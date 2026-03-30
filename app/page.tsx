@@ -77,10 +77,12 @@ export default function Home() {
         .btn-secondary:hover{border-color:rgba(201,168,76,0.4);color:#c9a84c}
         .hero-stats{position:relative;bottom:auto;right:auto;display:flex;gap:2.5rem;margin-top:3rem;animation:fadeUp .9s .3s ease both;flex-wrap:wrap}        .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;display:block}
         .stat-label{font-size:.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.05em}
-        .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1.25rem 5%;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;overflow:hidden}
-        .press-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center;overflow:hidden}        .press-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center}        .press-logo-text{font-weight:700;letter-spacing:-.02em;white-space:nowrap}
-        .advertiser{font-family:'Times New Roman',serif;font-size:1.1rem;color:#111;font-weight:400}
-        .herald{font-family:Arial,sans-serif;font-size:1rem;color:#fff;background:#1a5ca8;padding:.25rem .7rem;font-weight:700}
+        .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1rem 5%;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+        .press-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#6b7a99;font-weight:600;white-space:nowrap}
+        .press-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+        .press-logo-text{white-space:nowrap;font-weight:700;letter-spacing:-.02em}
+        .advertiser{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:400}
+        .herald{font-family:Arial,sans-serif;font-size:.9rem;color:#fff;background:#1a5ca8;padding:.2rem .6rem;font-weight:700}
         .telegraph{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
         .courier{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
         section{padding:6rem 5%}
@@ -217,8 +219,8 @@ export default function Home() {
         <div className="press-logos">
           <span className="press-logo-text advertiser">The Advertiser</span>
           <span className="press-logo-text herald">Herald Sun</span>
-          <span className="press-logo-text telegraph">The Daily Telegraph</span>
-          <span className="press-logo-text courier">The Courier Mail</span>
+          <span className="press-logo-text telegraph">Daily Telegraph</span>
+          <span className="press-logo-text courier">Courier Mail</span>
         </div>
       </div>
 
