@@ -46,11 +46,12 @@ export default function Home() {
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
         :root{--navy:#0a1628;--gold:#c9a84c;--gold-light:#e8c96a;--cream:#f8f4ee;--slate:#6b7a99;--text:#1a2540}
         *{box-sizing:border-box;margin:0;padding:0}
+        html,body{overflow-x:hidden;max-width:100vw}
         html{scroll-behavior:smooth}
-        body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+        body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text)}
         nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5%;background:rgba(10,22,40,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2)}
         .nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
-        .nav-logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#c9a84c,#e8c96a);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#0a1628;font-family:'Playfair Display',serif}
+        .nav-logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#c9a84c,#e8c96a);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#0a1628;font-family:'Playfair Display',serif;flex-shrink:0}
         .nav-logo-text{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff}
         .nav-logo-text span{color:#c9a84c}
         .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
@@ -62,30 +63,32 @@ export default function Home() {
         .mobile-menu{display:none;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:#0a1628;padding:1.5rem 5%;gap:1.25rem;border-bottom:1px solid rgba(201,168,76,0.15);z-index:99}
         .mobile-menu.open{display:flex}
         .mobile-menu a{text-decoration:none;color:rgba(255,255,255,0.75);font-size:1rem;font-weight:500}
-        .hero{min-height:100vh;background:#0a1628;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;position:relative;overflow:hidden;padding:8rem 5% 5rem}        .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(160deg,#0a1628 0%,#0d1e3a 50%,#0a1628 100%)}
+        .hero{min-height:100vh;width:100%;background:#0a1628;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;position:relative;overflow:hidden;padding:8rem 5% 5rem}
+        .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(160deg,#0a1628 0%,#0d1e3a 50%,#0a1628 100%)}
         .hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(201,168,76,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.8) 1px,transparent 1px);background-size:60px 60px}
         .hero-content{position:relative;z-index:2;max-width:680px;animation:fadeUp .9s ease both}
         .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);border-radius:100px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;color:#c9a84c;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2rem}
-        .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,4.8rem);font-weight:900;color:#fff;line-height:1.08;margin-bottom:1.5rem}
+        .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4.8rem);font-weight:900;color:#fff;line-height:1.08;margin-bottom:1.5rem}
         .hero h1 em{font-style:normal;background:linear-gradient(135deg,#c9a84c,#e8c96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .hero-sub{font-size:1.1rem;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:2.5rem;max-width:520px;font-weight:300}
+        .hero-sub{font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:2.5rem;max-width:520px;font-weight:300}
         .hero-sub strong{color:rgba(255,255,255,0.9);font-weight:500}
         .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
         .btn-primary{background:linear-gradient(135deg,#c9a84c,#e8c96a);color:#0a1628;padding:.9rem 2rem;border-radius:8px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(201,168,76,0.3);display:inline-flex;align-items:center;gap:.5rem}
         .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,0.4)}
         .btn-secondary{color:rgba(255,255,255,0.8);padding:.9rem 1.5rem;border-radius:8px;font-weight:500;font-size:.95rem;text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
         .btn-secondary:hover{border-color:rgba(201,168,76,0.4);color:#c9a84c}
-        .hero-stats{position:relative;bottom:auto;right:auto;display:flex;gap:2.5rem;margin-top:3rem;animation:fadeUp .9s .3s ease both;flex-wrap:wrap}        .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;display:block}
+        .hero-stats{position:relative;display:flex;gap:2.5rem;margin-top:3rem;flex-wrap:wrap;animation:fadeUp .9s .3s ease both}
+        .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;display:block}
         .stat-label{font-size:.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.05em}
-        .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1rem 5%;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
-        .press-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#6b7a99;font-weight:600;white-space:nowrap}
-        .press-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center}
-        .press-logo-text{white-space:nowrap;font-weight:700;letter-spacing:-.02em}
+        .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1.25rem 5%;width:100%;display:flex;flex-direction:column;align-items:center;gap:.75rem}
+        .press-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#6b7a99;font-weight:600}
+        .press-logos{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;width:100%}
+        .press-logo-text{white-space:nowrap;font-weight:700}
         .advertiser{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:400}
         .herald{font-family:Arial,sans-serif;font-size:.9rem;color:#fff;background:#1a5ca8;padding:.2rem .6rem;font-weight:700}
         .telegraph{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
         .courier{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
-        section{padding:6rem 5%}
+        section{padding:6rem 5%;width:100%}
         .section-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:#c9a84c;font-weight:700;margin-bottom:.75rem}
         .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#0a1628;line-height:1.15;margin-bottom:1.25rem}
         .section-sub{font-size:1.05rem;color:#6b7a99;line-height:1.7;max-width:560px;font-weight:300}
@@ -118,7 +121,7 @@ export default function Home() {
         .author-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0a1628,#112040);display:flex;align-items:center;justify-content:center;font-weight:700;color:#c9a84c;font-size:.9rem}
         .author-name{font-weight:600;font-size:.9rem;color:#0a1628}
         .author-detail{font-size:.78rem;color:#6b7a99}
-        .motto{background:linear-gradient(135deg,#c9a84c 0%,#e8c96a 100%);padding:5rem 5%;text-align:center}
+        .motto{background:linear-gradient(135deg,#c9a84c 0%,#e8c96a 100%);padding:5rem 5%;text-align:center;width:100%}
         .motto-text{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:#0a1628;font-style:italic;margin-bottom:.5rem}
         .motto small{font-size:.85rem;color:rgba(10,22,40,0.6);text-transform:uppercase;letter-spacing:.1em}
         .contact{background:#fff}
@@ -135,7 +138,7 @@ export default function Home() {
         .contact-info{display:flex;flex-direction:column;gap:.75rem}
         .contact-info-item{display:flex;align-items:center;gap:.75rem;color:#6b7a99;font-size:.9rem}
         .contact-info-item span{color:#c9a84c}
-        footer{background:#0a1628;padding:3rem 5% 2rem;border-top:1px solid rgba(201,168,76,0.15)}
+        footer{background:#0a1628;padding:3rem 5% 2rem;border-top:1px solid rgba(201,168,76,0.15);width:100%}
         .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem}
         .footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff}
         .footer-logo span{color:#c9a84c}
@@ -151,10 +154,10 @@ export default function Home() {
         @media(max-width:768px){
           .nav-links{display:none}
           .hamburger{display:flex}
-          .hero{padding-top:100px;padding-bottom:4rem;flex-direction:column;justify-content:flex-start}
+          .hero{padding-top:100px;padding-bottom:4rem}
           .hero-content{max-width:100%}
           .hero-badge{font-size:.7rem;padding:.35rem .8rem}
-          .hero-stats{position:relative;bottom:auto;right:auto;margin-top:2rem;gap:1.5rem;justify-content:flex-start}
+          .hero-stats{gap:1.5rem;margin-top:2rem}
           .stat-num{font-size:1.6rem}
           .why-grid{grid-template-columns:1fr}
           .contact-inner{grid-template-columns:1fr;gap:2.5rem}
@@ -162,8 +165,7 @@ export default function Home() {
           .services-grid{grid-template-columns:1fr}
           .testimonials-grid{grid-template-columns:1fr}
           section{padding:4rem 5%}
-          .press-logos{gap:1.25rem}
-          .press-logo-text{font-size:.85rem}
+          .press-logos{gap:1rem}
         }
       `}</style>
 
@@ -205,17 +207,17 @@ export default function Home() {
             <a href="#contact" className="btn-primary">Book a Free Consultation →</a>
             <a href="#services" className="btn-secondary">See Our Services</a>
           </div>
-        </div>
-        <div className="hero-stats">
-          <div className="stat"><span className="stat-num">120+</span><span className="stat-label">Students Taught</span></div>
-          <div className="stat"><span className="stat-num">97th</span><span className="stat-label">Percentile Maths</span></div>
-          <div className="stat"><span className="stat-num">4+</span><span className="stat-label">Years Experience</span></div>
+          <div className="hero-stats">
+            <div className="stat"><span className="stat-num">120+</span><span className="stat-label">Students Taught</span></div>
+            <div className="stat"><span className="stat-num">97th</span><span className="stat-label">Percentile Maths</span></div>
+            <div className="stat"><span className="stat-num">4+</span><span className="stat-label">Years Experience</span></div>
+          </div>
         </div>
       </section>
 
       {/* PRESS */}
       <div className="press-banner">
-        <span className="press-label">As seen in</span>
+        <p className="press-label">As seen in</p>
         <div className="press-logos">
           <span className="press-logo-text advertiser">The Advertiser</span>
           <span className="press-logo-text herald">Herald Sun</span>
