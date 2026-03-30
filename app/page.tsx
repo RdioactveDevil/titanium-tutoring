@@ -84,8 +84,7 @@ export default function Home() {
         .press-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#6b7a99;font-weight:600}
         .press-logos{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;width:100%}
         .press-logo-text{white-space:nowrap;font-weight:700}
-        .advertiser{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:400}
-        .herald{font-family:Arial,sans-serif;font-size:.9rem;color:#fff;background:#1a5ca8;padding:.2rem .6rem;font-weight:700}
+        .newspaper-adl{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:400}        .herald{font-family:Arial,sans-serif;font-size:.9rem;color:#fff;background:#1a5ca8;padding:.2rem .6rem;font-weight:700}
         .telegraph{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
         .courier{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
         section{padding:6rem 5%;width:100%}
@@ -219,7 +218,7 @@ export default function Home() {
       <div className="press-banner">
         <p className="press-label">As seen in</p>
         <div className="press-logos">
-          <span className="press-logo-text advertiser">The Advertiser</span>
+          <span className="press-logo-text newspaper-adl">The Advertiser</span>
           <span className="press-logo-text herald">Herald Sun</span>
           <span className="press-logo-text telegraph">Daily Telegraph</span>
           <span className="press-logo-text courier">Courier Mail</span>
