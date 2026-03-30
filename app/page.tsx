@@ -79,10 +79,8 @@ export default function Home() {
         .hero-stats{position:absolute;bottom:3rem;right:5%;display:flex;gap:2.5rem;animation:fadeUp .9s .3s ease both}
         .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;display:block}
         .stat-label{font-size:.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.05em}
-        .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1.25rem 5%;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
-        .press-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#6b7a99;font-weight:600}
-        .press-logos{display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;justify-content:center}
-        .press-logo-text{font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+        .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1.25rem 3%;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}        .press-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#6b7a99;font-weight:600}
+        .press-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center}        .press-logo-text{font-weight:700;letter-spacing:-.02em;white-space:nowrap}
         .advertiser{font-family:'Times New Roman',serif;font-size:1.1rem;color:#111;font-weight:400}
         .herald{font-family:Arial,sans-serif;font-size:1rem;color:#fff;background:#1a5ca8;padding:.25rem .7rem;font-weight:700}
         .telegraph{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
