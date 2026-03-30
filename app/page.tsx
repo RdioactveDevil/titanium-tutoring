@@ -16,104 +16,140 @@ export default function Home() {
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el))
   }, [])
 
+  const services = [
+    { icon: '🏆', title: 'Selective Entry & Scholarships', desc: 'HAST, Suzanne Cory, Melbourne High, scholarship exams. We have been through these doors and know what the markers want.', tag: 'Selective Schools' },
+    { icon: '📐', title: 'VCE & SACE Maths', desc: "Polya's four-step framework applied to every problem type. Methods, Specialist, General Maths — study scores, not just passes.", tag: 'Methods · Specialist' },
+    { icon: '📝', title: 'NAPLAN Preparation', desc: 'Numeracy and literacy coaching for Years 3, 5, 7, and 9. We build fundamentals that stick, not last-minute cramming.', tag: 'Years 3–9' },
+    { icon: '🌟', title: 'Primary Maths & English', desc: 'Years 1–6. Building confident, curious learners. Strong foundations make every year after easier.', tag: 'Primary School' },
+    { icon: '📚', title: 'Year 7–10 Acceleration', desc: 'Get ahead before VCE or SACE begins. We identify gaps early and close them before they compound.', tag: 'Secondary School' },
+    { icon: '🎯', title: 'Exam Strategy & Mindset', desc: 'Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches.', tag: 'All Levels' },
+  ]
+
+  const whyItems = [
+    { title: "Polya's Problem-Solving Method", desc: 'Every session uses the four-step framework: Understand, Plan, Execute, Reflect. Students learn how to think, not just what to memorise.' },
+    { title: 'Personalised to the Individual', desc: 'No cookie-cutter programmes. We diagnose exactly where each student is losing marks and build from there.' },
+    { title: 'Herald Sun Featured', desc: 'Our results have been independently recognised in the press. We do not just claim outcomes — they speak for themselves.' },
+    { title: 'Multilingual, Multicultural', desc: 'Tutoring available in English, Hindi, and Urdu. We understand the unique pressures on students from diverse backgrounds.' },
+    { title: '120+ Students Served', desc: 'Across VCE, SACE, NAPLAN, and selective entry. A proven track record across multiple curricula and states.' },
+    { title: 'Branded Resources Included', desc: 'Every student receives custom worksheets, PowerPoints, and answer keys — not photocopied textbook pages.' },
+  ]
+
+  const testimonials = [
+    { initial: 'P', quote: 'My daughter went from a C in Methods to a B+ in one term. The way concepts are broken down made everything click for the first time.', name: 'Parent of VCE Student', detail: 'Mathematical Methods · Victoria' },
+    { initial: 'A', quote: 'We tried two other tutors before Titanium. The difference was immediately obvious — structured, patient, and genuinely invested in results.', name: 'Parent of Year 9 Student', detail: 'NAPLAN · South Australia' },
+    { initial: 'R', quote: 'My son got into his first-choice selective school. The exam strategy coaching was on another level — we could not have done it without Titanium.', name: 'Parent of Year 6 Student', detail: 'Selective Entry · Victoria' },
+  ]
+
   return (
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
-        :root { --navy:#0a1628; --navy-mid:#112040; --gold:#c9a84c; --gold-light:#e8c96a; --cream:#f8f4ee; --white:#ffffff; --slate:#6b7a99; --text:#1a2540; }
-        nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:1.2rem 5%; background:rgba(10,22,40,0.96); backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,168,76,0.2); }
-        .nav-logo { display:flex; align-items:center; gap:0.75rem; text-decoration:none; }
-        .nav-logo-icon { width:38px; height:38px; background:linear-gradient(135deg,#c9a84c,#e8c96a); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:900; color:#0a1628; font-family:'Playfair Display',serif; }
-        .nav-logo-text { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:#fff; line-height:1.1; }
-        .nav-logo-text span { color:#c9a84c; }
-        .nav-links { display:flex; align-items:center; gap:2rem; list-style:none; }
-        .nav-links a { text-decoration:none; color:rgba(255,255,255,0.75); font-size:0.9rem; font-weight:500; transition:color 0.2s; }
-        .nav-links a:hover { color:#c9a84c; }
-        .nav-cta { background:#c9a84c; color:#0a1628 !important; padding:0.55rem 1.3rem; border-radius:6px; font-weight:600 !important; }
-        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
-        .hamburger span { display:block; width:24px; height:2px; background:#fff; border-radius:2px; }
-        .mobile-menu { display:none; flex-direction:column; position:fixed; top:64px; left:0; right:0; background:#0a1628; padding:1.5rem 5%; gap:1.25rem; border-bottom:1px solid rgba(201,168,76,0.15); z-index:99; }
-        .mobile-menu.open { display:flex; }
-        .mobile-menu a { text-decoration:none; color:rgba(255,255,255,0.75); font-size:1rem; font-weight:500; }
-        .hero { min-height:100vh; background:#0a1628; display:flex; align-items:center; position:relative; overflow:hidden; padding:0 5%; }
-        .hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(160deg,#0a1628 0%,#0d1e3a 50%,#0a1628 100%); }
-        .hero-grid { position:absolute; inset:0; opacity:0.04; background-image:linear-gradient(rgba(201,168,76,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.8) 1px,transparent 1px); background-size:60px 60px; }
-        .hero-content { position:relative; z-index:2; max-width:680px; animation:fadeUp 0.9s ease both; }
-        .hero-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(201,168,76,0.12); border:1px solid rgba(201,168,76,0.3); border-radius:100px; padding:0.4rem 1rem; font-size:0.8rem; font-weight:600; color:#c9a84c; letter-spacing:0.05em; text-transform:uppercase; margin-bottom:2rem; }
-        .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.8rem,6vw,4.8rem); font-weight:900; color:#fff; line-height:1.08; margin-bottom:1.5rem; }
-        .hero h1 em { font-style:normal; background:linear-gradient(135deg,#c9a84c,#e8c96a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-        .hero-sub { font-size:1.1rem; line-height:1.7; color:rgba(255,255,255,0.65); margin-bottom:2.5rem; max-width:520px; font-weight:300; }
-        .hero-sub strong { color:rgba(255,255,255,0.9); font-weight:500; }
-        .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
-        .btn-primary { background:linear-gradient(135deg,#c9a84c,#e8c96a); color:#0a1628; padding:0.9rem 2rem; border-radius:8px; font-weight:700; font-size:0.95rem; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s; box-shadow:0 4px 20px rgba(201,168,76,0.3); display:inline-flex; align-items:center; gap:0.5rem; }
-        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(201,168,76,0.4); }
-        .btn-secondary { color:rgba(255,255,255,0.8); padding:0.9rem 1.5rem; border-radius:8px; font-weight:500; font-size:0.95rem; text-decoration:none; border:1px solid rgba(255,255,255,0.15); transition:all 0.2s; display:inline-flex; align-items:center; gap:0.5rem; }
-        .btn-secondary:hover { border-color:rgba(201,168,76,0.4); color:#c9a84c; }
-        .hero-stats { position:absolute; bottom:3rem; right:5%; display:flex; gap:2.5rem; animation:fadeUp 0.9s 0.3s ease both; }
-        .stat-num { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:#c9a84c; display:block; }
-        .stat-label { font-size:0.75rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.05em; }
-        .press-banner { background:#fff; border-bottom:1px solid rgba(0,0,0,0.06); padding:1rem 5%; display:flex; align-items:center; justify-content:center; gap:2rem; flex-wrap:wrap; }
-        .press-label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:#6b7a99; font-weight:600; }
-        .press-item { display:flex; align-items:center; gap:0.5rem; font-weight:700; font-size:0.9rem; color:#1a2540; }
-        .press-item .icon { width:24px; height:24px; background:#0a1628; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; color:#c9a84c; }
-        section { padding:6rem 5%; }
-        .section-label { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:#c9a84c; font-weight:700; margin-bottom:0.75rem; }
-        .section-title { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3rem); font-weight:700; color:#0a1628; line-height:1.15; margin-bottom:1.25rem; }
-        .section-sub { font-size:1.05rem; color:#6b7a99; line-height:1.7; max-width:560px; font-weight:300; }
-        .services { background:#fff; }
-        .services-header { display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; margin-bottom:3.5rem; }
-        .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
-        .service-card { background:#f8f4ee; border:1px solid rgba(0,0,0,0.06); border-radius:16px; padding:2rem; transition:transform 0.25s,box-shadow 0.25s,border-color 0.25s; position:relative; overflow:hidden; }
-        .service-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,#c9a84c,#e8c96a); opacity:0; transition:opacity 0.25s; }
-        .service-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(10,22,40,0.1); border-color:rgba(201,168,76,0.2); }
-        .service-card:hover::before { opacity:1; }
-        .service-icon { width:52px; height:52px; background:linear-gradient(135deg,#0a1628,#112040); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:1.25rem; }
-        .service-card h3 { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:#0a1628; margin-bottom:0.75rem; }
-        .service-card p { font-size:0.9rem; color:#6b7a99; line-height:1.65; margin-bottom:1.25rem; }
-        .service-tag { display:inline-block; background:rgba(201,168,76,0.12); color:#c9a84c; font-size:0.72rem; font-weight:600; padding:0.25rem 0.6rem; border-radius:4px; text-transform:uppercase; letter-spacing:0.05em; }
-        .why { background:#0a1628; }
-        .why .section-title { color:#fff; }
-        .why .section-sub { color:rgba(255,255,255,0.5); }
-        .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; margin-top:3.5rem; }
-        .why-item { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:1.75rem; transition:background 0.25s,border-color 0.25s; }
-        .why-item:hover { background:rgba(201,168,76,0.06); border-color:rgba(201,168,76,0.2); }
-        .why-item h4 { font-size:1.05rem; font-weight:600; color:#fff; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.6rem; }
-        .why-item h4 .check { width:22px; height:22px; min-width:22px; background:linear-gradient(135deg,#c9a84c,#e8c96a); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.65rem; color:#0a1628; }
-        .why-item p { font-size:0.88rem; color:rgba(255,255,255,0.45); line-height:1.65; padding-left:1.9rem; }
-        .testimonials { background:#f8f4ee; }
-        .testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; margin-top:3.5rem; }
-        .testimonial-card { background:#fff; border-radius:16px; padding:2rem; border:1px solid rgba(0,0,0,0.06); }
-        .stars { color:#c9a84c; font-size:0.9rem; margin-bottom:1rem; }
-        .testimonial-card p { font-size:0.95rem; color:#1a2540; line-height:1.7; margin-bottom:1.5rem; font-style:italic; }
-        .testimonial-author { display:flex; align-items:center; gap:0.75rem; }
-        .author-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,#0a1628,#112040); display:flex; align-items:center; justify-content:center; font-weight:700; color:#c9a84c; font-size:0.9rem; }
-        .author-name { font-weight:600; font-size:0.9rem; color:#0a1628; }
-        .author-detail { font-size:0.78rem; color:#6b7a99; }
-        .motto { background:linear-gradient(135deg,#c9a84c 0%,#e8c96a 100%); padding:5rem 5%; text-align:center; }
-        .motto p { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,3rem); font-weight:700; color:#0a1628; font-style:italic; margin-bottom:0.5rem; }
-        .motto small { font-size:0.85rem; color:rgba(10,22,40,0.6); text-transform:uppercase; letter-spacing:0.1em; }
-        .contact { background:#fff; }
-        .contact-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-        .contact-form { display:flex; flex-direction:column; gap:1rem; }
-        .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-        .form-group { display:flex; flex-direction:column; gap:0.4rem; }
-        .form-group label { font-size:0.8rem; font-weight:600; color:#1a2540; text-transform:uppercase; letter-spacing:0.04em; }
-        .form-group input,.form-group select,.form-group textarea { padding:0.8rem 1rem; border:1.5px solid rgba(0,0,0,0.1); border-radius:8px; font-family:'DM Sans',sans-serif; font-size:0.92rem; color:#1a2540; background:#f8f4ee; transition:border-color 0.2s; outline:none; width:100%; }
-        .form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:#c9a84c; background:#fff; }
-        .form-group textarea { resize:vertical; min-height:110px; }
-        footer { background:#0a1628; padding:3rem 5% 2rem; border-top:1px solid rgba(201,168,76,0.15); }
-        .footer-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; margin-bottom:2rem; }
-        .footer-logo { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:#fff; }
-        .footer-logo span { color:#c9a84c; }
-        .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
-        .footer-links a { color:rgba(255,255,255,0.45); font-size:0.85rem; text-decoration:none; transition:color 0.2s; }
-        .footer-links a:hover { color:#c9a84c; }
-        .footer-bottom { border-top:1px solid rgba(255,255,255,0.07); padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; }
-        .footer-bottom p { font-size:0.78rem; color:rgba(255,255,255,0.25); }
-        .fade-in { opacity:0; transform:translateY(20px); transition:opacity 0.6s ease,transform 0.6s ease; }
-        .fade-in.visible { opacity:1; transform:translateY(0); }
-        @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+        :root{--navy:#0a1628;--gold:#c9a84c;--gold-light:#e8c96a;--cream:#f8f4ee;--slate:#6b7a99;--text:#1a2540}
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5%;background:rgba(10,22,40,0.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,0.2)}
+        .nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+        .nav-logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#c9a84c,#e8c96a);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#0a1628;font-family:'Playfair Display',serif}
+        .nav-logo-text{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff}
+        .nav-logo-text span{color:#c9a84c}
+        .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+        .nav-links a{text-decoration:none;color:rgba(255,255,255,0.75);font-size:.9rem;font-weight:500;transition:color .2s}
+        .nav-links a:hover{color:#c9a84c}
+        .nav-cta{background:#c9a84c;color:#0a1628 !important;padding:.55rem 1.3rem;border-radius:6px;font-weight:600 !important}
+        .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+        .hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+        .mobile-menu{display:none;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:#0a1628;padding:1.5rem 5%;gap:1.25rem;border-bottom:1px solid rgba(201,168,76,0.15);z-index:99}
+        .mobile-menu.open{display:flex}
+        .mobile-menu a{text-decoration:none;color:rgba(255,255,255,0.75);font-size:1rem;font-weight:500}
+        .hero{min-height:100vh;background:#0a1628;display:flex;align-items:center;position:relative;overflow:hidden;padding:0 5%}
+        .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(160deg,#0a1628 0%,#0d1e3a 50%,#0a1628 100%)}
+        .hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(201,168,76,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.8) 1px,transparent 1px);background-size:60px 60px}
+        .hero-content{position:relative;z-index:2;max-width:680px;animation:fadeUp .9s ease both}
+        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);border-radius:100px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;color:#c9a84c;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2rem}
+        .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,4.8rem);font-weight:900;color:#fff;line-height:1.08;margin-bottom:1.5rem}
+        .hero h1 em{font-style:normal;background:linear-gradient(135deg,#c9a84c,#e8c96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-sub{font-size:1.1rem;line-height:1.7;color:rgba(255,255,255,0.65);margin-bottom:2.5rem;max-width:520px;font-weight:300}
+        .hero-sub strong{color:rgba(255,255,255,0.9);font-weight:500}
+        .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+        .btn-primary{background:linear-gradient(135deg,#c9a84c,#e8c96a);color:#0a1628;padding:.9rem 2rem;border-radius:8px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(201,168,76,0.3);display:inline-flex;align-items:center;gap:.5rem}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,0.4)}
+        .btn-secondary{color:rgba(255,255,255,0.8);padding:.9rem 1.5rem;border-radius:8px;font-weight:500;font-size:.95rem;text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+        .btn-secondary:hover{border-color:rgba(201,168,76,0.4);color:#c9a84c}
+        .hero-stats{position:absolute;bottom:3rem;right:5%;display:flex;gap:2.5rem;animation:fadeUp .9s .3s ease both}
+        .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;display:block}
+        .stat-label{font-size:.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.05em}
+        .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1.25rem 5%;display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap}
+        .press-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#6b7a99;font-weight:600}
+        .press-logos{display:flex;align-items:center;gap:2.5rem;flex-wrap:wrap;justify-content:center}
+        .press-logo-text{font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+        .advertiser{font-family:'Times New Roman',serif;font-size:1.1rem;color:#111;font-weight:400}
+        .herald{font-family:Arial,sans-serif;font-size:1rem;color:#fff;background:#1a5ca8;padding:.25rem .7rem;font-weight:700}
+        .telegraph{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
+        .courier{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
+        section{padding:6rem 5%}
+        .section-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:#c9a84c;font-weight:700;margin-bottom:.75rem}
+        .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#0a1628;line-height:1.15;margin-bottom:1.25rem}
+        .section-sub{font-size:1.05rem;color:#6b7a99;line-height:1.7;max-width:560px;font-weight:300}
+        .services{background:#fff}
+        .services-header{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:3.5rem}
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+        .service-card{background:#f8f4ee;border:1px solid rgba(0,0,0,0.06);border-radius:16px;padding:2rem;transition:transform .25s,box-shadow .25s,border-color .25s;position:relative;overflow:hidden}
+        .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c9a84c,#e8c96a);opacity:0;transition:opacity .25s}
+        .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(10,22,40,0.1);border-color:rgba(201,168,76,0.2)}
+        .service-card:hover::before{opacity:1}
+        .service-icon{width:52px;height:52px;background:linear-gradient(135deg,#0a1628,#112040);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.25rem}
+        .service-card h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#0a1628;margin-bottom:.75rem}
+        .service-card p{font-size:.9rem;color:#6b7a99;line-height:1.65;margin-bottom:1.25rem}
+        .service-tag{display:inline-block;background:rgba(201,168,76,0.12);color:#c9a84c;font-size:.72rem;font-weight:600;padding:.25rem .6rem;border-radius:4px;text-transform:uppercase;letter-spacing:.05em}
+        .why{background:#0a1628}
+        .why .section-title{color:#fff}
+        .why .section-sub{color:rgba(255,255,255,0.5)}
+        .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3.5rem}
+        .why-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.75rem;transition:background .25s,border-color .25s}
+        .why-item:hover{background:rgba(201,168,76,0.06);border-color:rgba(201,168,76,0.2)}
+        .why-item h4{font-size:1.05rem;font-weight:600;color:#fff;margin-bottom:.5rem;display:flex;align-items:center;gap:.6rem}
+        .check{width:22px;height:22px;min-width:22px;background:linear-gradient(135deg,#c9a84c,#e8c96a);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;color:#0a1628}
+        .why-item p{font-size:.88rem;color:rgba(255,255,255,0.45);line-height:1.65;padding-left:1.9rem}
+        .testimonials{background:#f8f4ee}
+        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3.5rem}
+        .testimonial-card{background:#fff;border-radius:16px;padding:2rem;border:1px solid rgba(0,0,0,0.06)}
+        .stars{color:#c9a84c;font-size:.9rem;margin-bottom:1rem}
+        .testimonial-card blockquote{font-size:.95rem;color:#1a2540;line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+        .testimonial-author{display:flex;align-items:center;gap:.75rem}
+        .author-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0a1628,#112040);display:flex;align-items:center;justify-content:center;font-weight:700;color:#c9a84c;font-size:.9rem}
+        .author-name{font-weight:600;font-size:.9rem;color:#0a1628}
+        .author-detail{font-size:.78rem;color:#6b7a99}
+        .motto{background:linear-gradient(135deg,#c9a84c 0%,#e8c96a 100%);padding:5rem 5%;text-align:center}
+        .motto-text{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:#0a1628;font-style:italic;margin-bottom:.5rem}
+        .motto small{font-size:.85rem;color:rgba(10,22,40,0.6);text-transform:uppercase;letter-spacing:.1em}
+        .contact{background:#fff}
+        .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .contact-form{display:flex;flex-direction:column;gap:1rem}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+        .form-group{display:flex;flex-direction:column;gap:.4rem}
+        .form-group label{font-size:.8rem;font-weight:600;color:#1a2540;text-transform:uppercase;letter-spacing:.04em}
+        .form-group input,.form-group select,.form-group textarea{padding:.8rem 1rem;border:1.5px solid rgba(0,0,0,0.1);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.92rem;color:#1a2540;background:#f8f4ee;transition:border-color .2s;outline:none;width:100%}
+        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#c9a84c;background:#fff}
+        .form-group textarea{resize:vertical;min-height:110px}
+        .submit-btn{background:linear-gradient(135deg,#c9a84c,#e8c96a);color:#0a1628;padding:1rem;border-radius:8px;font-weight:700;font-size:1rem;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(201,168,76,0.3)}
+        .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,0.4)}
+        .contact-info{display:flex;flex-direction:column;gap:.75rem}
+        .contact-info-item{display:flex;align-items:center;gap:.75rem;color:#6b7a99;font-size:.9rem}
+        .contact-info-item span{color:#c9a84c}
+        footer{background:#0a1628;padding:3rem 5% 2rem;border-top:1px solid rgba(201,168,76,0.15)}
+        .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;margin-bottom:2rem}
+        .footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:#fff}
+        .footer-logo span{color:#c9a84c}
+        .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+        .footer-links a{color:rgba(255,255,255,0.45);font-size:.85rem;text-decoration:none;transition:color .2s}
+        .footer-links a:hover{color:#c9a84c}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem}
+        .footer-copy{font-size:.78rem;color:rgba(255,255,255,0.25)}
+        .footer-motto{font-style:italic;color:rgba(201,168,76,0.4);font-size:.75rem}
+        .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
+        @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
         @media(max-width:768px){
           .nav-links{display:none}
           .hamburger{display:flex}
@@ -128,8 +164,9 @@ export default function Home() {
           .services-grid{grid-template-columns:1fr}
           .testimonials-grid{grid-template-columns:1fr}
           section{padding:4rem 5%}
+          .press-logos{gap:1.25rem}
+          .press-logo-text{font-size:.85rem}
         }
-        
       `}</style>
 
       {/* NAV */}
@@ -153,7 +190,7 @@ export default function Home() {
         <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
         <a href="#why" onClick={() => setMenuOpen(false)}>About</a>
         <a href="#testimonials" onClick={() => setMenuOpen(false)}>Results</a>
-        <a href="#contact" onClick={() => setMenuOpen(false)}>Get Started →</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>Get Started</a>
       </div>
 
       {/* HERO */}
@@ -163,7 +200,9 @@ export default function Home() {
         <div className="hero-content">
           <div className="hero-badge">As featured in the Herald Sun</div>
           <h1>From Struggle<br/>to <em>Top Marks.</em><br/>We&apos;ve Done It.</h1>
-          <p className="hero-sub">Expert tutoring for <strong>VCE, SACE, NAPLAN</strong>, and selective entry exams — built by a student who scored the highest possible ATAR. We know exactly what it takes.</p>
+          <p className="hero-sub">
+            Expert tutoring for <strong>VCE, SACE, NAPLAN</strong>, and selective entry exams — built by a student who scored the highest possible ATAR. We know exactly what it takes.
+          </p>
           <div className="hero-actions">
             <a href="#contact" className="btn-primary">Book a Free Consultation →</a>
             <a href="#services" className="btn-secondary">See Our Services</a>
@@ -179,9 +218,12 @@ export default function Home() {
       {/* PRESS */}
       <div className="press-banner">
         <span className="press-label">As seen in</span>
-        <div className="press-item"><div className="icon">📰</div>Herald Sun</div>
-        <span className="press-label">Trusted by</span>
-        <div className="press-item"><div className="icon">🎓</div>120+ Students · VCE · SACE · NAPLAN</div>
+        <div className="press-logos">
+          <span className="press-logo-text advertiser">The Advertiser</span>
+          <span className="press-logo-text herald">Herald Sun</span>
+          <span className="press-logo-text telegraph">The Daily Telegraph</span>
+          <span className="press-logo-text courier">The Courier Mail</span>
+        </div>
       </div>
 
       {/* SERVICES */}
@@ -194,14 +236,7 @@ export default function Home() {
           <p className="section-sub">Every programme is personalised. No generic worksheets — just targeted coaching that moves the needle.</p>
         </div>
         <div className="services-grid">
-          {[
-            {icon:'🏆', title:'Selective Entry & Scholarships', desc:"HAST, Suzanne Cory, Melbourne High, scholarship exams. We've been through these doors — we know what the markers want.", tag:'Selective Schools'},
-            {icon:'📐', title:'VCE & SACE Maths', desc:"Mathematical Methods, Specialist, General Maths. Polya's four-step framework applied to every problem type.", tag:'Methods · Specialist'},
-            {icon:'📝', title:'NAPLAN Preparation', desc:'Numeracy and literacy coaching for Years 3, 5, 7, and 9. We build fundamentals that stick, not last-minute cramming.', tag:'Years 3–9'},
-            {icon:'🌟', title:'Primary Maths & English', desc:'Years 1–6. Building confident, curious learners. Strong foundations make every year after easier.', tag:'Primary School'},
-            {icon:'📚', title:'Year 7–10 Acceleration', desc:'Get ahead before VCE or SACE begins. We identify gaps early and close them before they compound.', tag:'Secondary School'},
-            {icon:'🎯', title:'Exam Strategy & Mindset', desc:'Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches.', tag:'All Levels'},
-          ].map((s, i) => (
+          {services.map((s, i) => (
             <div className="service-card fade-in" key={i}>
               <div className="service-icon">{s.icon}</div>
               <h3>{s.title}</h3>
@@ -220,14 +255,7 @@ export default function Home() {
           <p className="section-sub">Our founder scored the highest possible ATAR at a selective entry school and placed in the 97th percentile nationally in the Australian Maths Competition.</p>
         </div>
         <div className="why-grid">
-          {[
-            {title:"Polya's Problem-Solving Method", desc:"Every session uses the four-step framework: Understand, Plan, Execute, Reflect. Students learn how to think, not just what to memorise."},
-            {title:"Personalised to the Individual", desc:"No cookie-cutter programmes. We diagnose exactly where each student is losing marks and build from there."},
-            {title:"Herald Sun Featured", desc:"Our results have been independently recognised in the press. We don't just claim outcomes — they speak for themselves."},
-            {title:"Multilingual, Multicultural", desc:"Tutoring available in English, Hindi, and Urdu. We understand the unique pressures on students from diverse backgrounds."},
-            {title:"120+ Students Served", desc:"Across VCE, SACE, NAPLAN, and selective entry. A proven track record across multiple curricula and states."},
-            {title:"Branded Resources Included", desc:"Every student receives custom worksheets, PowerPoints, and answer keys — not photocopied textbook pages."},
-          ].map((w, i) => (
+          {whyItems.map((w, i) => (
             <div className="why-item fade-in" key={i}>
               <h4><span className="check">✓</span>{w.title}</h4>
               <p>{w.desc}</p>
@@ -243,17 +271,16 @@ export default function Home() {
           <h2 className="section-title">What Families Say</h2>
         </div>
         <div className="testimonials-grid">
-          {[
-            {initial:'P', quote:"My daughter went from a C in Methods to a B+ in one term. The way concepts are broken down made everything click for the first time.", name:'Parent of VCE Student', detail:'Mathematical Methods · Victoria'},
-            {initial:'A', quote:"We tried two other tutors before Titanium. The difference was immediately obvious — structured, patient, and genuinely invested in results.", name:'Parent of Year 9 Student', detail:'NAPLAN · South Australia'},
-            {initial:'R', quote:"My son got into his first-choice selective school. The exam strategy coaching was on another level — we couldn't have done it without Titanium.", name:'Parent of Year 6 Student', detail:'Selective Entry · Victoria'},
-          ].map((t, i) => (
+          {testimonials.map((t, i) => (
             <div className="testimonial-card fade-in" key={i}>
               <div className="stars">★★★★★</div>
-              <p>&ldquo;{t.quote}&rdquo;</p>
+              <blockquote>{t.quote}</blockquote>
               <div className="testimonial-author">
                 <div className="author-avatar">{t.initial}</div>
-                <div><div className="author-name">{t.name}</div><div className="author-detail">{t.detail}</div></div>
+                <div>
+                  <div className="author-name">{t.name}</div>
+                  <div className="author-detail">{t.detail}</div>
+                </div>
               </div>
             </div>
           ))}
@@ -262,7 +289,7 @@ export default function Home() {
 
       {/* MOTTO */}
       <div className="motto">
-        <p>&ldquo;Per aspera ad astra.&rdquo;</p>
+        <p className="motto-text">&ldquo;Per aspera ad astra.&rdquo;</p>
         <small>Through hardship to the stars — the Titanium Tutoring philosophy</small>
       </div>
 
@@ -272,31 +299,44 @@ export default function Home() {
           <div className="fade-in">
             <div className="section-label">Get Started</div>
             <h2 className="section-title">Book a Free<br/>Consultation</h2>
-            <p className="section-sub" style={{marginBottom:'2rem'}}>No commitment. We&apos;ll discuss your child&apos;s specific needs and explain exactly how we&apos;d approach their preparation.</p>
-            <div style={{display:'flex',flexDirection:'column',gap:'0.75rem'}}>
-              <div style={{display:'flex',alignItems:'center',gap:'0.75rem',color:'#6b7a99',fontSize:'0.9rem'}}><span style={{color:'#c9a84c'}}>📍</span> Serving Adelaide, Melbourne & online Australia-wide</div>
-              <div style={{display:'flex',alignItems:'center',gap:'0.75rem',color:'#6b7a99',fontSize:'0.9rem'}}><span style={{color:'#c9a84c'}}>📧</span> contact@titaniumtutoring.com</div>
-              <div style={{display:'flex',alignItems:'center',gap:'0.75rem',color:'#6b7a99',fontSize:'0.9rem'}}><span style={{color:'#c9a84c'}}>⚡</span> Response within 24 hours</div>
+            <p className="section-sub" style={{marginBottom:'2rem'}}>No commitment. We will discuss your child&apos;s specific needs and explain exactly how we would approach their preparation.</p>
+            <div className="contact-info">
+              <div className="contact-info-item"><span>📍</span> Serving Adelaide, Melbourne & online Australia-wide</div>
+              <div className="contact-info-item"><span>📧</span> contact@titaniumtutoring.com</div>
+              <div className="contact-info-item"><span>⚡</span> Response within 24 hours</div>
             </div>
           </div>
           <form className="contact-form fade-in" action="https://formspree.io/f/YOUR_CODE" method="POST">
             <div className="form-row">
-              <div className="form-group"><label>Parent Name</label><input type="text" name="name" placeholder="Your name"/></div>
-              <div className="form-group"><label>Year Level</label>
+              <div className="form-group">
+                <label>Parent Name</label>
+                <input type="text" name="name" placeholder="Your name"/>
+              </div>
+              <div className="form-group">
+                <label>Year Level</label>
                 <select name="year">
                   <option value="">Select year...</option>
-                  <option>Primary (Years 1–6)</option>
-                  <option>Year 7–10</option>
+                  <option>Primary (Years 1-6)</option>
+                  <option>Year 7-10</option>
                   <option>VCE / SACE</option>
                   <option>Selective Entry Prep</option>
                   <option>NAPLAN</option>
                 </select>
               </div>
             </div>
-            <div className="form-group"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com"/></div>
-            <div className="form-group"><label>Subject / Area of Help</label><input type="text" name="subject" placeholder="e.g. Mathematical Methods, scholarship prep..."/></div>
-            <div className="form-group"><label>Tell Us More (optional)</label><textarea name="message" placeholder="What are the main challenges your child is facing?"/></div>
-            <button type="submit" className="btn-primary" style={{border:'none',cursor:'pointer',justifyContent:'center',fontSize:'1rem',padding:'1rem'}}>Send Enquiry →</button>
+            <div className="form-group">
+              <label>Email Address</label>
+              <input type="email" name="email" placeholder="your@email.com"/>
+            </div>
+            <div className="form-group">
+              <label>Subject / Area of Help</label>
+              <input type="text" name="subject" placeholder="e.g. Mathematical Methods, scholarship prep..."/>
+            </div>
+            <div className="form-group">
+              <label>Tell Us More (optional)</label>
+              <textarea name="message" placeholder="What are the main challenges your child is facing?"/>
+            </div>
+            <button type="submit" className="submit-btn">Send Enquiry →</button>
           </form>
         </div>
       </section>
@@ -305,16 +345,16 @@ export default function Home() {
       <footer>
         <div className="footer-inner">
           <div className="footer-logo">Titanium <span>Tutoring</span></div>
-          <nav className="footer-links">
+          <div className="footer-links">
             <a href="#services">Services</a>
             <a href="#why">About</a>
             <a href="#testimonials">Results</a>
             <a href="#contact">Contact</a>
-          </nav>
+          </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2025 Titanium Tutoring. All rights reserved.</p>
-          <p style={{fontStyle:'italic',color:'rgba(201,168,76,0.4)',fontSize:'0.75rem'}}>Per aspera ad astra.</p>
+          <p className="footer-copy">2025 Titanium Tutoring. All rights reserved.</p>
+          <p className="footer-motto">Per aspera ad astra.</p>
         </div>
       </footer>
     </>
