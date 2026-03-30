@@ -63,10 +63,9 @@ export default function Home() {
         .mobile-menu{display:none;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:#0a1628;padding:1.5rem 5%;gap:1.25rem;border-bottom:1px solid rgba(201,168,76,0.15);z-index:99}
         .mobile-menu.open{display:flex}
         .mobile-menu a{text-decoration:none;color:rgba(255,255,255,0.75);font-size:1rem;font-weight:500}
-        .hero{min-height:100vh;width:100%;background:#0a1628;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;position:relative;overflow:hidden;padding:8rem 5% 5rem}
-        .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(160deg,#0a1628 0%,#0d1e3a 50%,#0a1628 100%)}
+        .hero{min-height:100vh;width:100%;background:#0a1628;display:flex;align-items:center;justify-content:flex-start;position:relative;overflow:hidden;padding:8rem 10% 5rem}        .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(160deg,#0a1628 0%,#0d1e3a 50%,#0a1628 100%)}
         .hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(201,168,76,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.8) 1px,transparent 1px);background-size:60px 60px}
-        .hero-content{position:relative;z-index:2;max-width:680px;animation:fadeUp .9s ease both}
+        .hero-content{position:relative;z-index:2;max-width:780px;width:100%;animation:fadeUp .9s ease both}
         .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);border-radius:100px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;color:#c9a84c;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2rem}
         .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4.8rem);font-weight:900;color:#fff;line-height:1.08;margin-bottom:1.5rem}
         .hero h1 em{font-style:normal;background:linear-gradient(135deg,#c9a84c,#e8c96a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -77,8 +76,7 @@ export default function Home() {
         .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,0.4)}
         .btn-secondary{color:rgba(255,255,255,0.8);padding:.9rem 1.5rem;border-radius:8px;font-weight:500;font-size:.95rem;text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
         .btn-secondary:hover{border-color:rgba(201,168,76,0.4);color:#c9a84c}
-        .hero-stats{position:relative;display:flex;gap:2.5rem;margin-top:3rem;flex-wrap:wrap;animation:fadeUp .9s .3s ease both}
-        .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;display:block}
+        .hero-stats{position:relative;display:flex;gap:3rem;margin-top:4rem;padding-top:2.5rem;border-top:1px solid rgba(201,168,76,0.2);flex-wrap:wrap;animation:fadeUp .9s .3s ease both}        .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;display:block}
         .stat-label{font-size:.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.05em}
         .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1.25rem 5%;width:100%;display:flex;flex-direction:column;align-items:center;gap:.75rem}
         .press-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#6b7a99;font-weight:600}
