@@ -62,8 +62,7 @@ export default function Home() {
         .mobile-menu{display:none;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:#0a1628;padding:1.5rem 5%;gap:1.25rem;border-bottom:1px solid rgba(201,168,76,0.15);z-index:99}
         .mobile-menu.open{display:flex}
         .mobile-menu a{text-decoration:none;color:rgba(255,255,255,0.75);font-size:1rem;font-weight:500}
-        .hero{min-height:100vh;background:#0a1628;display:flex;align-items:center;position:relative;overflow:hidden;padding:0 5%}
-        .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(160deg,#0a1628 0%,#0d1e3a 50%,#0a1628 100%)}
+        .hero{min-height:100vh;background:#0a1628;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;position:relative;overflow:hidden;padding:8rem 5% 5rem}        .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 60% 50%,rgba(201,168,76,0.08) 0%,transparent 70%),linear-gradient(160deg,#0a1628 0%,#0d1e3a 50%,#0a1628 100%)}
         .hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(201,168,76,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.8) 1px,transparent 1px);background-size:60px 60px}
         .hero-content{position:relative;z-index:2;max-width:680px;animation:fadeUp .9s ease both}
         .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);border-radius:100px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;color:#c9a84c;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2rem}
@@ -76,11 +75,10 @@ export default function Home() {
         .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,0.4)}
         .btn-secondary{color:rgba(255,255,255,0.8);padding:.9rem 1.5rem;border-radius:8px;font-weight:500;font-size:.95rem;text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
         .btn-secondary:hover{border-color:rgba(201,168,76,0.4);color:#c9a84c}
-        .hero-stats{position:absolute;bottom:3rem;right:5%;display:flex;gap:2.5rem;animation:fadeUp .9s .3s ease both}
-        .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;display:block}
+        .hero-stats{position:relative;bottom:auto;right:auto;display:flex;gap:2.5rem;margin-top:3rem;animation:fadeUp .9s .3s ease both;flex-wrap:wrap}        .stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:#c9a84c;display:block}
         .stat-label{font-size:.75rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:.05em}
-        .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1.25rem 3%;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}        .press-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#6b7a99;font-weight:600}
-        .press-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center}        .press-logo-text{font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+        .press-banner{background:#fff;border-bottom:1px solid rgba(0,0,0,0.06);padding:1.25rem 5%;display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;overflow:hidden}
+        .press-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center;overflow:hidden}        .press-logos{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center}        .press-logo-text{font-weight:700;letter-spacing:-.02em;white-space:nowrap}
         .advertiser{font-family:'Times New Roman',serif;font-size:1.1rem;color:#111;font-weight:400}
         .herald{font-family:Arial,sans-serif;font-size:1rem;color:#fff;background:#1a5ca8;padding:.25rem .7rem;font-weight:700}
         .telegraph{font-family:'Times New Roman',serif;font-size:1rem;color:#111;font-weight:700}
