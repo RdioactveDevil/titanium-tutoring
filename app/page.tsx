@@ -205,9 +205,9 @@ export default function Home() {
             <a href="#services" className="btn-secondary">See Our Services</a>
           </div>
           <div className="hero-stats">
-            <div className="stat"><span className="stat-num">120+</span><span className="stat-label">Students Taught</span></div>
+            <div className="stat"><span className="stat-num">120 +</span><span className="stat-label">Students Taught</span></div>
             <div className="stat"><span className="stat-num">97th</span><span className="stat-label">Percentile Maths</span></div>
-            <div className="stat"><span className="stat-num">4+</span><span className="stat-label">Years Experience</span></div>
+            <div className="stat"><span className="stat-num">7+</span><span className="stat-label">Years Experience</span></div>
           </div>
         </div>
       </section>
