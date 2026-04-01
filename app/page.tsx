@@ -206,7 +206,7 @@ export default function Home() {
           </div>
           <div className="hero-stats">
             <div className="stat"><span className="stat-num">120 +</span><span className="stat-label">Students Taught</span></div>
-            <div className="stat"><span className="stat-num">97th</span><span className="stat-label">Percentile Maths</span></div>
+            <div className="stat"><span className="stat-num">94%</span><span className="stat-label">Improvement Within 2 Weeks</span></div>
             <div className="stat"><span className="stat-num">7+</span><span className="stat-label">Years Experience</span></div>
           </div>
         </div>
