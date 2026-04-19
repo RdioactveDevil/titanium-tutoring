@@ -1,9 +1,13 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 
 export default function Home() {
   const didCount = useRef(false)
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const mouseRef = useRef({ x: -1000, y: -1000 })
+  const smoothRef = useRef({ x: -1000, y: -1000 })
+  const glowRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const revealObs = new IntersectionObserver(
@@ -43,7 +47,116 @@ export default function Home() {
       cObs.observe(statsTrigger)
     }
 
-    return () => revealObs.disconnect()
+    const canvas = canvasRef.current
+    if (!canvas) return { disconnect: () => revealObs.disconnect() }
+    const ctx = canvas.getContext('2d')!
+    let animId: number
+
+    const resize = () => {
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
+    }
+    resize()
+    window.addEventListener('resize', resize)
+
+    type Pt = { x: number; y: number; vx: number; vy: number; r: number; o: number; layer: number }
+    const N = 65
+    let pts: Pt[] = []
+    const init = () => {
+      pts = Array.from({ length: N }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.16,
+        r: Math.random() * 1.5 + 0.4,
+        o: Math.random() * 0.4 + 0.12,
+        layer: Math.random() * 3 + 1,
+      }))
+    }
+    init()
+
+    const tick = () => {
+      const W = canvas.width, H = canvas.height
+      ctx.clearRect(0, 0, W, H)
+
+      const tx = mouseRef.current.x, ty = mouseRef.current.y
+      smoothRef.current.x += (tx - smoothRef.current.x) * 0.07
+      smoothRef.current.y += (ty - smoothRef.current.y) * 0.07
+      const mx = smoothRef.current.x, my = smoothRef.current.y
+
+      if (mx > 0) {
+        const g = ctx.createRadialGradient(mx, my, 0, mx, my, 420)
+        g.addColorStop(0, 'rgba(243,190,67,0.07)')
+        g.addColorStop(0.45, 'rgba(243,190,67,0.025)')
+        g.addColorStop(1, 'rgba(0,0,0,0)')
+        ctx.fillStyle = g
+        ctx.fillRect(0, 0, W, H)
+      }
+
+      for (const p of pts) {
+        const parallaxX = mx > 0 ? (mx - W / 2) / W * p.layer * 14 : 0
+        const parallaxY = my > 0 ? (my - H / 2) / H * p.layer * 10 : 0
+        const px = ((p.x + parallaxX) % W + W) % W
+        const py = ((p.y + parallaxY) % H + H) % H
+
+        const dx = px - mx, dy = py - my
+        const dist = Math.sqrt(dx * dx + dy * dy)
+        const glow = mx > 0 ? Math.max(0, 1 - dist / 170) : 0
+
+        ctx.beginPath()
+        ctx.arc(px, py, p.r + glow * 2.2, 0, Math.PI * 2)
+        ctx.fillStyle = `rgba(243,190,67,${p.o + glow * 0.55})`
+        ctx.fill()
+
+        p.x += p.vx
+        p.y += p.vy
+        if (p.x < 0) p.x = W
+        if (p.x > W) p.x = 0
+        if (p.y < 0) p.y = H
+        if (p.y > H) p.y = 0
+      }
+
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y
+          const d = Math.sqrt(dx * dx + dy * dy)
+          if (d < 115) {
+            ctx.beginPath()
+            ctx.strokeStyle = `rgba(243,190,67,${0.09 * (1 - d / 115)})`
+            ctx.lineWidth = 0.5
+            ctx.moveTo(pts[i].x, pts[i].y)
+            ctx.lineTo(pts[j].x, pts[j].y)
+            ctx.stroke()
+          }
+        }
+      }
+
+      animId = requestAnimationFrame(tick)
+    }
+    tick()
+
+    return () => {
+      cancelAnimationFrame(animId)
+      window.removeEventListener('resize', resize)
+      revealObs.disconnect()
+    }
+  }, [])
+
+  const onHeroMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    mouseRef.current = { x, y }
+    if (glowRef.current) {
+      glowRef.current.style.left = x + 'px'
+      glowRef.current.style.top = y + 'px'
+      glowRef.current.style.opacity = '1'
+    }
+  }, [])
+
+  const onHeroLeave = useCallback(() => {
+    mouseRef.current = { x: -1000, y: -1000 }
+    if (glowRef.current) glowRef.current.style.opacity = '0'
   }, [])
 
   const testimonials = [
@@ -56,88 +169,91 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="hero" id="home">
-        <svg viewBox="0 0 1400 760" preserveAspectRatio="xMidYMid slice" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
-          <defs>
-            <pattern id="hg" width="48" height="48" patternUnits="userSpaceOnUse">
-              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(243,190,67,0.07)" strokeWidth="1" />
-            </pattern>
-            <radialGradient id="hv" cx="62%" cy="38%" r="68%">
-              <stop offset="0%" stopColor="rgba(243,190,67,0.1)" />
-              <stop offset="100%" stopColor="rgba(8,30,109,0)" />
-            </radialGradient>
-            <linearGradient id="hf" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="65%" stopColor="rgba(8,30,109,0)" />
-              <stop offset="100%" stopColor="rgba(8,30,109,1)" />
-            </linearGradient>
-          </defs>
-          <rect width="1400" height="760" fill="url(#hg)" />
-          <rect width="1400" height="760" fill="url(#hv)" />
-          <g transform="translate(1080,360)" opacity="0.8">
-            <ellipse cx="0" cy="0" rx="270" ry="105" fill="none" stroke="rgba(243,190,67,0.32)" strokeWidth="1" transform="rotate(-18)" />
-            <ellipse cx="0" cy="0" rx="200" ry="78" fill="none" stroke="rgba(243,190,67,0.42)" strokeWidth="1" transform="rotate(-18)" />
-            <ellipse cx="0" cy="0" rx="130" ry="51" fill="none" stroke="rgba(243,190,67,0.52)" strokeWidth="1" transform="rotate(-18)" />
-            <circle cx="0" cy="0" r="12" fill="rgba(243,190,67,0.18)" />
-            <circle cx="0" cy="0" r="5" fill="#F3BE43" />
-            <circle cx="172" cy="-46" r="4" fill="#F3BE43" />
-            <circle cx="-114" cy="33" r="3" fill="#F3BE43" opacity="0.8" />
-            <circle cx="228" cy="44" r="3" fill="#F3BE43" opacity="0.6" />
-          </g>
-          <g fill="#F3BE43">
-            {([[118,108,2],[198,158,1.6],[288,118,1.4],[92,238,1.8],[238,248,1.2],[338,208,1.6],[68,358,1.4],[178,398,1.8],[298,358,1.2],[418,438,1.6]] as [number,number,number][]).map(([x,y,r],i)=>(
-              <circle key={i} cx={x} cy={y} r={r} opacity={0.45 + (r-1.2)*0.25}/>
-            ))}
-          </g>
-          <g stroke="rgba(243,190,67,0.2)" strokeWidth="1" fill="none">
-            <path d="M 118 108 L 198 158 L 288 118 M 198 158 L 238 248 L 178 398 M 238 248 L 338 208 M 68 358 L 178 398 L 298 358 L 418 438"/>
-          </g>
-          <g transform="translate(72,560)" opacity="0.3">
-            <line x1="0" y1="0" x2="0" y2="-170" stroke="rgba(243,190,67,0.5)" strokeWidth="1"/>
-            <line x1="0" y1="0" x2="340" y2="0" stroke="rgba(243,190,67,0.5)" strokeWidth="1"/>
-            <path d="M 0 -8 Q 80 -20, 140 -50 T 280 -130 L 318 -158" fill="none" stroke="#F3BE43" strokeWidth="1.5"/>
-            <circle cx="0" cy="-8" r="3" fill="#F3BE43"/>
-            <circle cx="140" cy="-50" r="3" fill="#F3BE43"/>
-            <circle cx="280" cy="-130" r="3" fill="#F3BE43"/>
-            <circle cx="318" cy="-158" r="4" fill="#F3BE43"/>
-          </g>
-          <g fontFamily="'Cormorant Garamond',serif" fill="rgba(243,190,67,0.25)" fontStyle="italic">
-            <text x="420" y="195" fontSize="30">∫ f(x) dx</text>
-            <text x="540" y="635" fontSize="20">f′(x) = lim</text>
-            <text x="910" y="175" fontSize="22">a² + b² = c²</text>
-            <text x="255" y="698" fontSize="20">π ≈ 3.14159</text>
-          </g>
-          <rect width="1400" height="760" fill="url(#hf)"/>
-        </svg>
+      <section className="hero" id="home" onMouseMove={onHeroMove} onMouseLeave={onHeroLeave}>
+        <canvas ref={canvasRef} className="hero-canvas" />
+        <div ref={glowRef} className="hero-cursor-glow" />
 
-        <div className="hero-inner">
-          <div className="hero-eyebrow">
-            <span className="hero-eyebrow-rule" />
-            Adelaide · Melbourne · Online Australia-wide
+        <div className="hero-layout">
+          {/* LEFT — content */}
+          <div className="hero-inner">
+            <div className="hero-eyebrow">
+              <span className="hero-eyebrow-rule" />
+              Adelaide · Melbourne · Online Australia-wide
+            </div>
+            <h1>
+              Through hardships,<br />
+              <em>to the stars.</em>
+            </h1>
+            <p className="hero-lead">
+              Specialist tutoring for <strong>VCE, SACE, NAPLAN</strong>, scholarship and selective-entry exams — built by a student who scored the highest possible ATAR. Personalised strategy, structured drilling, measurable results.
+            </p>
+            <div className="hero-actions">
+              <Link href="/contact" className="btn-gold">Book a Trial Session</Link>
+              <Link href="/programs" className="btn-ghost-light">See Our Programs</Link>
+            </div>
+            <div className="hero-stats stats-trigger">
+              <div className="stat">
+                <span className="stat-num" data-count="93" data-suffix="%" data-dec="0">93%</span>
+                <span className="stat-label">Improved in 2 Weeks</span>
+              </div>
+              <div className="stat">
+                <span className="stat-num" data-count="100" data-suffix="%" data-dec="0">100%</span>
+                <span className="stat-label">Improved in 6 Weeks</span>
+              </div>
+              <div className="stat">
+                <span className="stat-num" data-count="120" data-suffix="+" data-dec="0">120+</span>
+                <span className="stat-label">Students Supported</span>
+              </div>
+            </div>
           </div>
-          <h1>
-            Through hardships,<br />
-            <em>to the stars.</em>
-          </h1>
-          <p className="hero-lead">
-            Specialist tutoring for <strong>VCE, SACE, NAPLAN</strong>, scholarship and selective-entry exams — built by a student who scored the highest possible ATAR. Personalised strategy, structured drilling, measurable results.
-          </p>
-          <div className="hero-actions">
-            <Link href="/contact" className="btn-gold">Book a Trial Session</Link>
-            <Link href="/programs" className="btn-ghost-light">See Our Programs</Link>
-          </div>
-          <div className="hero-stats stats-trigger">
-            <div className="stat">
-              <span className="stat-num" data-count="93" data-suffix="%" data-dec="0">93%</span>
-              <span className="stat-label">Improved in 2 Weeks</span>
-            </div>
-            <div className="stat">
-              <span className="stat-num" data-count="100" data-suffix="%" data-dec="0">100%</span>
-              <span className="stat-label">Improved in 6 Weeks</span>
-            </div>
-            <div className="stat">
-              <span className="stat-num" data-count="120" data-suffix="+" data-dec="0">120+</span>
-              <span className="stat-label">Students Supported</span>
-            </div>
+
+          {/* RIGHT — orbital visual */}
+          <div className="hero-visual" aria-hidden="true">
+            <div className="hero-math hero-math-1">∫ f(x) dx</div>
+            <div className="hero-math hero-math-2">a² + b² = c²</div>
+            <div className="hero-math hero-math-3">∇²φ = 0</div>
+            <div className="hero-math hero-math-4">lim<sub>x→∞</sub></div>
+            <div className="hero-math hero-math-5">e<sup>iπ</sup> + 1 = 0</div>
+
+            <svg viewBox="0 0 420 420" className="hero-orbital-svg">
+              <defs>
+                <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor="rgba(243,190,67,0.9)" />
+                  <stop offset="60%" stopColor="rgba(243,190,67,0.3)" />
+                  <stop offset="100%" stopColor="rgba(243,190,67,0)" />
+                </radialGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                </filter>
+              </defs>
+
+              {/* Outer orbit ring + planet */}
+              <g className="orbit-group-1">
+                <ellipse cx="210" cy="210" rx="190" ry="74" fill="none" stroke="rgba(243,190,67,0.22)" strokeWidth="1" />
+                <circle cx="400" cy="210" r="5" fill="#F3BE43" filter="url(#glow)" />
+              </g>
+
+              {/* Middle orbit ring + planet */}
+              <g className="orbit-group-2">
+                <ellipse cx="210" cy="210" rx="142" ry="56" fill="none" stroke="rgba(243,190,67,0.35)" strokeWidth="1" />
+                <circle cx="352" cy="210" r="3.5" fill="#F3BE43" opacity="0.75" filter="url(#glow)" />
+              </g>
+
+              {/* Inner orbit ring + planet */}
+              <g className="orbit-group-3">
+                <ellipse cx="210" cy="210" rx="94" ry="37" fill="none" stroke="rgba(243,190,67,0.55)" strokeWidth="1" />
+                <circle cx="304" cy="210" r="2.5" fill="#F3BE43" opacity="0.55" />
+              </g>
+
+              {/* Center star */}
+              <circle cx="210" cy="210" r="28" fill="url(#starGlow)" className="star-pulse" />
+              <circle cx="210" cy="210" r="8" fill="#F3BE43" filter="url(#glow)" />
+
+              {/* Axis cross */}
+              <line x1="210" y1="50" x2="210" y2="370" stroke="rgba(243,190,67,0.08)" strokeWidth="1" strokeDasharray="4 8" />
+              <line x1="20" y1="210" x2="400" y2="210" stroke="rgba(243,190,67,0.08)" strokeWidth="1" strokeDasharray="4 8" />
+            </svg>
           </div>
         </div>
       </section>
@@ -181,7 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY TITANIUM — condensed */}
+      {/* WHY TITANIUM */}
       <section className="why">
         <div className="why-inner">
           <div className="why-photo-col slide-left">
@@ -249,7 +365,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS — 4 highlights */}
+      {/* TESTIMONIALS */}
       <section className="testimonials">
         <div className="testimonials-inner">
           <div className="section-header fade-in">
