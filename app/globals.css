@@ -169,6 +169,19 @@ nav{position:sticky;top:0;left:0;right:0;z-index:100;height:var(--nav-h);backgro
   70%{transform:translateY(7px) rotate(-2deg);opacity:0.16}
 }
 
+/* ACHIEVEMENT TICKER */
+.ticker-wrap{background:var(--navy-900);border-top:1px solid rgba(243,190,67,0.12);border-bottom:1px solid rgba(243,190,67,0.12);overflow:hidden;position:relative}
+.ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.ticker-wrap::before{left:0;background:linear-gradient(to right,var(--navy-900),transparent)}
+.ticker-wrap::after{right:0;background:linear-gradient(to left,var(--navy-900),transparent)}
+.ticker-track{display:flex;width:max-content;animation:ticker-scroll 38s linear infinite}
+.ticker-track:hover{animation-play-state:paused}
+.ticker-item{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;white-space:nowrap;flex-shrink:0}
+.ticker-label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.08em;font-size:13px;color:var(--gold)}
+.ticker-name{font-family:var(--font-serif);font-style:italic;font-size:13px;color:rgba(250,246,238,0.45);font-weight:400}
+.ticker-dot{color:rgba(243,190,67,0.25);font-size:8px;margin-left:14px}
+@keyframes ticker-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
 /* AS FEATURED */
 .as-featured{background:var(--paper);border-bottom:1px solid var(--rule);padding:32px 5%}
 .as-featured-inner{max-width:var(--content-max);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}

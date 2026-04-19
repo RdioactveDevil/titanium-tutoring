@@ -251,6 +251,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ACHIEVEMENT TICKER */}
+      {(() => {
+        const items = [
+          { label: 'ATAR 98.55', name: 'Alex Fazzioni' },
+          { label: 'Bond University Medicine', name: 'Tanelle Galea' },
+          { label: 'John Monash Science School', name: 'Selective Entry' },
+          { label: '93% Improved', name: 'Within 2 Weeks' },
+          { label: 'Scholarship Winner', name: 'Jasmine Manning' },
+          { label: '100% Improved', name: 'Within 6 Weeks' },
+          { label: 'Perfect ATAR', name: 'Our Founder' },
+          { label: '120+ Students', name: 'Supported & Counting' },
+          { label: 'AMC Distinction', name: 'Olympiad Prep' },
+          { label: 'NAPLAN Band 10', name: 'Multiple Students' },
+        ]
+        const all = [...items, ...items]
+        return (
+          <div className="ticker-wrap">
+            <div className="ticker-track">
+              {all.map((item, i) => (
+                <span key={i} className="ticker-item">
+                  <span className="ticker-label">{item.label}</span>
+                  <span className="ticker-name">{item.name}</span>
+                  <span className="ticker-dot">✦</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        )
+      })()}
+
       {/* AS FEATURED */}
       <div className="as-featured">
         <div className="as-featured-inner">
