@@ -173,87 +173,80 @@ export default function Home() {
         <canvas ref={canvasRef} className="hero-canvas" />
         <div ref={glowRef} className="hero-cursor-glow" />
 
-        <div className="hero-layout">
-          {/* LEFT — content */}
-          <div className="hero-inner">
-            <div className="hero-eyebrow">
-              <span className="hero-eyebrow-rule" />
-              Adelaide · Melbourne · Online Australia-wide
-            </div>
-            <h1>
-              Through hardships,<br />
-              <em>to the stars.</em>
-            </h1>
-            <p className="hero-lead">
-              Specialist tutoring for <strong>VCE, SACE, NAPLAN</strong>, scholarship and selective-entry exams — built by a student who scored the highest possible ATAR. Personalised strategy, structured drilling, measurable results.
-            </p>
-            <div className="hero-actions">
-              <Link href="/contact" className="btn-gold">Book a Trial Session</Link>
-              <Link href="/programs" className="btn-ghost-light">See Our Programs</Link>
-            </div>
-            <div className="hero-stats stats-trigger">
-              <div className="stat">
-                <span className="stat-num" data-count="93" data-suffix="%" data-dec="0">93%</span>
-                <span className="stat-label">Improved in 2 Weeks</span>
-              </div>
-              <div className="stat">
-                <span className="stat-num" data-count="100" data-suffix="%" data-dec="0">100%</span>
-                <span className="stat-label">Improved in 6 Weeks</span>
-              </div>
-              <div className="stat">
-                <span className="stat-num" data-count="120" data-suffix="+" data-dec="0">120+</span>
-                <span className="stat-label">Students Supported</span>
-              </div>
-            </div>
+        {/* Orbital — purely decorative, absolute positioned */}
+        <div className="hero-orbital-deco" aria-hidden="true">
+          <div className="hero-math hero-math-1">∫ f(x) dx</div>
+          <div className="hero-math hero-math-2">a² + b² = c²</div>
+          <div className="hero-math hero-math-3">∇²φ = 0</div>
+          <div className="hero-math hero-math-4">lim<sub>x→∞</sub></div>
+          <div className="hero-math hero-math-5">e<sup>iπ</sup> + 1 = 0</div>
+          <svg viewBox="0 0 420 420" className="hero-orbital-svg">
+            <defs>
+              <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="rgba(243,190,67,0.9)" />
+                <stop offset="60%" stopColor="rgba(243,190,67,0.3)" />
+                <stop offset="100%" stopColor="rgba(243,190,67,0)" />
+              </radialGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+            </defs>
+            <g className="orbit-group-1">
+              <ellipse cx="210" cy="210" rx="190" ry="74" fill="none" stroke="rgba(243,190,67,0.22)" strokeWidth="1" />
+              <circle cx="400" cy="210" r="5" fill="#F3BE43" filter="url(#glow)" />
+            </g>
+            <g className="orbit-group-2">
+              <ellipse cx="210" cy="210" rx="142" ry="56" fill="none" stroke="rgba(243,190,67,0.35)" strokeWidth="1" />
+              <circle cx="352" cy="210" r="3.5" fill="#F3BE43" opacity="0.75" filter="url(#glow)" />
+            </g>
+            <g className="orbit-group-3">
+              <ellipse cx="210" cy="210" rx="94" ry="37" fill="none" stroke="rgba(243,190,67,0.55)" strokeWidth="1" />
+              <circle cx="304" cy="210" r="2.5" fill="#F3BE43" opacity="0.55" />
+            </g>
+            <circle cx="210" cy="210" r="28" fill="url(#starGlow)" className="star-pulse" />
+            <circle cx="210" cy="210" r="8" fill="#F3BE43" filter="url(#glow)" />
+            <line x1="210" y1="50" x2="210" y2="370" stroke="rgba(243,190,67,0.07)" strokeWidth="1" strokeDasharray="4 8" />
+            <line x1="20" y1="210" x2="400" y2="210" stroke="rgba(243,190,67,0.07)" strokeWidth="1" strokeDasharray="4 8" />
+          </svg>
+        </div>
+
+        {/* Content */}
+        <div className="hero-inner">
+          <div className="hero-eyebrow">
+            <span className="hero-eyebrow-rule" />
+            VCE · SACE · NAPLAN · Selective Entry
           </div>
 
-          {/* RIGHT — orbital visual */}
-          <div className="hero-visual" aria-hidden="true">
-            <div className="hero-math hero-math-1">∫ f(x) dx</div>
-            <div className="hero-math hero-math-2">a² + b² = c²</div>
-            <div className="hero-math hero-math-3">∇²φ = 0</div>
-            <div className="hero-math hero-math-4">lim<sub>x→∞</sub></div>
-            <div className="hero-math hero-math-5">e<sup>iπ</sup> + 1 = 0</div>
+          <h1>
+            Through<br />hardships,<br />
+            <em>to the stars.</em>
+          </h1>
 
-            <svg viewBox="0 0 420 420" className="hero-orbital-svg">
-              <defs>
-                <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="rgba(243,190,67,0.9)" />
-                  <stop offset="60%" stopColor="rgba(243,190,67,0.3)" />
-                  <stop offset="100%" stopColor="rgba(243,190,67,0)" />
-                </radialGradient>
-                <filter id="glow">
-                  <feGaussianBlur stdDeviation="3" result="blur" />
-                  <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-                </filter>
-              </defs>
+          <p className="hero-attr">Built by Australia&apos;s top ATAR scorer.</p>
 
-              {/* Outer orbit ring + planet */}
-              <g className="orbit-group-1">
-                <ellipse cx="210" cy="210" rx="190" ry="74" fill="none" stroke="rgba(243,190,67,0.22)" strokeWidth="1" />
-                <circle cx="400" cy="210" r="5" fill="#F3BE43" filter="url(#glow)" />
-              </g>
+          <p className="hero-lead">
+            Personalised tutoring — strategy-first, results-driven — for students who refuse to settle.
+          </p>
 
-              {/* Middle orbit ring + planet */}
-              <g className="orbit-group-2">
-                <ellipse cx="210" cy="210" rx="142" ry="56" fill="none" stroke="rgba(243,190,67,0.35)" strokeWidth="1" />
-                <circle cx="352" cy="210" r="3.5" fill="#F3BE43" opacity="0.75" filter="url(#glow)" />
-              </g>
+          <div className="hero-actions">
+            <Link href="/contact" className="btn-gold">Book a Trial Session</Link>
+            <Link href="/programs" className="btn-ghost-light">Explore Programs →</Link>
+          </div>
 
-              {/* Inner orbit ring + planet */}
-              <g className="orbit-group-3">
-                <ellipse cx="210" cy="210" rx="94" ry="37" fill="none" stroke="rgba(243,190,67,0.55)" strokeWidth="1" />
-                <circle cx="304" cy="210" r="2.5" fill="#F3BE43" opacity="0.55" />
-              </g>
-
-              {/* Center star */}
-              <circle cx="210" cy="210" r="28" fill="url(#starGlow)" className="star-pulse" />
-              <circle cx="210" cy="210" r="8" fill="#F3BE43" filter="url(#glow)" />
-
-              {/* Axis cross */}
-              <line x1="210" y1="50" x2="210" y2="370" stroke="rgba(243,190,67,0.08)" strokeWidth="1" strokeDasharray="4 8" />
-              <line x1="20" y1="210" x2="400" y2="210" stroke="rgba(243,190,67,0.08)" strokeWidth="1" strokeDasharray="4 8" />
-            </svg>
+          <div className="hero-stats stats-trigger">
+            <div className="stat">
+              <span className="stat-num" data-count="93" data-suffix="%" data-dec="0">93%</span>
+              <span className="stat-label">Improved in 2 Weeks</span>
+            </div>
+            <div className="stat">
+              <span className="stat-num" data-count="100" data-suffix="%" data-dec="0">100%</span>
+              <span className="stat-label">Improved in 6 Weeks</span>
+            </div>
+            <div className="stat">
+              <span className="stat-num" data-count="120" data-suffix="+" data-dec="0">120+</span>
+              <span className="stat-label">Students Supported</span>
+            </div>
           </div>
         </div>
       </section>
