@@ -48,7 +48,7 @@ export default function Home() {
     }
 
     const canvas = canvasRef.current
-    if (!canvas) return { disconnect: () => revealObs.disconnect() }
+    if (!canvas) return () => revealObs.disconnect()
     const ctx = canvas.getContext('2d')!
     let animId: number
 
