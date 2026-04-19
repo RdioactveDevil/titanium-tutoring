@@ -49,6 +49,8 @@ export default function Home() {
   const testimonials = [
     { q: 'The Accelerate Methods program helped me build amazing skills to crush VCE Methods. The regular worksheets, tests and assessments helped a lot with application-style questions. The Exam Tracker was especially helpful in the lead-up to the exams.', name: 'Alex Fazzioni', badge: 'ATAR 98.55' },
     { q: "Before joining Titanium, I was struggling with essays and tricky maths problems, but my tutor broke things down step by step. The English Writing Mastery program taught me to write essays that stood out. I wouldn't have made it this far without their support.", name: 'Jasmine Manning', badge: 'Scholarship' },
+    { q: 'Thanks to Titanium, I got into John Monash Science School. The tutors made tricky maths and science concepts easy to understand and gave me great practice tests with detailed feedback. Their support boosted my confidence and kept me calm during the exam.', name: 'Undisclosed', badge: 'John Monash Science School' },
+    { q: 'Thanks to Titanium, I was accepted into Bond Medicine. Their guidance and personalised support made all the difference in preparing for the entrance exams and interviews. My tutor kept me motivated every step of the way.', name: 'Tanelle Galea', badge: 'Bond University Medicine' },
   ]
 
   return (
@@ -113,16 +115,15 @@ export default function Home() {
             Adelaide · Melbourne · Online Australia-wide
           </div>
           <h1>
-            From Struggle<br />
-            to <em>the Stars.</em><br />
-            We&apos;ve Done It.
+            Through hardships,<br />
+            <em>to the stars.</em>
           </h1>
           <p className="hero-lead">
             Specialist tutoring for <strong>VCE, SACE, NAPLAN</strong>, scholarship and selective-entry exams — built by a student who scored the highest possible ATAR. Personalised strategy, structured drilling, measurable results.
           </p>
           <div className="hero-actions">
             <Link href="/contact" className="btn-gold">Book a Trial Session</Link>
-            <Link href="/programs" className="btn-ghost">See Our Programs</Link>
+            <Link href="/programs" className="btn-ghost-light">See Our Programs</Link>
           </div>
           <div className="hero-stats stats-trigger">
             <div className="stat">
@@ -152,6 +153,33 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* SERVICES */}
+      <section className="services">
+        <div className="services-inner">
+          <div className="section-header fade-in">
+            <span className="eyebrow">Our Services</span>
+            <h2 className="section-title">Programs We Run</h2>
+            <p className="lead" style={{ marginTop: 14 }}>From Year 3 to Year 12 — plus specialist entry and medical admissions. Every program is built around George Pólya&apos;s problem-solving method.</p>
+            <div className="section-rule" />
+          </div>
+          <div className="services-grid">
+            {[
+              { n: '01', title: 'Year 3 to Year 12 Weekly Classes', desc: 'Structured weekly sessions across all year levels and subjects. Diagnose gaps, drill fundamentals, and build the consistency that compounds into results.' },
+              { n: '02', title: 'Year 6–Year 8 Writing Mastery Program', desc: 'Essay structure, analytical writing, and persuasive technique for the critical middle-school years. The skills that make every English assessment easier from here.' },
+              { n: '03', title: 'Australian Mathematics Competition and Olympiads Preparation', desc: 'Targeted preparation for the AMC and Mathematics Olympiad series. Problem-solving at the level that separates good from exceptional.' },
+              { n: '04', title: 'Selective Entry and Scholarship Exams Weekly Classes', desc: 'Weekly coaching for HAST, Suzanne Cory, Melbourne High, and private-school scholarships. We know what the markers want.' },
+              { n: '05', title: 'Medical School Admissions', desc: 'UCAT, interview technique, and portfolio preparation for Bond, Monash, UNSW and beyond. Guided by a current medical student who has been through the process.' },
+            ].map(s => (
+              <div className="service-card card-lift" key={s.n}>
+                <span className="service-num">{s.n}</span>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* WHY TITANIUM — condensed */}
       <section className="why">
@@ -195,7 +223,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS — 2 highlights */}
+      {/* PÓLYA METHOD */}
+      <section className="polya">
+        <div className="polya-inner">
+          <div className="section-header fade-in">
+            <span className="eyebrow">The Pólya Method</span>
+            <h2 className="section-title">Understand. Plan. Execute. Reflect.</h2>
+            <p className="lead" style={{ marginTop: 14 }}>Inspired by George Pólya&apos;s <em>How to Solve It</em> — four steps we apply to every student, every week.</p>
+            <div className="section-rule" />
+          </div>
+          <div className="polya-grid">
+            {[
+              { n: '01', t: 'Understand', b: 'Diagnose exactly where the student is — strengths, gaps, and how they think about problems.' },
+              { n: '02', t: 'Plan', b: 'Build a personalised strategy: which topics to drill, which methods to rehearse, in what order.' },
+              { n: '03', t: 'Execute', b: 'Weekly sessions, worksheets and topic tests. The work is visible and the pace is measurable.' },
+              { n: '04', t: 'Reflect', b: 'Review every result. Adjust the plan. Repeat until the target is reached.' },
+            ].map(s => (
+              <div className="polya-card" key={s.n}>
+                <span className="polya-step">Step {s.n}</span>
+                <h3>{s.t}</h3>
+                <p>{s.b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS — 4 highlights */}
       <section className="testimonials">
         <div className="testimonials-inner">
           <div className="section-header fade-in">
