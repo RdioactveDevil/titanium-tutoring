@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
+import { testimonials } from '@/app/data/testimonials'
 
 export default function MiddleSchool() {
   useEffect(() => {
@@ -36,6 +37,14 @@ export default function MiddleSchool() {
     { years: 'Year 9', label: 'Pre-Senior Readiness', points: ['NAPLAN Year 9 Numeracy & Literacy', 'Quadratics, trigonometry, statistics', 'Extended essay writing and analysis', 'Year 10 preview: early VCE/SACE foundations'] },
   ]
 
+  const namedTestimonials = testimonials.filter(t => (t.cat === 'selective' || t.cat === 'naplan') && t.name !== 'Undisclosed')
+  const schemaReviews = namedTestimonials.slice(0, 5).map(t => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: t.name },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: t.q,
+  }))
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -59,6 +68,14 @@ export default function MiddleSchool() {
     },
     educationalLevel: 'Middle School (Years 7–9)',
     teaches: ['Mathematics', 'English', 'NAPLAN Preparation', 'Selective Entry Coaching', 'Study Skills'],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      reviewCount: String(namedTestimonials.length),
+    },
+    review: schemaReviews,
   }
 
   return (

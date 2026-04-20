@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
+import { testimonials } from '@/app/data/testimonials'
 
 export default function ExamStrategyPage() {
   useEffect(() => {
@@ -55,8 +56,51 @@ export default function ExamStrategyPage() {
     },
   ]
 
+  const namedTestimonials = testimonials.filter(t => t.cat === 'atar' && t.name !== 'Undisclosed')
+  const schemaReviews = namedTestimonials.slice(0, 5).map(t => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: t.name },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: t.q,
+  }))
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://titaniumtutoring.com.au/' },
+      { '@type': 'ListItem', position: 2, name: 'Programs', item: 'https://titaniumtutoring.com.au/programs' },
+      { '@type': 'ListItem', position: 3, name: 'Exam Strategy & Mindset', item: 'https://titaniumtutoring.com.au/programs/exam-strategy' },
+    ],
+  }
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Exam Strategy & Mindset Program',
+    description: 'High-stakes exam technique coaching for all year levels. Time management, stress resilience, question deconstruction, and mock exam debrief for VCE, SACE, NAPLAN, and selective entry exams.',
+    url: 'https://titaniumtutoring.com.au/programs/exam-strategy',
+    provider: {
+      '@type': 'Organization',
+      name: 'Titanium Tutoring',
+      url: 'https://titaniumtutoring.com.au',
+    },
+    educationalLevel: 'All Year Levels',
+    teaches: ['Time Management', 'Stress Resilience', 'Question Deconstruction', 'Elimination Strategy', 'Answer Presentation', 'Mock Exam Debrief'],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      reviewCount: String(namedTestimonials.length),
+    },
+    review: schemaReviews,
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumb items={[

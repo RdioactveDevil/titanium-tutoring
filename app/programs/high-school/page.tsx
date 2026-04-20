@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
+import { testimonials } from '@/app/data/testimonials'
 
 export default function HighSchool() {
   useEffect(() => {
@@ -49,6 +50,14 @@ export default function HighSchool() {
     },
   ]
 
+  const namedTestimonials = testimonials.filter(t => (t.cat === 'atar' || t.cat === 'selective' || t.cat === 'scholarship') && t.name !== 'Undisclosed')
+  const schemaReviews = namedTestimonials.slice(0, 5).map(t => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: t.name },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: t.q,
+  }))
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -72,6 +81,14 @@ export default function HighSchool() {
     },
     educationalLevel: 'High School (Years 10–12)',
     teaches: ['VCE Mathematical Methods', 'VCE Specialist Mathematics', 'SACE Mathematical Methods', 'VCE English', 'SACE English', 'GAT Preparation', 'Selective Entry Coaching'],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      reviewCount: String(namedTestimonials.length),
+    },
+    review: schemaReviews,
   }
 
   return (

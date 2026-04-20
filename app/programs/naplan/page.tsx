@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
+import { testimonials } from '@/app/data/testimonials'
 
 export default function NaplanPage() {
   useEffect(() => {
@@ -73,8 +74,51 @@ export default function NaplanPage() {
     },
   ]
 
+  const namedTestimonials = testimonials.filter(t => t.cat === 'naplan' && t.name !== 'Undisclosed')
+  const schemaReviews = namedTestimonials.slice(0, 5).map(t => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: t.name },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: t.q,
+  }))
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://titaniumtutoring.com.au/' },
+      { '@type': 'ListItem', position: 2, name: 'Programs', item: 'https://titaniumtutoring.com.au/programs' },
+      { '@type': 'ListItem', position: 3, name: 'NAPLAN Preparation', item: 'https://titaniumtutoring.com.au/programs/naplan' },
+    ],
+  }
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'NAPLAN Preparation Program',
+    description: 'Numeracy and literacy coaching for Years 3, 5, 7 and 9 NAPLAN. Structured, personalised sessions covering every test domain with timed practice and progress tracking.',
+    url: 'https://titaniumtutoring.com.au/programs/naplan',
+    provider: {
+      '@type': 'Organization',
+      name: 'Titanium Tutoring',
+      url: 'https://titaniumtutoring.com.au',
+    },
+    educationalLevel: 'Primary and Middle School (Years 3, 5, 7, 9)',
+    teaches: ['Numeracy', 'Reading Comprehension', 'Writing', 'Language Conventions', 'Test Technique'],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      reviewCount: String(namedTestimonials.length),
+    },
+    review: schemaReviews,
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumb items={[

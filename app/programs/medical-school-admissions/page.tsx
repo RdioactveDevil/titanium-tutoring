@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
+import { testimonials } from '@/app/data/testimonials'
 
 export default function MedicalSchoolAdmissions() {
   useEffect(() => {
@@ -54,6 +55,14 @@ export default function MedicalSchoolAdmissions() {
     },
   ]
 
+  const namedTestimonials = testimonials.filter(t => t.cat === 'medical' && t.name !== 'Undisclosed')
+  const schemaReviews = namedTestimonials.slice(0, 5).map(t => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: t.name },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: t.q,
+  }))
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -77,6 +86,14 @@ export default function MedicalSchoolAdmissions() {
     },
     educationalLevel: 'Tertiary Entrance',
     teaches: ['UCAT Coaching', 'Decision Making', 'Situational Judgement', 'MMI Interview Preparation', 'Personal Statement Guidance', 'Medical School Application Strategy'],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      reviewCount: String(namedTestimonials.length),
+    },
+    review: schemaReviews,
   }
 
   return (

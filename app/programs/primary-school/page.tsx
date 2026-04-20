@@ -2,6 +2,7 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
+import { testimonials } from '@/app/data/testimonials'
 
 export default function PrimarySchool() {
   useEffect(() => {
@@ -33,6 +34,14 @@ export default function PrimarySchool() {
     { years: 'Years 5–6', label: 'Acceleration', points: ['Early algebra and geometry', 'NAPLAN Year 5 preparation', 'Essay structure and extended writing', 'Selective entry & scholarship readiness'] },
   ]
 
+  const namedTestimonials = testimonials.filter(t => (t.cat === 'naplan' || t.cat === 'scholarship') && t.name !== 'Undisclosed')
+  const schemaReviews = namedTestimonials.slice(0, 5).map(t => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: t.name },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: t.q,
+  }))
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -56,6 +65,14 @@ export default function PrimarySchool() {
     },
     educationalLevel: 'Primary School (Years 1–6)',
     teaches: ['Mathematics', 'English', 'NAPLAN Preparation', 'Selective Entry Coaching'],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      worstRating: '1',
+      reviewCount: String(namedTestimonials.length),
+    },
+    review: schemaReviews,
   }
 
   return (
