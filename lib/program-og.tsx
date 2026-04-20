@@ -3,6 +3,18 @@ import { ImageResponse } from 'next/og'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
+export const programOgData = {
+  'high-school': { title: 'High School Tutoring', subtitle: 'Years 10–12 · VCE & SACE' },
+  'middle-school': { title: 'Middle School Tutoring', subtitle: 'Years 7–9' },
+  'primary-school': { title: 'Primary School Tutoring', subtitle: 'Years 1–6' },
+  'naplan': { title: 'NAPLAN Preparation', subtitle: 'Years 3, 5, 7 & 9' },
+  'exam-strategy': { title: 'Exam Strategy & Mindset', subtitle: 'For All Year Levels' },
+  'medical-school-admissions': {
+    title: 'Medical School Admissions',
+    subtitle: 'UCAT · MMI · Personal Statement',
+  },
+} as const
+
 interface ProgramOgProps {
   title: string
   subtitle: string
