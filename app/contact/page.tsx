@@ -178,7 +178,7 @@ export default function Contact() {
             <span className="consult-process-num">01</span>
             <div>
               <div className="consult-process-label">Fill in the form below</div>
-              <div className="consult-process-desc">Takes under a minute</div>
+              <div className="consult-process-desc">Takes about 2 minutes</div>
             </div>
           </div>
           <div className="consult-process-arrow" aria-hidden="true">→</div>
@@ -252,7 +252,7 @@ export default function Contact() {
           {/* RIGHT — form */}
           <div className="consult-form-wrap fade-in" data-delay="80">
             <div className="consult-form-header">
-              <p className="consult-form-prompt">Takes under a minute</p>
+              <p className="consult-form-prompt">Takes 2 minutes</p>
               <h3 className="consult-form-title">Book Your Call</h3>
               <p className="ch-scarcity" style={{ justifyContent: 'flex-start', marginTop: 10 }}>
                 <span className="ch-scarcity-dot" />
@@ -269,18 +269,50 @@ export default function Contact() {
                     <label>Student Year Level</label>
                     <select name="year" required>
                       <option value="">Select year...</option>
-                      <option>Primary (Years 1–6)</option>
-                      <option>Year 7–10</option>
-                      <option>VCE (Victoria)</option>
-                      <option>SACE (South Australia)</option>
+                      <option>Foundation / Prep</option>
+                      <option>Year 1</option>
+                      <option>Year 2</option>
+                      <option>Year 3</option>
+                      <option>Year 4</option>
+                      <option>Year 5</option>
+                      <option>Year 6</option>
+                      <option>Year 7</option>
+                      <option>Year 8</option>
+                      <option>Year 9</option>
+                      <option>Year 10</option>
+                      <option>VCE Year 11</option>
+                      <option>VCE Year 12</option>
+                      <option>SACE Year 11</option>
+                      <option>SACE Year 12</option>
                       <option>Selective Entry Prep</option>
                       <option>NAPLAN</option>
                     </select>
                   </div>
                 </div>
-                <div className="form-group">
-                  <label>Email Address</label>
-                  <input type="email" name="email" placeholder="your@email.com" required />
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" placeholder="your@email.com" required />
+                  </div>
+                  <div className="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" name="phone" placeholder="e.g. 0412 345 678" required />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>State / Location</label>
+                    <select name="state" required>
+                      <option value="">Select state...</option>
+                      <option>South Australia</option>
+                      <option>Victoria</option>
+                      <option>Other (Online)</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label>School Attending</label>
+                    <input type="text" name="school" placeholder="Student's current school" required />
+                  </div>
                 </div>
                 <div className="form-group">
                   <label>Subject / Goal</label>
