@@ -1,7 +1,125 @@
 'use client'
 import { useEffect } from 'react'
 import Link from 'next/link'
-import type { Metadata } from 'next'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Tutoring Programs – Titanium Tutoring',
+  description:
+    'From Year 1 to Year 12 — plus specialist entry exams and UCAT preparation. Every program is built around the Pólya method and personalised to the individual student.',
+  url: 'https://www.titaniumtutoring.com.au/programs',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'High School Tutoring (Years 10–12)',
+      url: 'https://www.titaniumtutoring.com.au/programs/high-school',
+      item: {
+        '@type': 'Course',
+        name: 'High School Tutoring (Years 10–12)',
+        description:
+          'VCE and SACE tutoring for Years 10–12. Expert coaching in Maths, English, and all senior subjects — personalised to your curriculum, ATAR target, and timeline.',
+        url: 'https://www.titaniumtutoring.com.au/programs/high-school',
+        provider: {
+          '@type': 'EducationalOrganization',
+          name: 'Titanium Tutoring',
+          url: 'https://www.titaniumtutoring.com.au',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'NAPLAN Preparation',
+      url: 'https://www.titaniumtutoring.com.au/programs/naplan',
+      item: {
+        '@type': 'Course',
+        name: 'NAPLAN Preparation',
+        description:
+          'Numeracy and literacy coaching for Years 3, 5, 7 and 9. We build fundamentals that stick, not last-minute cramming.',
+        url: 'https://www.titaniumtutoring.com.au/programs/naplan',
+        provider: {
+          '@type': 'EducationalOrganization',
+          name: 'Titanium Tutoring',
+          url: 'https://www.titaniumtutoring.com.au',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Primary School Tutoring (Years 1–6)',
+      url: 'https://www.titaniumtutoring.com.au/programs/primary-school',
+      item: {
+        '@type': 'Course',
+        name: 'Primary School Tutoring (Years 1–6)',
+        description:
+          'Years 1–6 Maths and English. Building confident, curious learners — strong foundations that make every year after easier.',
+        url: 'https://www.titaniumtutoring.com.au/programs/primary-school',
+        provider: {
+          '@type': 'EducationalOrganization',
+          name: 'Titanium Tutoring',
+          url: 'https://www.titaniumtutoring.com.au',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      name: 'Middle School Tutoring (Years 7–10)',
+      url: 'https://www.titaniumtutoring.com.au/programs/middle-school',
+      item: {
+        '@type': 'Course',
+        name: 'Middle School Tutoring (Years 7–10)',
+        description:
+          'Get ahead before VCE or SACE begins. We identify gaps early and close them before they compound.',
+        url: 'https://www.titaniumtutoring.com.au/programs/middle-school',
+        provider: {
+          '@type': 'EducationalOrganization',
+          name: 'Titanium Tutoring',
+          url: 'https://www.titaniumtutoring.com.au',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 5,
+      name: 'Exam Strategy & Mindset',
+      url: 'https://www.titaniumtutoring.com.au/programs/exam-strategy',
+      item: {
+        '@type': 'Course',
+        name: 'Exam Strategy & Mindset',
+        description:
+          'Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches.',
+        url: 'https://www.titaniumtutoring.com.au/programs/exam-strategy',
+        provider: {
+          '@type': 'EducationalOrganization',
+          name: 'Titanium Tutoring',
+          url: 'https://www.titaniumtutoring.com.au',
+        },
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 6,
+      name: 'UCAT & Medical School Admissions',
+      url: 'https://www.titaniumtutoring.com.au/programs/medical-school-admissions',
+      item: {
+        '@type': 'Course',
+        name: 'UCAT & Medical School Admissions',
+        description:
+          'All five UCAT subtests, MMI interview coaching, personal statement guidance, and application strategy for aspiring medical students.',
+        url: 'https://www.titaniumtutoring.com.au/programs/medical-school-admissions',
+        provider: {
+          '@type': 'EducationalOrganization',
+          name: 'Titanium Tutoring',
+          url: 'https://www.titaniumtutoring.com.au',
+        },
+      },
+    },
+  ],
+}
 
 export default function Programs() {
   useEffect(() => {
@@ -40,6 +158,10 @@ export default function Programs() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* PAGE HEADER */}
       <div className="page-hero">
         <div className="page-hero-inner">
