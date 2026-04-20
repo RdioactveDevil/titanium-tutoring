@@ -20,7 +20,7 @@ export default function Nav() {
 
   useEffect(() => {
     if (!menuOpen) return
-    const onScroll = () => setMenuOpen(false)
+    const onScroll = () => close()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [menuOpen])
