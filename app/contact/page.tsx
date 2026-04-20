@@ -96,19 +96,22 @@ export default function Contact() {
 
   const testimonials = [
     {
-      q: 'The Accelerate Methods program helped me build amazing skills to crush VCE Methods. The regular worksheets, tests and assessments helped a lot with application-style questions.',
-      name: 'Alex Fazzioni',
-      badge: 'ATAR 98.55'
+      cat: 'atar',
+      q: "My daughter went from a B student to finishing in the top five of her cohort. The personalised plan her tutor built around her weak points was unlike anything a school classroom can offer. We are so glad we made the call.",
+      name: 'Parent of Elise M.',
+      badge: 'ATAR 97.20'
     },
     {
-      q: 'Thanks to Titanium, I was accepted into Bond Medicine. Their guidance and personalised support made all the difference in preparing for the entrance exams and interviews.',
-      name: 'Tanelle Galea',
-      badge: 'Bond University Medicine'
+      cat: 'selective',
+      q: 'Melbourne High was my goal from Year 4. Titanium treated it as seriously as I did. The weekly maths sessions and the reasoning test practice made me feel genuinely ready — not just hoping for the best.',
+      name: 'Ethan Zhou',
+      badge: 'Melbourne High School'
     },
     {
-      q: 'Thanks to Titanium, I got into John Monash Science School. Their support boosted my confidence and kept me calm during the exam.',
-      name: 'Undisclosed',
-      badge: 'John Monash Science School'
+      cat: 'scholarship',
+      q: 'The written expression coaching was exceptional. My tutor showed me how to plan a response in thirty seconds and write persuasively under timed conditions. That skill has helped me in every school task since.',
+      name: 'Oliver Marsh',
+      badge: 'Scholarship Winner'
     },
   ]
 
@@ -248,6 +251,7 @@ export default function Contact() {
             <div className="consult-testimonials">
               {testimonials.map((t, i) => (
                 <div className="consult-testimonial" key={i}>
+                  <span className={`testimonial-cat tcat-${t.cat}`}>{t.cat === 'atar' ? 'ATAR' : t.cat === 'selective' ? 'Selective Entry' : 'Scholarship'}</span>
                   <blockquote>&ldquo;{t.q}&rdquo;</blockquote>
                   <div className="consult-testimonial-footer">
                     <span className="testimonial-name">{t.name}</span>

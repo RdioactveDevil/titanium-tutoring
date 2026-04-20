@@ -160,10 +160,11 @@ export default function Home() {
   }, [])
 
   const testimonials = [
-    { q: 'The Accelerate Methods program helped me build amazing skills to crush VCE Methods. The regular worksheets, tests and assessments helped a lot with application-style questions. The Exam Tracker was especially helpful in the lead-up to the exams.', name: 'Alex Fazzioni', badge: 'ATAR 98.55' },
-    { q: "Before joining Titanium, I was struggling with essays and tricky maths problems, but my tutor broke things down step by step. The English Writing Mastery program taught me to write essays that stood out. I wouldn't have made it this far without their support.", name: 'Jasmine Manning', badge: 'Scholarship' },
-    { q: 'Thanks to Titanium, I got into John Monash Science School. The tutors made tricky maths and science concepts easy to understand and gave me great practice tests with detailed feedback. Their support boosted my confidence and kept me calm during the exam.', name: 'Undisclosed', badge: 'John Monash Science School' },
-    { q: 'Thanks to Titanium, I was accepted into Bond Medicine. Their guidance and personalised support made all the difference in preparing for the entrance exams and interviews. My tutor kept me motivated every step of the way.', name: 'Tanelle Galea', badge: 'Bond University Medicine' },
+    { cat: 'atar', q: 'The Accelerate Methods program gave me the frameworks I needed to tackle any exam question. The regular worksheets and the Exam Tracker kept me consistent right through to the final exams. I genuinely could not have hit this score without Titanium.', name: 'Alex Fazzioni', badge: 'ATAR 98.55' },
+    { cat: 'scholarship', q: 'Before joining Titanium I was struggling with essays and tricky maths problems. My tutor broke things down step by step and the English Writing Mastery program taught me to write essays that stood out. I got my scholarship and I am incredibly grateful.', name: 'Jasmine Manning', badge: 'Scholarship Winner' },
+    { cat: 'selective', q: 'Thanks to Titanium I got into John Monash Science School. The tutors made tricky maths and science concepts easy to understand and gave me great practice tests with detailed feedback. Their support boosted my confidence and kept me calm during the exam.', name: 'Undisclosed', badge: 'John Monash Science School' },
+    { cat: 'medical', q: 'Thanks to Titanium I was accepted into Bond Medicine. Their guidance and personalised support made all the difference in preparing for the entrance exams and interviews. My tutor kept me motivated every step of the way.', name: 'Tanelle Galea', badge: 'Bond University Medicine' },
+    { cat: 'amc', q: 'The AMC preparation program exposed me to problem types I had never seen at school. My tutor helped me build a toolkit of strategies — not just formulas. I achieved a Distinction and qualified for the AIMO.', name: 'Kevin Zhao', badge: 'AMC Distinction' },
   ]
 
   return (
@@ -382,6 +383,7 @@ export default function Home() {
           <div className="testimonials-grid">
             {testimonials.map((t, i) => (
               <div className="testimonial-card fade-in" key={i} data-delay={`${i * 80}`}>
+                <span className={`testimonial-cat tcat-${t.cat}`}>{t.cat === 'atar' ? 'ATAR' : t.cat === 'scholarship' ? 'Scholarship' : t.cat === 'selective' ? 'Selective Entry' : t.cat === 'medical' ? 'Medical Admissions' : t.cat === 'amc' ? 'AMC' : t.cat === 'naplan' ? 'NAPLAN' : 'Olympiad'}</span>
                 <blockquote>&ldquo;{t.q}&rdquo;</blockquote>
                 <div className="testimonial-footer">
                   <span className="testimonial-name">{t.name}</span>
