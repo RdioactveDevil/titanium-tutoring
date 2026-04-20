@@ -78,13 +78,13 @@ export default function HighSchool() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
-      <Breadcrumb items={[
-        { label: 'Home', href: '/' },
-        { label: 'Programs', href: '/programs' },
-        { label: 'High School' },
-      ]} />
       <div className="page-hero">
         <div className="page-hero-inner">
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Programs', href: '/programs' },
+            { label: 'High School' },
+          ]} />
           <span className="eyebrow">Years 10–12</span>
           <h1 className="section-title">High School Program</h1>
           <p className="lead">VCE and SACE — the two years that determine your ATAR. We coach every subject with the same structured rigour, personalised to your specific exam board, target score, and timeline.</p>

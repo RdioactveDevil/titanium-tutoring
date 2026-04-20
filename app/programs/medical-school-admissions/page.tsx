@@ -83,13 +83,13 @@ export default function MedicalSchoolAdmissions() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
-      <Breadcrumb items={[
-        { label: 'Home', href: '/' },
-        { label: 'Programs', href: '/programs' },
-        { label: 'Medical School Admissions' },
-      ]} />
       <div className="page-hero">
         <div className="page-hero-inner">
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Programs', href: '/programs' },
+            { label: 'Medical School Admissions' },
+          ]} />
           <span className="eyebrow">UCAT · Interviews · Personal Statements</span>
           <h1 className="section-title">Medical School Admissions</h1>
           <p className="lead">The path to medicine is competitive at every stage. We coach UCAT performance, interview technique, and personal statement narrative so you present the strongest possible application.</p>

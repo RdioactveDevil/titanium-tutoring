@@ -75,14 +75,13 @@ export default function NaplanPage() {
 
   return (
     <>
-      <Breadcrumb items={[
-        { label: 'Home', href: '/' },
-        { label: 'Programs', href: '/programs' },
-        { label: 'NAPLAN Preparation' },
-      ]} />
-
       <div className="page-hero">
         <div className="page-hero-inner">
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Programs', href: '/programs' },
+            { label: 'NAPLAN Preparation' },
+          ]} />
           <span className="eyebrow">Years 3, 5, 7 &amp; 9</span>
           <h1 className="section-title">NAPLAN Preparation</h1>
           <p className="lead">Numeracy and literacy coaching that builds fundamentals, not last-minute cramming. We prepare students for every NAPLAN year level with structured, personalised sessions — so test day is familiar territory.</p>

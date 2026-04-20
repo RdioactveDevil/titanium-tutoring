@@ -62,13 +62,13 @@ export default function PrimarySchool() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
-      <Breadcrumb items={[
-        { label: 'Home', href: '/' },
-        { label: 'Programs', href: '/programs' },
-        { label: 'Primary School' },
-      ]} />
       <div className="page-hero">
         <div className="page-hero-inner">
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Programs', href: '/programs' },
+            { label: 'Primary School' },
+          ]} />
           <span className="eyebrow">Years 1–6</span>
           <h1 className="section-title">Primary School Program</h1>
           <p className="lead">Strong foundations are the difference between a student who keeps up and a student who pulls ahead. We build both — from first principles, at every year level.</p>

@@ -57,14 +57,13 @@ export default function ExamStrategyPage() {
 
   return (
     <>
-      <Breadcrumb items={[
-        { label: 'Home', href: '/' },
-        { label: 'Programs', href: '/programs' },
-        { label: 'Exam Strategy & Mindset' },
-      ]} />
-
       <div className="page-hero">
         <div className="page-hero-inner">
+          <Breadcrumb items={[
+            { label: 'Home', href: '/' },
+            { label: 'Programs', href: '/programs' },
+            { label: 'Exam Strategy & Mindset' },
+          ]} />
           <span className="eyebrow">All Year Levels</span>
           <h1 className="section-title">Exam Strategy &amp; Mindset</h1>
           <p className="lead">Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches — and the ones that separate students who know the content from those who score it.</p>
