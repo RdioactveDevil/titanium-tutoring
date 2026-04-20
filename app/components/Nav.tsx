@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -17,6 +17,13 @@ export default function Nav() {
   const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const close = () => { setMenuOpen(false); setProgOpen(false) }
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const onScroll = () => setMenuOpen(false)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [menuOpen])
   const active = (href: string) => path === href ? 'active' : ''
   const activePrograms = path === '/programs' || path.startsWith('/programs/') ? 'active' : ''
 
