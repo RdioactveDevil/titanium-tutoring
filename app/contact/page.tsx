@@ -1,9 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Contact() {
+  const router = useRouter()
   const [openFaq, setOpenFaq] = useState<number | null>(null)
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -23,8 +25,7 @@ export default function Contact() {
         headers: { Accept: 'application/json' },
       })
       if (res.ok) {
-        setFormStatus('success')
-        form.reset()
+        router.push('/contact/thank-you')
       } else {
         const body = await res.json().catch(() => ({}))
         console.error('Formspree submission failed', res.status, body)
@@ -284,21 +285,7 @@ export default function Contact() {
                 Limited slots — we keep groups small
               </p>
             </div>
-            {formStatus === 'success' ? (
-              <div className="consult-form-success">
-                <span className="consult-form-success-icon">✓</span>
-                <h3>We&rsquo;ve received your enquiry!</h3>
-                <p>Thank you — we will be in touch within 24 hours to arrange your strategy call.</p>
-                <button
-                  className="btn-consult-submit"
-                  style={{ marginTop: 16 }}
-                  onClick={() => setFormStatus('idle')}
-                >
-                  Submit another enquiry
-                </button>
-              </div>
-            ) : (
-              <form className="contact-form" onSubmit={handleSubmit}>
+            <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-row">
                   <div className="form-group">
                     <label>Parent Name</label>
@@ -338,7 +325,6 @@ export default function Contact() {
                   {formStatus === 'submitting' ? 'Sending…' : 'Book Your Call'}
                 </button>
               </form>
-            )}
           </div>
 
         </div>
