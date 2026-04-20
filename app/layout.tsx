@@ -8,6 +8,14 @@ export const metadata: Metadata = {
   title: { default: 'Titanium Tutoring', template: '%s | Titanium Tutoring' },
   description: 'Specialist tutoring for VCE, SACE, NAPLAN, and selective entry exams. A team of qualified educators and subject specialists dedicated to results.',
   alternates: { canonical: '/' },
+  openGraph: {
+    siteName: 'Titanium Tutoring',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Titanium Tutoring' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-default.jpg'],
+  },
 }
 
 const organizationJsonLd = {
