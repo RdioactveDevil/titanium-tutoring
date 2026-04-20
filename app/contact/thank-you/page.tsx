@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Thank You — We\'ll Be in Touch',
   description: 'Your enquiry has been received. We will reach out within 24 hours to arrange your free strategy call.',
   robots: { index: false },
+  alternates: { canonical: '/contact/thank-you' },
 }
 
 const steps = [
