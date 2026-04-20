@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import Link from 'next/link'
+import Breadcrumb from '@/app/components/Breadcrumb'
 
 export default function MiddleSchool() {
   useEffect(() => {
@@ -37,6 +38,11 @@ export default function MiddleSchool() {
 
   return (
     <>
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Programs', href: '/programs' },
+        { label: 'Middle School' },
+      ]} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow">Years 7–9</span>

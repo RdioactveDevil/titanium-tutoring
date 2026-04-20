@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import Link from 'next/link'
+import Breadcrumb from '@/app/components/Breadcrumb'
 
 export default function MedicalSchoolAdmissions() {
   useEffect(() => {
@@ -55,6 +56,11 @@ export default function MedicalSchoolAdmissions() {
 
   return (
     <>
+      <Breadcrumb items={[
+        { label: 'Home', href: '/' },
+        { label: 'Programs', href: '/programs' },
+        { label: 'Medical School Admissions' },
+      ]} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow">UCAT · Interviews · Personal Statements</span>
