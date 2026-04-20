@@ -10,9 +10,41 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 }
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['EducationalOrganization', 'LocalBusiness'],
+  name: 'Titanium Tutoring',
+  url: 'https://titaniumtutoring.com.au',
+  telephone: '+61456753747',
+  email: 'admin@titaniumtutoring.com',
+  description:
+    'Specialist tutoring for VCE, SACE, NAPLAN, and selective entry exams. A team of qualified educators and subject specialists dedicated to results.',
+  areaServed: 'Australia',
+  address: [
+    {
+      '@type': 'PostalAddress',
+      addressLocality: 'Adelaide',
+      addressRegion: 'SA',
+      addressCountry: 'AU',
+    },
+    {
+      '@type': 'PostalAddress',
+      addressLocality: 'Melbourne',
+      addressRegion: 'VIC',
+      addressCountry: 'AU',
+    },
+  ],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body>
         <Nav />
         {children}
