@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: { absolute: 'Exam Strategy & Mindset | Titanium Tutoring' },
   description: 'Time management, stress resilience, and high-stakes exam technique for all year levels. The exam skills no textbook teaches — coached by Titanium Tutoring.',
+  alternates: { canonical: '/programs/exam-strategy' },
   openGraph: {
     title: 'Exam Strategy & Mindset | Titanium Tutoring',
     description: 'Time management, stress resilience, and high-stakes exam technique for all year levels. The exam skills no textbook teaches — coached by Titanium Tutoring.',

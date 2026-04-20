@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: { absolute: 'High School Tutoring | Titanium Tutoring' },
   description: 'VCE and SACE tutoring for Years 10–12. Expert coaching in Maths, English, and all senior subjects — personalised to your curriculum, ATAR target, and timeline.',
+  alternates: { canonical: '/programs/high-school' },
   openGraph: {
     title: 'High School Tutoring | Titanium Tutoring',
     description: 'VCE and SACE tutoring for Years 10–12. Expert coaching in Maths, English, and all senior subjects — personalised to your curriculum, ATAR target, and timeline.',
