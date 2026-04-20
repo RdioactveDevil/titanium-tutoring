@@ -44,7 +44,7 @@ const organizationJsonLd = {
   },
   image: 'https://titaniumtutoring.com.au/og-default.jpg',
   telephone: '+61456753747',
-  email: 'admin@titaniumtutoring.com',
+  email: 'contact@titaniumtutoring.com',
   description:
     'Specialist tutoring for VCE, SACE, NAPLAN, and selective entry exams. A team of qualified educators and subject specialists dedicated to results.',
   areaServed: [

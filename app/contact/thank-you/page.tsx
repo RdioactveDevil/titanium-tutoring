@@ -142,8 +142,8 @@ export default function ThankYou() {
                       +61 456 753 747
                     </a>{' '}
                     or email{' '}
-                    <a href="mailto:admin@titaniumtutoring.com" style={{ color: 'var(--navy)', fontWeight: 700 }}>
-                      admin@titaniumtutoring.com
+                    <a href="mailto:contact@titaniumtutoring.com" style={{ color: 'var(--navy)', fontWeight: 700 }}>
+                      contact@titaniumtutoring.com
                     </a>
                   </>
                 ),

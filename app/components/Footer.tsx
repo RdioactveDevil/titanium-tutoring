@@ -43,8 +43,8 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <span className="footer-col-title">Contact</span>
-          <p>+61 456 753 747</p>
-          <p>admin@titaniumtutoring.com</p>
+          <p><a href="tel:+61456753747">+61 456 753 747</a></p>
+          <p><a href="mailto:contact@titaniumtutoring.com">contact@titaniumtutoring.com</a></p>
           <p>South Australia &middot; Victoria</p>
         </div>
       </div>

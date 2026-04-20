@@ -247,7 +247,7 @@ export default function Contact() {
             <div className="consult-contact-details">
               <span className="eyebrow" style={{ marginBottom: 8 }}>Prefer to call or email directly?</span>
               <a href="tel:+61456753747" className="consult-contact-link">+61 456 753 747</a>
-              <a href="mailto:admin@titaniumtutoring.com" className="consult-contact-link">admin@titaniumtutoring.com</a>
+              <a href="mailto:contact@titaniumtutoring.com" className="consult-contact-link">contact@titaniumtutoring.com</a>
               <p style={{ fontSize: 13, color: 'var(--ink-3)', marginTop: 6 }}>South Australia · Victoria · Online Australia-wide</p>
             </div>
           </div>
@@ -327,7 +327,7 @@ export default function Contact() {
                 </div>
                 {formStatus === 'error' && (
                   <p className="consult-form-error">
-                    Something went wrong — please try again or email us directly at <a href="mailto:admin@titaniumtutoring.com">admin@titaniumtutoring.com</a>.
+                    Something went wrong — please try again or email us directly at <a href="mailto:contact@titaniumtutoring.com">contact@titaniumtutoring.com</a>.
                   </p>
                 )}
                 <button type="submit" className="btn-consult-submit" disabled={formStatus === 'submitting'}>
@@ -366,7 +366,7 @@ export default function Contact() {
             <p>Any other questions? Reach out directly and we will get back to you promptly.</p>
             <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap', marginTop: 20 }}>
               <a href="tel:+61456753747" className="btn-navy-sm">Call +61 456 753 747</a>
-              <a href="mailto:admin@titaniumtutoring.com" className="btn-gold-sm">Email Us</a>
+              <a href="mailto:contact@titaniumtutoring.com" className="btn-gold-sm">Email Us</a>
             </div>
           </div>
         </div>
