@@ -123,61 +123,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* MEET THE TEAM */}
-      <section className="why" style={{ background: 'var(--cream)' }}>
-        <div className="why-inner" style={{ display: 'block', maxWidth: 1100 }}>
-          <div className="fade-in" style={{ textAlign: 'center', marginBottom: 48 }}>
-            <span className="eyebrow">Our Tutors</span>
-            <h2 className="section-title">Meet the Team</h2>
-            <p className="lead" style={{ maxWidth: 620, margin: '14px auto 0' }}>Every Titanium tutor is selected for their subject-matter expertise, teaching credentials, and track record of results — not just their availability.</p>
-          </div>
-          <div className="services-grid">
-            {[
-              {
-                name: 'James R.',
-                role: 'VCE Mathematics Specialist',
-                background: 'Registered VCE teacher with a Bachelor of Education (Secondary) and a double major in Pure Mathematics. Previously taught Mathematical Methods and Specialist Maths at a leading selective-entry school in Melbourne.',
-                subjects: 'Methods · Specialist · Further Maths',
-              },
-              {
-                name: 'Dr. Priya S.',
-                role: 'University Lecturer & Science Tutor',
-                background: 'PhD in Biochemistry from the University of Melbourne. Current sessional lecturer in first-year sciences, and former selective school student who sat the HAST exam herself. Coaches UCAT and medical admissions alongside Year 11–12 Biology.',
-                subjects: 'Biology · Chemistry · UCAT · Medical Admissions',
-              },
-              {
-                name: 'Daniel M.',
-                role: 'Selective Entry & English Coach',
-                background: 'Former student at John Monash Science School, now completing a Master of Teaching. Specialises in essay writing, comprehension strategy, and scholarship exam preparation for Years 5–9.',
-                subjects: 'English · Scholarship Prep · Writing Mastery',
-              },
-              {
-                name: 'Aisha K.',
-                role: 'SACE Specialist & Mathematics Tutor',
-                background: 'Qualified teacher with five years of classroom experience delivering Stage 1 and Stage 2 SACE Mathematics in South Australia. Consistently achieves A-band results with her students across Mathematical Methods and Essential Mathematics.',
-                subjects: 'SACE Methods · Essential Maths · Stage 1 & 2',
-              },
-              {
-                name: 'Tom W.',
-                role: 'Olympiad & AMC Preparation',
-                background: 'AMC Distinction recipient and current Mathematics PhD candidate. Coaches students preparing for the Australian Mathematics Competition, Mathematics Olympiad, and high-distinction NAPLAN numeracy outcomes.',
-                subjects: 'AMC · Olympiad Prep · NAPLAN Numeracy',
-              },
-            ].map((member, i) => (
-              <div className="service-card card-lift fade-in" key={i} data-delay={`${i * 80}`}>
-                <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 18, color: 'var(--navy)', marginBottom: 12 }}>
-                  {member.name.charAt(0)}
-                </div>
-                <h3 style={{ fontSize: '1.05rem', marginBottom: 2 }}>{member.name}</h3>
-                <p style={{ fontSize: '0.8rem', color: 'var(--gold)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>{member.role}</p>
-                <p style={{ fontSize: '0.9rem', marginBottom: 12 }}>{member.background}</p>
-                <p style={{ fontSize: '0.78rem', color: 'var(--ink-3)', fontStyle: 'italic' }}>{member.subjects}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* WEEKLY INSIGHTS */}
       <section className="insights">
         <div className="insights-inner">
