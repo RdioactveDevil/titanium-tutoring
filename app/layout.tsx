@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import { testimonials } from './data/testimonials'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://titaniumtutoring.com.au'),
@@ -17,6 +18,18 @@ export const metadata: Metadata = {
     images: ['/og-default.jpg'],
   },
 }
+
+const SCHEMA_REVIEW_COUNT = 5
+
+const schemaReviews = testimonials
+  .filter((t) => t.name !== 'Undisclosed')
+  .slice(0, SCHEMA_REVIEW_COUNT)
+  .map((t) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: t.name },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: t.q,
+  }))
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -70,6 +83,14 @@ const organizationJsonLd = {
     'https://www.facebook.com/titanium.tutoring',
     'https://www.linkedin.com/company/titanium-tutoring-au/',
   ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    bestRating: '5',
+    worstRating: '1',
+    reviewCount: String(testimonials.length),
+  },
+  review: schemaReviews,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
