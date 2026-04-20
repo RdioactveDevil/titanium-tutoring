@@ -13,14 +13,8 @@ export default function Contact() {
     setFormStatus('submitting')
     const form = e.currentTarget
     const data = new FormData(form)
-    const formspreeId = (process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '').trim()
-    if (!formspreeId) {
-      console.error('NEXT_PUBLIC_FORMSPREE_ID is not set — form submissions will not be delivered.')
-      setFormStatus('error')
-      return
-    }
     try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      const res = await fetch('https://formspree.io/f/mjgjorqe', {
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' },
