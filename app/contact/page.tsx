@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { contactTestimonials } from '../data/testimonials'
 
 export default function Contact() {
   const router = useRouter()
@@ -92,33 +93,6 @@ export default function Contact() {
       icon: '◉',
       title: 'No Pressure, Ever',
       desc: 'This is a genuine conversation. Take our strategy and walk away if you wish — we would rather earn your trust than your signature.'
-    },
-  ]
-
-  const testimonials = [
-    {
-      cat: 'atar',
-      q: "My daughter went from a B student to finishing in the top five of her cohort. The personalised plan her tutor built around her weak points was unlike anything a school classroom can offer. We are so glad we made the call.",
-      name: 'Parent of Elise M.',
-      badge: 'ATAR 97.20'
-    },
-    {
-      cat: 'selective',
-      q: 'Melbourne High was my goal from Year 4. Titanium treated it as seriously as I did. The weekly maths sessions and the reasoning test practice made me feel genuinely ready — not just hoping for the best.',
-      name: 'Ethan Zhou',
-      badge: 'Melbourne High School'
-    },
-    {
-      cat: 'scholarship',
-      q: 'The written expression coaching was exceptional. My tutor showed me how to plan a response in thirty seconds and write persuasively under timed conditions. That skill has helped me in every school task since.',
-      name: 'Oliver Marsh',
-      badge: 'Scholarship Winner'
-    },
-    {
-      cat: 'naplan',
-      q: 'My son was working at Band 5 in numeracy going into Year 5. After two terms with Titanium he sat NAPLAN and scored Band 9. The improvement was far beyond what his school expected and far beyond what we hoped for.',
-      name: 'Parent of Thomas G.',
-      badge: 'NAPLAN Band 9'
     },
   ]
 
@@ -256,7 +230,7 @@ export default function Contact() {
             <span className="eyebrow">What Our Students Say</span>
             <h2 className="section-title" style={{ fontSize: 'clamp(22px,3vw,30px)' }}>Results That Speak for Themselves</h2>
             <div className="consult-testimonials">
-              {testimonials.map((t, i) => (
+              {contactTestimonials.map((t, i) => (
                 <div className="consult-testimonial" key={i}>
                   <span className={`testimonial-cat tcat-${t.cat}`}>{t.cat === 'atar' ? 'ATAR' : t.cat === 'selective' ? 'Selective Entry' : t.cat === 'naplan' ? 'NAPLAN' : 'Scholarship'}</span>
                   <blockquote>&ldquo;{t.q}&rdquo;</blockquote>
