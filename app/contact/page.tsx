@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { contactTestimonials } from '../data/testimonials'
+import { contactTestimonials, catLabel } from '../data/testimonials'
 
 export default function Contact() {
   const router = useRouter()
@@ -232,7 +232,7 @@ export default function Contact() {
             <div className="consult-testimonials">
               {contactTestimonials.map((t, i) => (
                 <div className="consult-testimonial" key={i}>
-                  <span className={`testimonial-cat tcat-${t.cat}`}>{t.cat === 'atar' ? 'ATAR' : t.cat === 'selective' ? 'Selective Entry' : t.cat === 'naplan' ? 'NAPLAN' : 'Scholarship'}</span>
+                  <span className={`testimonial-cat tcat-${t.cat}`}>{catLabel[t.cat]}</span>
                   <blockquote>&ldquo;{t.q}&rdquo;</blockquote>
                   <div className="consult-testimonial-footer">
                     <span className="testimonial-name">{t.name}</span>

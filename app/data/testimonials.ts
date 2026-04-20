@@ -1,5 +1,17 @@
+export const catLabel = {
+  atar: 'ATAR',
+  scholarship: 'Scholarship',
+  selective: 'Selective Entry',
+  medical: 'Medical Admissions',
+  naplan: 'NAPLAN',
+  amc: 'AMC',
+  olympiad: 'Olympiad',
+} as const
+
+export type TestimonialCategory = keyof typeof catLabel
+
 export type Testimonial = {
-  cat: string
+  cat: TestimonialCategory
   q: string
   name: string
   badge: string

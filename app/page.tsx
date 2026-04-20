@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
-import { homeTestimonials } from './data/testimonials'
+import { homeTestimonials, catLabel } from './data/testimonials'
 
 export default function Home() {
   const didCount = useRef(false)
@@ -390,7 +390,7 @@ export default function Home() {
           <div className="testimonials-grid">
             {homeTestimonials.map((t, i) => (
               <div className="testimonial-card fade-in" key={i} data-delay={`${i * 80}`}>
-                <span className={`testimonial-cat tcat-${t.cat}`}>{t.cat === 'atar' ? 'ATAR' : t.cat === 'scholarship' ? 'Scholarship' : t.cat === 'selective' ? 'Selective Entry' : t.cat === 'medical' ? 'Medical Admissions' : t.cat === 'amc' ? 'AMC' : t.cat === 'naplan' ? 'NAPLAN' : 'Olympiad'}</span>
+                <span className={`testimonial-cat tcat-${t.cat}`}>{catLabel[t.cat]}</span>
                 <blockquote>&ldquo;{t.q}&rdquo;</blockquote>
                 <div className="testimonial-footer">
                   <span className="testimonial-name">{t.name}</span>

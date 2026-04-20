@@ -1,17 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import Link from 'next/link'
-import { testimonials } from '../data/testimonials'
-
-const catLabel: Record<string, string> = {
-  atar: 'ATAR',
-  scholarship: 'Scholarship',
-  selective: 'Selective Entry',
-  medical: 'Medical Admissions',
-  naplan: 'NAPLAN',
-  amc: 'AMC',
-  olympiad: 'Olympiad',
-}
+import { testimonials, catLabel } from '../data/testimonials'
 
 const pressClippings = [
   { src: '/press/advertiser.png', label: 'The Advertiser' },
