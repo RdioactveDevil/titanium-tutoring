@@ -2,6 +2,25 @@
 import { useEffect } from 'react'
 import Link from 'next/link'
 
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://www.titaniumtutoring.com.au',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Programs',
+      item: 'https://www.titaniumtutoring.com.au/programs',
+    },
+  ],
+}
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -158,6 +177,10 @@ export default function Programs() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
