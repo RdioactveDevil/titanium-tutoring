@@ -36,6 +36,7 @@ export default function Nav() {
             <span className="nav-brand-name">Titanium Tutoring</span>
           </Link>
           <ul className="nav-links">
+            <li><Link href="/" className={active('/')}>Home</Link></li>
             <li>
               <div
                 className="nav-dropdown-wrap"
@@ -65,6 +66,7 @@ export default function Nav() {
       </nav>
 
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
+        <Link href="/" className={active('/')} onClick={close}>Home</Link>
         <Link href="/programs" className={active('/programs')} onClick={close}>Programs</Link>
         {programs.map(p => (
           <Link key={p} href="/programs" className="mobile-sub" onClick={close}>{p}</Link>
