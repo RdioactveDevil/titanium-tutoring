@@ -60,7 +60,7 @@ export default function Nav() {
             <li><Link href="/results" className={active('/results')}>Results</Link></li>
             <li><Link href="/contact" className={`nav-cta ${active('/contact')}`}>Book a Call</Link></li>
           </ul>
-          <button className="hamburger" onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+          <button className={`hamburger${menuOpen ? ' open' : ''}`} onClick={() => setMenuOpen(o => !o)} aria-label="Menu" aria-expanded={menuOpen}>
             <span /><span /><span />
           </button>
         </div>
@@ -74,7 +74,7 @@ export default function Nav() {
         ))}
         <Link href="/about" className={active('/about')} onClick={close}>About</Link>
         <Link href="/results" className={active('/results')} onClick={close}>Results</Link>
-        <Link href="/contact" className={active('/contact')} onClick={close}>Book a Call</Link>
+        <Link href="/contact" className={`mobile-cta ${active('/contact')}`} onClick={close}>Book a Call</Link>
       </div>
     </>
   )
