@@ -511,8 +511,15 @@ footer{background:var(--navy);padding:56px 5% 32px;border-top:1px solid rgba(243
 .consult-form-header{margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--rule)}
 .consult-form-prompt{font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-600);margin-bottom:8px}
 .consult-form-title{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.04em;font-size:clamp(20px,2.5vw,26px);color:var(--navy);line-height:1.1}
+.consult-form-success{text-align:center;padding:40px 20px}
+.consult-form-success-icon{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;font-size:26px;margin-bottom:20px}
+.consult-form-success h3{font-family:var(--font-display);font-size:clamp(18px,2.5vw,24px);color:var(--navy);margin-bottom:12px}
+.consult-form-success p{color:var(--ink-2);font-size:15px;line-height:1.6}
+.consult-form-error{font-size:13px;color:#c0392b;background:#fdf0ef;border:1px solid #f5c6c4;border-radius:4px;padding:10px 14px;margin-bottom:12px}
+.consult-form-error a{color:#c0392b;text-decoration:underline}
 .btn-consult-submit{background:var(--gold);color:var(--navy);padding:15px;border-radius:4px;font-weight:700;font-size:16px;border:none;cursor:pointer;font-family:var(--font-body);width:100%;transition:background 200ms,transform 150ms;letter-spacing:0.02em;margin-top:4px}
 .btn-consult-submit:hover{background:var(--gold-600);transform:translateY(-1px)}
+.btn-consult-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none}
 
 /* FAQ */
 .consult-faq{background:var(--paper);padding:88px 5%}

@@ -3,6 +3,37 @@ import { useEffect, useState } from 'react'
 
 export default function Contact() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    setFormStatus('submitting')
+    const form = e.currentTarget
+    const data = new FormData(form)
+    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID
+    if (!formspreeId) {
+      console.error('NEXT_PUBLIC_FORMSPREE_ID is not set — form submissions will not be delivered.')
+      setFormStatus('error')
+      return
+    }
+    try {
+      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      })
+      if (res.ok) {
+        setFormStatus('success')
+        form.reset()
+      } else {
+        const body = await res.json().catch(() => ({}))
+        console.error('Formspree submission failed', res.status, body)
+        setFormStatus('error')
+      }
+    } catch {
+      setFormStatus('error')
+    }
+  }
 
   useEffect(() => {
     const obs = new IntersectionObserver(
@@ -243,39 +274,61 @@ export default function Contact() {
                 Limited slots — we keep groups small
               </p>
             </div>
-            <form className="contact-form" action="https://formspree.io/f/YOUR_CODE" method="POST">
-              <div className="form-row">
-                <div className="form-group">
-                  <label>Parent Name</label>
-                  <input type="text" name="name" placeholder="Your name" required />
+            {formStatus === 'success' ? (
+              <div className="consult-form-success">
+                <span className="consult-form-success-icon">✓</span>
+                <h3>We&rsquo;ve received your enquiry!</h3>
+                <p>Thank you — we will be in touch within 24 hours to arrange your strategy call.</p>
+                <button
+                  className="btn-consult-submit"
+                  style={{ marginTop: 16 }}
+                  onClick={() => setFormStatus('idle')}
+                >
+                  Submit another enquiry
+                </button>
+              </div>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label>Parent Name</label>
+                    <input type="text" name="name" placeholder="Your name" required />
+                  </div>
+                  <div className="form-group">
+                    <label>Student Year Level</label>
+                    <select name="year" required>
+                      <option value="">Select year...</option>
+                      <option>Primary (Years 1–6)</option>
+                      <option>Year 7–10</option>
+                      <option>VCE (Victoria)</option>
+                      <option>SACE (South Australia)</option>
+                      <option>Selective Entry Prep</option>
+                      <option>NAPLAN</option>
+                    </select>
+                  </div>
                 </div>
                 <div className="form-group">
-                  <label>Student Year Level</label>
-                  <select name="year" required>
-                    <option value="">Select year...</option>
-                    <option>Primary (Years 1–6)</option>
-                    <option>Year 7–10</option>
-                    <option>VCE (Victoria)</option>
-                    <option>SACE (South Australia)</option>
-                    <option>Selective Entry Prep</option>
-                    <option>NAPLAN</option>
-                  </select>
+                  <label>Email Address</label>
+                  <input type="email" name="email" placeholder="your@email.com" required />
                 </div>
-              </div>
-              <div className="form-group">
-                <label>Email Address</label>
-                <input type="email" name="email" placeholder="your@email.com" required />
-              </div>
-              <div className="form-group">
-                <label>Subject / Goal</label>
-                <input type="text" name="subject" placeholder="e.g. Mathematical Methods, scholarship prep, UCAT..." required />
-              </div>
-              <div className="form-group">
-                <label>Anything else we should know? <span style={{ fontWeight: 400, color: 'var(--ink-3)' }}>(optional)</span></label>
-                <textarea name="message" placeholder="What are the main challenges your child is facing?" />
-              </div>
-              <button type="submit" className="btn-consult-submit">Book Your Call</button>
-            </form>
+                <div className="form-group">
+                  <label>Subject / Goal</label>
+                  <input type="text" name="subject" placeholder="e.g. Mathematical Methods, scholarship prep, UCAT..." required />
+                </div>
+                <div className="form-group">
+                  <label>Anything else we should know? <span style={{ fontWeight: 400, color: 'var(--ink-3)' }}>(optional)</span></label>
+                  <textarea name="message" placeholder="What are the main challenges your child is facing?" />
+                </div>
+                {formStatus === 'error' && (
+                  <p className="consult-form-error">
+                    Something went wrong — please try again or email us directly at <a href="mailto:admin@titaniumtutoring.com">admin@titaniumtutoring.com</a>.
+                  </p>
+                )}
+                <button type="submit" className="btn-consult-submit" disabled={formStatus === 'submitting'}>
+                  {formStatus === 'submitting' ? 'Sending…' : 'Book Your Call'}
+                </button>
+              </form>
+            )}
           </div>
 
         </div>
