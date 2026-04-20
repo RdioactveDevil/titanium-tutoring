@@ -108,6 +108,36 @@ export default function MedicalSchoolAdmissions() {
         </div>
       </section>
 
+      <section className="related-programs">
+        <div className="related-programs-inner">
+          <div className="section-header">
+            <span className="eyebrow">Explore Other Programs</span>
+            <h2 className="section-title">Find the Right Program<br />for Your Student</h2>
+            <div className="section-rule" style={{ margin: '20px auto 0' }} />
+          </div>
+          <div className="related-grid">
+            <Link href="/programs/primary-school" className="related-card">
+              <span className="related-card-eyebrow">Years 1–6</span>
+              <div className="related-card-title">Primary School Program</div>
+              <p className="related-card-desc">Core acceleration, NAPLAN preparation, and early selective entry coaching built from first principles.</p>
+              <span className="related-card-link">Explore Primary School →</span>
+            </Link>
+            <Link href="/programs/middle-school" className="related-card">
+              <span className="related-card-eyebrow">Years 7–9</span>
+              <div className="related-card-title">Middle School Program</div>
+              <p className="related-card-desc">Close the gaps before senior school. We cover Maths, English, NAPLAN, and early VCE/SACE foundations.</p>
+              <span className="related-card-link">Explore Middle School →</span>
+            </Link>
+            <Link href="/programs/high-school" className="related-card">
+              <span className="related-card-eyebrow">Years 10–12</span>
+              <div className="related-card-title">High School Program</div>
+              <p className="related-card-desc">VCE and SACE coaching. From first SAC to final exam — every subject, every study score target.</p>
+              <span className="related-card-link">Explore High School →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <div className="motto-banner">
         <div className="motto-banner-inner">
           <div className="motto-display" style={{ fontSize: 'clamp(16px,3vw,24px)' }}>Your Medical School Application Starts Here</div>

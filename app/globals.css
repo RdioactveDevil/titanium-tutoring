@@ -321,6 +321,19 @@ nav{position:sticky;top:0;left:0;right:0;z-index:100;height:var(--nav-h);backgro
 .signup-success{text-align:center;padding:20px;color:var(--gold);font-weight:600;font-size:15px}
 
 /* MOTTO BANNER */
+.related-programs{background:var(--paper-raise);padding:64px 5%}
+.related-programs-inner{max-width:var(--content-max);margin:0 auto}
+.related-programs .section-header{text-align:center;margin-bottom:40px}
+.related-programs .section-title{font-size:clamp(22px,3vw,32px)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.related-card{display:flex;flex-direction:column;background:var(--paper);border:1px solid rgba(8,30,109,0.1);border-radius:var(--r-md);padding:28px 24px;text-decoration:none;transition:box-shadow 220ms,transform 220ms;position:relative;overflow:hidden}
+.related-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 200ms}
+.related-card:hover{box-shadow:0 6px 24px rgba(8,30,109,0.12);transform:translateY(-3px)}
+.related-card:hover::before{transform:scaleX(1)}
+.related-card-eyebrow{font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-600);margin-bottom:8px;display:block}
+.related-card-title{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.04em;font-size:16px;color:var(--navy);line-height:1.2;margin-bottom:10px}
+.related-card-desc{font-size:14px;color:rgba(8,30,109,0.7);line-height:1.55;flex:1;margin-bottom:16px}
+.related-card-link{font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:0.06em;color:var(--navy);display:inline-flex;align-items:center;gap:4px;margin-top:auto}
 .motto-banner{background:var(--navy);padding:72px 5%;text-align:center;position:relative;overflow:hidden}
 .motto-banner::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(243,190,67,0.1) 1px,transparent 1px);background-size:24px 24px;opacity:0.5}
 .motto-banner-inner{position:relative;max-width:720px;margin:0 auto}
