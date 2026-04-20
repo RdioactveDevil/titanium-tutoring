@@ -113,6 +113,12 @@ export default function Contact() {
       name: 'Oliver Marsh',
       badge: 'Scholarship Winner'
     },
+    {
+      cat: 'naplan',
+      q: 'My son was working at Band 5 in numeracy going into Year 5. After two terms with Titanium he sat NAPLAN and scored Band 9. The improvement was far beyond what his school expected and far beyond what we hoped for.',
+      name: 'Parent of Thomas G.',
+      badge: 'NAPLAN Band 9'
+    },
   ]
 
   return (
@@ -251,7 +257,7 @@ export default function Contact() {
             <div className="consult-testimonials">
               {testimonials.map((t, i) => (
                 <div className="consult-testimonial" key={i}>
-                  <span className={`testimonial-cat tcat-${t.cat}`}>{t.cat === 'atar' ? 'ATAR' : t.cat === 'selective' ? 'Selective Entry' : 'Scholarship'}</span>
+                  <span className={`testimonial-cat tcat-${t.cat}`}>{t.cat === 'atar' ? 'ATAR' : t.cat === 'selective' ? 'Selective Entry' : t.cat === 'naplan' ? 'NAPLAN' : 'Scholarship'}</span>
                   <blockquote>&ldquo;{t.q}&rdquo;</blockquote>
                   <div className="consult-testimonial-footer">
                     <span className="testimonial-name">{t.name}</span>
