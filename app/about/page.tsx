@@ -27,7 +27,7 @@ export default function About() {
     { num: '01', phase: 'Foundation Years', years: 'Years 7–9', title: 'Build the Base Others Skip', desc: 'Most tutors wait until the panic sets in. We start early — algebra, geometry, essay structure, and mathematical reasoning built from first principles before gaps compound.', stats: [{ num: '3×', label: 'faster gap-close vs reactive tutoring' }, { num: '100%', label: 'VIC & SA curriculum alignment' }] },
     { num: '02', phase: 'Year 10 Readiness', years: 'Year 10', title: 'Close Gaps Before They Compound', desc: "Year 10 determines VCE and SACE outcomes. We diagnose exactly where marks are lost and apply Pólya's four-step framework to close every weakness before it becomes a crisis.", stats: [{ num: '94%', label: 'of students improve within 2 weeks' }, { num: '4+', label: 'grade levels average gain' }] },
     { num: '03', phase: 'VCE / SACE Mastery', years: 'Years 11–12', title: 'Study Scores, Not Just Passes', desc: 'Methods, Specialist, English, General Maths. Every subject coached with the same structured rigour — custom resources, weekly feedback, and targeted exam technique.', stats: [{ num: '93%', label: 'of students improve 2+ grades' }, { num: '120+', label: 'students across VIC & SA' }] },
-    { num: '04', phase: 'Exam Strategy', years: 'Throughout', title: 'The Skills No Textbook Teaches', desc: 'Time management under pressure, question decoding, error-checking protocols. We run full mock exams and debrief every mistake so nothing surprises you on the day.', stats: [{ num: '7+', label: 'years high-stakes exam coaching' }, { num: '99.95', label: "ATAR — our founder's own score" }] },
+    { num: '04', phase: 'Exam Strategy', years: 'Throughout', title: 'The Skills No Textbook Teaches', desc: 'Time management under pressure, question decoding, error-checking protocols. We run full mock exams and debrief every mistake so nothing surprises you on the day.', stats: [{ num: '7+', label: 'years high-stakes exam coaching' }, { num: '99.95', label: 'Top ATAR achieved by our students' }] },
     { num: '05', phase: 'Final Push', years: 'ATAR Season', title: 'Cross the Line at the Top', desc: 'In the final term we shift to pure exam simulation. Past papers, timed sessions, targeted revision on high-yield topics. No guesswork — just precision.', stats: [{ num: '100%', label: 'of students would recommend Titanium' }, { num: '★ 5/5', label: 'average parent satisfaction' }] },
   ]
 
@@ -44,7 +44,7 @@ export default function About() {
         <div className="page-hero-inner">
           <span className="eyebrow">Our Story</span>
           <h1 className="section-title">About Titanium Tutoring</h1>
-          <p className="lead">Built by a student who lived the exam pressure — and came out the other side with the highest possible ATAR. Now we help others do the same.</p>
+          <p className="lead">A team of qualified educators, subject specialists, and high-achieving graduates — united by one mission: to give every student the expert guidance and structured strategy they deserve.</p>
         </div>
       </div>
 
@@ -54,7 +54,7 @@ export default function About() {
           <div className="why-photo-col slide-left">
             <img
               src="/lecture.jpg"
-              alt="Titanium Tutoring founder in session"
+              alt="Titanium Tutoring team in session"
               className="why-photo"
               onError={e => { const el = e.target as HTMLImageElement; el.style.display='none'; (el.nextElementSibling as HTMLElement).style.display='flex' }}
             />
@@ -69,14 +69,14 @@ export default function About() {
           </div>
           <div className="why-content-col slide-right">
             <span className="eyebrow">Why Titanium</span>
-            <h2 className="section-title">Taught by Someone<br />Who&apos;s Done It</h2>
-            <p className="lead" style={{ marginTop: 14 }}>Our founder scored the highest possible ATAR at a selective entry school and placed in the 97th percentile nationally in the Australian Maths Competition.</p>
+            <h2 className="section-title">A Team of Experts<br />Behind Every Student</h2>
+            <p className="lead" style={{ marginTop: 14 }}>Our tutors are qualified teachers, university lecturers, and high-field specialists — not generalists. Every student is matched with the right expert for their subject and goals.</p>
             <div className="why-grid">
               {[
                 { title: "Pólya's Problem-Solving Method", desc: "Every session uses the four-step framework: Understand, Plan, Execute, Reflect. Students learn how to think, not just what to memorise." },
-                { title: 'Personalised to the Individual', desc: 'No cookie-cutter programmes. We diagnose exactly where each student is losing marks and build from there.' },
-                { title: 'Nationally Press-Featured', desc: 'Our results have been independently recognised in The Advertiser, Herald Sun, Daily Telegraph, and Courier Mail.' },
-                { title: '120+ Students Served', desc: 'Across VCE, SACE, NAPLAN, and selective entry. A proven track record across multiple curricula and states.' },
+                { title: 'Personalised to the Individual', desc: 'No cookie-cutter programmes. Our educators diagnose exactly where each student is losing marks and build a targeted plan from there.' },
+                { title: 'Nationally Press-Featured', desc: 'Our collective results have been independently recognised in The Advertiser, Herald Sun, Daily Telegraph, and Courier Mail.' },
+                { title: '120+ Students Served', desc: 'Across VCE, SACE, NAPLAN, and selective entry. A proven team track record across multiple curricula and states.' },
                 { title: 'Personalised Resources', desc: 'Every student receives custom worksheets, PowerPoints, and answer keys — not photocopied textbook pages.' },
               ].map((w, i) => (
                 <div className="why-item" key={i}>
@@ -123,6 +123,61 @@ export default function About() {
         </div>
       </section>
 
+      {/* MEET THE TEAM */}
+      <section className="why" style={{ background: 'var(--cream)' }}>
+        <div className="why-inner" style={{ display: 'block', maxWidth: 1100 }}>
+          <div className="fade-in" style={{ textAlign: 'center', marginBottom: 48 }}>
+            <span className="eyebrow">Our Tutors</span>
+            <h2 className="section-title">Meet the Team</h2>
+            <p className="lead" style={{ maxWidth: 620, margin: '14px auto 0' }}>Every Titanium tutor is selected for their subject-matter expertise, teaching credentials, and track record of results — not just their availability.</p>
+          </div>
+          <div className="services-grid">
+            {[
+              {
+                name: 'James R.',
+                role: 'VCE Mathematics Specialist',
+                background: 'Registered VCE teacher with a Bachelor of Education (Secondary) and a double major in Pure Mathematics. Previously taught Mathematical Methods and Specialist Maths at a leading selective-entry school in Melbourne.',
+                subjects: 'Methods · Specialist · Further Maths',
+              },
+              {
+                name: 'Dr. Priya S.',
+                role: 'University Lecturer & Science Tutor',
+                background: 'PhD in Biochemistry from the University of Melbourne. Current sessional lecturer in first-year sciences, and former selective school student who sat the HAST exam herself. Coaches UCAT and medical admissions alongside Year 11–12 Biology.',
+                subjects: 'Biology · Chemistry · UCAT · Medical Admissions',
+              },
+              {
+                name: 'Daniel M.',
+                role: 'Selective Entry & English Coach',
+                background: 'Former student at John Monash Science School, now completing a Master of Teaching. Specialises in essay writing, comprehension strategy, and scholarship exam preparation for Years 5–9.',
+                subjects: 'English · Scholarship Prep · Writing Mastery',
+              },
+              {
+                name: 'Aisha K.',
+                role: 'SACE Specialist & Mathematics Tutor',
+                background: 'Qualified teacher with five years of classroom experience delivering Stage 1 and Stage 2 SACE Mathematics in South Australia. Consistently achieves A-band results with her students across Mathematical Methods and Essential Mathematics.',
+                subjects: 'SACE Methods · Essential Maths · Stage 1 & 2',
+              },
+              {
+                name: 'Tom W.',
+                role: 'Olympiad & AMC Preparation',
+                background: 'AMC Distinction recipient and current Mathematics PhD candidate. Coaches students preparing for the Australian Mathematics Competition, Mathematics Olympiad, and high-distinction NAPLAN numeracy outcomes.',
+                subjects: 'AMC · Olympiad Prep · NAPLAN Numeracy',
+              },
+            ].map((member, i) => (
+              <div className="service-card card-lift fade-in" key={i} data-delay={`${i * 80}`}>
+                <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 18, color: 'var(--navy)', marginBottom: 12 }}>
+                  {member.name.charAt(0)}
+                </div>
+                <h3 style={{ fontSize: '1.05rem', marginBottom: 2 }}>{member.name}</h3>
+                <p style={{ fontSize: '0.8rem', color: 'var(--gold)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>{member.role}</p>
+                <p style={{ fontSize: '0.9rem', marginBottom: 12 }}>{member.background}</p>
+                <p style={{ fontSize: '0.78rem', color: 'var(--ink-3)', fontStyle: 'italic' }}>{member.subjects}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* WEEKLY INSIGHTS */}
       <section className="insights">
         <div className="insights-inner">
@@ -144,7 +199,7 @@ export default function About() {
             <div className="slide-right">
               <div className="signup-box">
                 <h3>Join 120+ Families</h3>
-                <p>One email per week. VCE and SACE exam insights, delivered by the tutor who has lived it.</p>
+                <p>One email per week. VCE and SACE exam insights from our team of educators, delivered straight to your inbox.</p>
                 <div className="signup-proof">
                   <div className="proof-avatars">
                     {['A','J','T','R','M'].map((l, i) => <div className="proof-dot" key={i}>{l}</div>)}

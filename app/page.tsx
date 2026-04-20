@@ -184,7 +184,7 @@ export default function Home() {
               Through<br />hardships,<br />
               <em>to the stars.</em>
             </h1>
-            <p className="hero-attr">Built by Australia&apos;s top ATAR scorer.</p>
+            <p className="hero-attr">A team of qualified educators and subject specialists.</p>
             <p className="hero-lead">
               Personalised tutoring — strategy-first, results-driven — for students who refuse to settle.
             </p>
@@ -243,7 +243,7 @@ export default function Home() {
           { label: '93% Improved', name: 'Within 2 Weeks' },
           { label: 'Scholarship Winner', name: 'Jasmine Manning' },
           { label: '100% Improved', name: 'Within 6 Weeks' },
-          { label: 'Perfect ATAR', name: 'Our Founder' },
+          { label: 'Top ATAR Results', name: 'Every Year' },
           { label: '120+ Students', name: 'Supported & Counting' },
           { label: 'AMC Distinction', name: 'Olympiad Prep' },
           { label: 'NAPLAN Band 10', name: 'Multiple Students' },
@@ -309,7 +309,7 @@ export default function Home() {
           <div className="why-photo-col slide-left">
             <img
               src="/lecture.jpg"
-              alt="Titanium Tutoring founder in session"
+              alt="Titanium Tutoring team in session"
               className="why-photo"
               onError={e => { const el = e.target as HTMLImageElement; el.style.display='none'; (el.nextElementSibling as HTMLElement).style.display='flex' }}
             />
@@ -324,13 +324,13 @@ export default function Home() {
           </div>
           <div className="why-content-col slide-right">
             <span className="eyebrow">Why Titanium</span>
-            <h2 className="section-title">Taught by Someone<br />Who&apos;s Done It</h2>
-            <p className="lead" style={{ marginTop: 14 }}>Our founder scored the highest possible ATAR at a selective entry school and placed in the 97th percentile nationally in the Australian Maths Competition.</p>
+            <h2 className="section-title">Taught by Elite<br />Professionals</h2>
+            <p className="lead" style={{ marginTop: 14 }}>Our team includes qualified teachers, university lecturers, and subject-area specialists — each selected for their academic credentials and proven ability to produce results.</p>
             <div className="why-grid">
               {[
                 { title: "Pólya's Problem-Solving Method", desc: "Every session uses the four-step framework: Understand, Plan, Execute, Reflect. Students learn how to think, not just what to memorise." },
-                { title: 'Personalised to the Individual', desc: 'No cookie-cutter programmes. We diagnose exactly where each student is losing marks and build from there.' },
-                { title: 'Nationally Press-Featured', desc: 'Our results have been independently recognised in The Advertiser, Herald Sun, Daily Telegraph, and Courier Mail.' },
+                { title: 'Personalised to the Individual', desc: 'No cookie-cutter programmes. Our educators diagnose exactly where each student is losing marks and build a targeted plan from there.' },
+                { title: 'Nationally Press-Featured', desc: 'Our collective results have been independently recognised in The Advertiser, Herald Sun, Daily Telegraph, and Courier Mail.' },
               ].map((w, i) => (
                 <div className="why-item" key={i}>
                   <h4><span className="check-mark">✓</span>{w.title}</h4>
