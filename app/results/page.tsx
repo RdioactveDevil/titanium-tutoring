@@ -134,6 +134,7 @@ export default function Results() {
                 <blockquote>&ldquo;{t.q}&rdquo;</blockquote>
                 <div className="testimonial-footer">
                   <span className="testimonial-name">{t.name}</span>
+                  <span className="testimonial-author">{t.author === 'parent' ? 'Parent' : 'Student'}</span>
                   <span className="testimonial-badge">{t.badge}</span>
                 </div>
               </div>
