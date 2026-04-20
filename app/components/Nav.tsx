@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
@@ -14,9 +14,18 @@ export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [progOpen, setProgOpen] = useState(false)
   const path = usePathname()
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const close = () => { setMenuOpen(false); setProgOpen(false) }
   const active = (href: string) => path === href ? 'active' : ''
+
+  const handleEnter = () => {
+    if (leaveTimer.current) clearTimeout(leaveTimer.current)
+    setProgOpen(true)
+  }
+  const handleLeave = () => {
+    leaveTimer.current = setTimeout(() => setProgOpen(false), 120)
+  }
 
   return (
     <>
@@ -30,8 +39,8 @@ export default function Nav() {
             <li>
               <div
                 className="nav-dropdown-wrap"
-                onMouseEnter={() => setProgOpen(true)}
-                onMouseLeave={() => setProgOpen(false)}
+                onMouseEnter={handleEnter}
+                onMouseLeave={handleLeave}
               >
                 <Link href="/programs" className={active('/programs')} style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>
                   Programs <span style={{ fontSize: 9, opacity: 0.7 }}>▼</span>
