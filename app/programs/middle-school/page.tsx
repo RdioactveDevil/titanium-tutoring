@@ -36,8 +36,35 @@ export default function MiddleSchool() {
     { years: 'Year 9', label: 'Pre-Senior Readiness', points: ['NAPLAN Year 9 Numeracy & Literacy', 'Quadratics, trigonometry, statistics', 'Extended essay writing and analysis', 'Year 10 preview: early VCE/SACE foundations'] },
   ]
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://titaniumtutoring.com.au/' },
+      { '@type': 'ListItem', position: 2, name: 'Programs', item: 'https://titaniumtutoring.com.au/programs' },
+      { '@type': 'ListItem', position: 3, name: 'Middle School', item: 'https://titaniumtutoring.com.au/programs/middle-school' },
+    ],
+  }
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Middle School Tutoring Program',
+    description: 'Personalised tutoring for Years 7–9 covering Mathematics, English, NAPLAN preparation, early VCE/SACE acceleration, and selective entry coaching.',
+    url: 'https://titaniumtutoring.com.au/programs/middle-school',
+    provider: {
+      '@type': 'Organization',
+      name: 'Titanium Tutoring',
+      url: 'https://titaniumtutoring.com.au',
+    },
+    educationalLevel: 'Middle School (Years 7–9)',
+    teaches: ['Mathematics', 'English', 'NAPLAN Preparation', 'Selective Entry Coaching', 'Study Skills'],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Programs', href: '/programs' },

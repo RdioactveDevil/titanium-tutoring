@@ -33,8 +33,35 @@ export default function PrimarySchool() {
     { years: 'Years 5–6', label: 'Acceleration', points: ['Early algebra and geometry', 'NAPLAN Year 5 preparation', 'Essay structure and extended writing', 'Selective entry & scholarship readiness'] },
   ]
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://titaniumtutoring.com.au/' },
+      { '@type': 'ListItem', position: 2, name: 'Programs', item: 'https://titaniumtutoring.com.au/programs' },
+      { '@type': 'ListItem', position: 3, name: 'Primary School', item: 'https://titaniumtutoring.com.au/programs/primary-school' },
+    ],
+  }
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Primary School Tutoring Program',
+    description: 'Personalised tutoring for Years 1–6 covering core Maths and English acceleration, NAPLAN preparation, and selective entry coaching.',
+    url: 'https://titaniumtutoring.com.au/programs/primary-school',
+    provider: {
+      '@type': 'Organization',
+      name: 'Titanium Tutoring',
+      url: 'https://titaniumtutoring.com.au',
+    },
+    educationalLevel: 'Primary School (Years 1–6)',
+    teaches: ['Mathematics', 'English', 'NAPLAN Preparation', 'Selective Entry Coaching'],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Programs', href: '/programs' },

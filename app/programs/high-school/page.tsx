@@ -49,8 +49,35 @@ export default function HighSchool() {
     },
   ]
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://titaniumtutoring.com.au/' },
+      { '@type': 'ListItem', position: 2, name: 'Programs', item: 'https://titaniumtutoring.com.au/programs' },
+      { '@type': 'ListItem', position: 3, name: 'High School', item: 'https://titaniumtutoring.com.au/programs/high-school' },
+    ],
+  }
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'High School Tutoring Program',
+    description: 'VCE and SACE coaching for Years 10–12. Personalised tutoring in Mathematical Methods, Specialist Mathematics, English, and GAT preparation to reach your ATAR target.',
+    url: 'https://titaniumtutoring.com.au/programs/high-school',
+    provider: {
+      '@type': 'Organization',
+      name: 'Titanium Tutoring',
+      url: 'https://titaniumtutoring.com.au',
+    },
+    educationalLevel: 'High School (Years 10–12)',
+    teaches: ['VCE Mathematical Methods', 'VCE Specialist Mathematics', 'SACE Mathematical Methods', 'VCE English', 'SACE English', 'GAT Preparation', 'Selective Entry Coaching'],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Programs', href: '/programs' },

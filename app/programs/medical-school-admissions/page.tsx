@@ -54,8 +54,35 @@ export default function MedicalSchoolAdmissions() {
     },
   ]
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://titaniumtutoring.com.au/' },
+      { '@type': 'ListItem', position: 2, name: 'Programs', item: 'https://titaniumtutoring.com.au/programs' },
+      { '@type': 'ListItem', position: 3, name: 'Medical School Admissions', item: 'https://titaniumtutoring.com.au/programs/medical-school-admissions' },
+    ],
+  }
+
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Medical School Admissions Coaching',
+    description: 'Expert coaching for medical school admissions including UCAT preparation, MMI interview technique, and personal statement guidance.',
+    url: 'https://titaniumtutoring.com.au/programs/medical-school-admissions',
+    provider: {
+      '@type': 'Organization',
+      name: 'Titanium Tutoring',
+      url: 'https://titaniumtutoring.com.au',
+    },
+    educationalLevel: 'Tertiary Entrance',
+    teaches: ['UCAT Coaching', 'Decision Making', 'Situational Judgement', 'MMI Interview Preparation', 'Personal Statement Guidance', 'Medical School Application Strategy'],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
       <Breadcrumb items={[
         { label: 'Home', href: '/' },
         { label: 'Programs', href: '/programs' },
