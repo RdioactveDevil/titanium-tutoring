@@ -1,0 +1,44 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: { absolute: 'NAPLAN Preparation | Titanium Tutoring' },
+  description: 'NAPLAN coaching for Years 3, 5, 7 and 9. Numeracy and literacy preparation that builds fundamentals — not last-minute cramming. Personalised sessions for every year level.',
+  openGraph: {
+    title: 'NAPLAN Preparation | Titanium Tutoring',
+    description: 'NAPLAN coaching for Years 3, 5, 7 and 9. Numeracy and literacy preparation that builds fundamentals — not last-minute cramming. Personalised sessions for every year level.',
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'NAPLAN Preparation (Years 3, 5, 7 & 9)',
+  description: 'NAPLAN coaching for Years 3, 5, 7 and 9. Numeracy and literacy preparation that builds fundamentals — not last-minute cramming. Personalised sessions for every year level.',
+  url: 'https://www.titaniumtutoring.com.au/programs/naplan',
+  inLanguage: 'en-AU',
+  provider: {
+    '@type': 'EducationalOrganization',
+    name: 'Titanium Tutoring',
+    url: 'https://www.titaniumtutoring.com.au',
+  },
+  educationalLevel: 'Primary and Secondary School (Years 3–9)',
+  hasCourseInstance: [
+    {
+      '@type': 'CourseInstance',
+      courseMode: 'online',
+      courseWorkload: 'PT1H',
+    },
+  ],
+}
+
+export default function NaplanLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  )
+}

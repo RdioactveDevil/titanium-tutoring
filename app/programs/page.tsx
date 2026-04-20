@@ -24,10 +24,10 @@ export default function Programs() {
   const services = [
     { n: '01', title: 'Selective Entry & Scholarships', desc: 'HAST, Suzanne Cory, Melbourne High, scholarship exams. We have been through these doors and know what the markers want.', href: '/programs/high-school' },
     { n: '02', title: 'VCE & SACE Mathematics', desc: "Pólya's four-step framework applied to every problem type. Methods, Specialist, General Maths — study scores, not just passes.", href: '/programs/high-school' },
-    { n: '03', title: 'NAPLAN Preparation', desc: 'Numeracy and literacy coaching for Years 3, 5, 7 and 9. We build fundamentals that stick, not last-minute cramming.' },
+    { n: '03', title: 'NAPLAN Preparation', desc: 'Numeracy and literacy coaching for Years 3, 5, 7 and 9. We build fundamentals that stick, not last-minute cramming.', href: '/programs/naplan' },
     { n: '04', title: 'Primary Maths & English', desc: 'Years 1–6. Building confident, curious learners. Strong foundations make every year after easier.', href: '/programs/primary-school' },
     { n: '05', title: 'Year 7–10 Acceleration', desc: 'Get ahead before VCE or SACE begins. We identify gaps early and close them before they compound.', href: '/programs/middle-school' },
-    { n: '06', title: 'Exam Strategy & Mindset', desc: 'Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches.' },
+    { n: '06', title: 'Exam Strategy & Mindset', desc: 'Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches.', href: '/programs/exam-strategy' },
     { n: '07', title: 'UCAT & Medical School Admissions', desc: 'All five UCAT subtests, MMI interview coaching, personal statement guidance, and application strategy for aspiring medical students.', href: '/programs/medical-school-admissions' },
   ]
 
