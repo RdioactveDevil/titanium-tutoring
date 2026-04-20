@@ -388,6 +388,9 @@ footer{background:var(--navy);padding:56px 5% 32px;border-top:1px solid rgba(243
 .footer-brand-name{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.08em;font-size:15px;color:var(--paper)}
 .footer-brand-motto{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.18em;font-size:10px;color:var(--gold);margin-top:4px}
 .footer-desc{font-size:13px;color:rgba(250,246,238,0.6);line-height:1.6;max-width:320px}
+.footer-social{display:flex;gap:14px;margin-top:16px}
+.footer-social a{color:rgba(250,246,238,0.55);transition:color 200ms;display:flex;align-items:center}
+.footer-social a:hover{color:var(--gold)}
 .footer-col-title{font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
 .footer-col a,.footer-col p{font-size:13px;color:rgba(250,246,238,0.75);text-decoration:none;display:block;margin-bottom:8px;transition:color 200ms;line-height:1.5}
 .footer-col a:hover{color:var(--gold)}

@@ -65,6 +65,11 @@ const organizationJsonLd = {
     ],
   },
   knowsAbout: ['VCE', 'SACE', 'NAPLAN', 'Selective Entry Exams', 'Scholarship Exams', 'UCAT', 'Medical School Admissions', 'Mathematics Olympiad'],
+  sameAs: [
+    'https://www.titaniumtutoring.com',
+    'https://www.facebook.com/titanium.tutoring',
+    'https://www.linkedin.com/company/titanium-tutoring-au/',
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
