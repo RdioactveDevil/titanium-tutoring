@@ -238,16 +238,30 @@ export default function Home() {
       {/* ACHIEVEMENT TICKER */}
       {(() => {
         const items = [
-          { label: 'ATAR 98.55', name: 'Alex Fazzioni' },
-          { label: 'Bond University Medicine', name: 'Tanelle Galea' },
+          { label: 'ATAR 99.10', name: 'Parent of Priya S.' },
           { label: 'John Monash Science School', name: 'Selective Entry' },
-          { label: '93% Improved', name: 'Within 2 Weeks' },
-          { label: 'Scholarship Winner', name: 'Jasmine Manning' },
-          { label: '100% Improved', name: 'Within 6 Weeks' },
-          { label: 'Top ATAR Results', name: 'Every Year' },
-          { label: '120+ Students', name: 'Supported & Counting' },
-          { label: 'AMC Distinction', name: 'Olympiad Prep' },
+          { label: 'Scholarship — Top Award', name: 'Mei Lin' },
+          { label: 'Bond University Medicine', name: 'Tanelle Galea' },
           { label: 'NAPLAN Band 10', name: 'Multiple Students' },
+          { label: 'AMC Distinction', name: 'Kevin Zhao' },
+          { label: 'ATAR 98.55', name: 'Alex Fazzioni' },
+          { label: 'Melbourne High School', name: 'Ethan Zhou' },
+          { label: 'Scholarship Winner', name: 'Jasmine Manning' },
+          { label: 'UCAT — 90th Percentile', name: 'Medical Admissions' },
+          { label: 'ATAR 97.85', name: 'Isabella Santos' },
+          { label: 'Suzanne Cory High School', name: 'William H.' },
+          { label: 'Two Scholarship Offers', name: 'James R.' },
+          { label: 'State Mathematics Olympiad', name: "Sean O'Brien" },
+          { label: 'NAPLAN Band 9', name: 'Thomas G.' },
+          { label: 'ATAR 96.85', name: 'Jordan Kaur' },
+          { label: "MacRobertson Girls' High", name: 'Anika Patel' },
+          { label: 'AMC Top 10%', name: 'Celine W.' },
+          { label: 'UNSW Medicine', name: 'Arjun M.' },
+          { label: 'ATAR 95.00', name: 'Rohan Pillai' },
+          { label: '120+ Students', name: 'Supported & Counting' },
+          { label: 'Private School Scholarship', name: 'Sam W.' },
+          { label: 'AMOC Training Squad', name: 'Lucas P.' },
+          { label: 'ATAR 94.30', name: 'Sophie Andreou' },
         ]
         const all = [...items, ...items]
         return (
