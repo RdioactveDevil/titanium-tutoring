@@ -9,6 +9,36 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Middle School Tutoring (Years 7–9)',
+  description: 'Middle school tutoring for Years 7–9. Maths, English, NAPLAN, and selective entry prep — we close the gaps before senior school and set students up to thrive.',
+  url: 'https://www.titaniumtutoring.com.au/programs/middle-school',
+  inLanguage: 'en-AU',
+  provider: {
+    '@type': 'EducationalOrganization',
+    name: 'Titanium Tutoring',
+    url: 'https://www.titaniumtutoring.com.au',
+  },
+  educationalLevel: 'Middle School (Years 7–9)',
+  hasCourseInstance: [
+    {
+      '@type': 'CourseInstance',
+      courseMode: 'online',
+      courseWorkload: 'PT1H',
+    },
+  ],
+}
+
 export default function MiddleSchoolLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  )
 }
