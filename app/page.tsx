@@ -189,7 +189,7 @@ export default function Home() {
               Personalised tutoring — strategy-first, results-driven — for students who refuse to settle.
             </p>
             <div className="hero-actions">
-              <Link href="/contact" className="btn-gold">Book a Trial Session</Link>
+              <Link href="/contact" className="btn-gold">Book a Call</Link>
               <Link href="/programs" className="btn-ghost-light">Explore Programs →</Link>
             </div>
           </div>
@@ -402,7 +402,7 @@ export default function Home() {
           <div className="motto-display">Per Aspera Ad Astra</div>
           <p className="motto-translation">&ldquo;Through hardships, to the stars.&rdquo;</p>
           <p className="motto-sub">The principle behind everything we do</p>
-          <Link href="/contact" className="btn-gold">Start With a Trial</Link>
+          <Link href="/contact" className="btn-gold">Book a Call</Link>
         </div>
       </div>
     </>
