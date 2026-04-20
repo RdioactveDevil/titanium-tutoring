@@ -4,10 +4,10 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 
 const programs = [
-  'Primary School',
-  'Middle School',
-  'High School',
-  'Medical School Admissions',
+  { label: 'Primary School', href: '/programs/primary-school' },
+  { label: 'Middle School', href: '/programs/middle-school' },
+  { label: 'High School', href: '/programs/high-school' },
+  { label: 'Medical School Admissions', href: '/programs/medical-school-admissions' },
 ]
 
 export default function Nav() {
@@ -18,6 +18,7 @@ export default function Nav() {
 
   const close = () => { setMenuOpen(false); setProgOpen(false) }
   const active = (href: string) => path === href ? 'active' : ''
+  const activePrograms = path === '/programs' || path.startsWith('/programs/') ? 'active' : ''
 
   const handleEnter = () => {
     if (leaveTimer.current) clearTimeout(leaveTimer.current)
@@ -43,13 +44,13 @@ export default function Nav() {
                 onMouseEnter={handleEnter}
                 onMouseLeave={handleLeave}
               >
-                <Link href="/programs" className={active('/programs')} style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+                <Link href="/programs" className={activePrograms} style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>
                   Programs <span style={{ fontSize: 9, opacity: 0.7 }}>▼</span>
                 </Link>
                 {progOpen && (
                   <div className="nav-dropdown">
                     {programs.map(p => (
-                      <Link key={p} href="/programs" className="nav-dropdown-item" onClick={close}>{p}</Link>
+                      <Link key={p.href} href={p.href} className={`nav-dropdown-item${path === p.href ? ' active' : ''}`} onClick={close}>{p.label}</Link>
                     ))}
                   </div>
                 )}
@@ -67,9 +68,9 @@ export default function Nav() {
 
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
         <Link href="/" className={active('/')} onClick={close}>Home</Link>
-        <Link href="/programs" className={active('/programs')} onClick={close}>Programs</Link>
+        <Link href="/programs" className={activePrograms} onClick={close}>Programs</Link>
         {programs.map(p => (
-          <Link key={p} href="/programs" className="mobile-sub" onClick={close}>{p}</Link>
+          <Link key={p.href} href={p.href} className={`mobile-sub${path === p.href ? ' active' : ''}`} onClick={close}>{p.label}</Link>
         ))}
         <Link href="/about" className={active('/about')} onClick={close}>About</Link>
         <Link href="/results" className={active('/results')} onClick={close}>Results</Link>
