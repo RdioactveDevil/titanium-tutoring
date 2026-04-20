@@ -414,7 +414,7 @@ In `app/contact/page.tsx`, find the `<div className="contact-info-list">` block 
             <div style={{ marginTop: 28, padding: 24, background: 'var(--paper-raise)', borderRadius: 4, border: '1px solid var(--rule)' }}>
               <span className="eyebrow" style={{ marginBottom: 8 }}>Direct</span>
               <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--navy)' }}>+61 456 753 747</div>
-              <div style={{ fontSize: 15, color: 'var(--ink-2)', marginTop: 2 }}>admin@titaniumtutoring.com</div>
+              <div style={{ fontSize: 15, color: 'var(--ink-2)', marginTop: 2 }}>contact@titaniumtutoring.com</div>
               <div style={{ height: 1, background: 'var(--rule)', margin: '16px 0' }} />
               <span className="eyebrow" style={{ marginBottom: 8 }}>Locations</span>
               <div style={{ fontSize: 14, color: 'var(--ink-2)' }}>South Australia · Victoria · Online Australia-wide</div>
