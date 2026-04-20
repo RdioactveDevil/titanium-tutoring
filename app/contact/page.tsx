@@ -13,7 +13,7 @@ export default function Contact() {
     setFormStatus('submitting')
     const form = e.currentTarget
     const data = new FormData(form)
-    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID
+    const formspreeId = (process.env.NEXT_PUBLIC_FORMSPREE_ID ?? '').trim()
     if (!formspreeId) {
       console.error('NEXT_PUBLIC_FORMSPREE_ID is not set — form submissions will not be delivered.')
       setFormStatus('error')
@@ -28,11 +28,14 @@ export default function Contact() {
       if (res.ok) {
         router.push('/contact/thank-you')
       } else {
-        const body = await res.json().catch(() => ({}))
+        const text = await res.text().catch(() => '')
+        let body: unknown = {}
+        try { body = JSON.parse(text) } catch { body = { _raw: text } }
         console.error('Formspree submission failed', res.status, body)
         setFormStatus('error')
       }
-    } catch {
+    } catch (err) {
+      console.error('Formspree fetch threw an exception', err)
       setFormStatus('error')
     }
   }
