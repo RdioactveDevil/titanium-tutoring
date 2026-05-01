@@ -40,6 +40,7 @@ export default function Footer() {
           <Link href="/results">Testimonials</Link>
           <Link href="/results">In the News</Link>
           <Link href="/contact">Get in Touch</Link>
+          <a href="https://www.gradefarm.com.au" target="_blank" rel="noopener noreferrer" style={{ marginTop: 8 }}>GradeFarm ↗</a>
         </div>
         <div className="footer-col">
           <span className="footer-col-title">Contact</span>

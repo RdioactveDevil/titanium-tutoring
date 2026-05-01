@@ -379,6 +379,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* GRADEFARM SPOTLIGHT */}
+      <section className="gf-spotlight">
+        <div className="gf-spotlight-inner">
+          <div>
+            <span className="gf-eyebrow">Also from Titanium Tutoring</span>
+            <div className="gf-wordmark">gradefarm<em>.</em></div>
+            <p className="gf-headline">The Study Platform That Adapts to You</p>
+            <p className="gf-desc">gradefarm. learns what your student struggles with and keeps drilling until they don&apos;t. Built on the same principles as our tutoring sessions — adaptive, personalised, and free to start.</p>
+            <div className="gf-pills">
+              <span className="gf-pill">Adaptive Practice</span>
+              <span className="gf-pill">VCE &amp; SACE Subjects</span>
+              <span className="gf-pill">Built for Australia</span>
+              <span className="gf-pill">Free to Start</span>
+            </div>
+            <div className="gf-actions">
+              <a href="https://www.gradefarm.com.au" target="_blank" rel="noopener noreferrer" className="gf-btn-primary">Try GradeFarm Free →</a>
+              <a href="https://www.gradefarm.com.au" target="_blank" rel="noopener noreferrer" className="gf-btn-ghost">gradefarm.com.au ↗</a>
+            </div>
+          </div>
+          <div className="gf-card-wrap">
+            <div className="gf-card">
+              <div className="gf-card-header">
+                <span className="gf-card-subject">Organic Chemistry</span>
+                <span className="gf-card-priority">🔥 Priority</span>
+              </div>
+              <p className="gf-card-q">What is the IUPAC name for CH₃CH₂CH₂COOH?</p>
+              <div className="gf-card-options">
+                <div className="gf-card-option gf-correct">
+                  <span className="gf-card-option-letter">A</span>
+                  <span className="gf-card-option-text">Butanoic acid</span>
+                </div>
+                <div className="gf-card-option">
+                  <span className="gf-card-option-letter">B</span>
+                  <span className="gf-card-option-text">Propanoic acid</span>
+                </div>
+                <div className="gf-card-option">
+                  <span className="gf-card-option-letter">C</span>
+                  <span className="gf-card-option-text">Pentanoic acid</span>
+                </div>
+                <div className="gf-card-option">
+                  <span className="gf-card-option-letter">D</span>
+                  <span className="gf-card-option-text">Ethanoic acid</span>
+                </div>
+              </div>
+              <div className="gf-card-footer">
+                <span className="gf-card-brand">gradefarm · by Titanium Tutoring</span>
+                <span className="gf-card-streak">🔥 3 streak</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <section className="testimonials">
         <div className="testimonials-inner">
