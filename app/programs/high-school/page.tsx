@@ -1,10 +1,86 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
 import { testimonials } from '@/app/data/testimonials'
 
+const subjects = [
+  {
+    key: 'Methods',
+    title: 'VCE / SACE Mathematical Methods',
+    desc: 'Functions, calculus, probability and statistics — delivered in the exact sequence of the VCAA and SACE study designs. Every topic is taught with conceptual understanding first, then applied to the past-exam question patterns that actually appear on test day.',
+    points: [
+      'Functions, relations and graphs',
+      'Differential calculus — chain, product and quotient rules',
+      'Integral calculus and area under curves',
+      'Discrete and continuous probability distributions',
+      'SAC strategy and mock exam debrief',
+      'Last-six-years exam question drilling',
+    ],
+  },
+  {
+    key: 'Specialist',
+    title: 'VCE / SACE Specialist Mathematics',
+    desc: "The most demanding subject on the ATAR scale. Our Specialist coaching targets the exact question types that separate a 35 from a 45 — with the conceptual depth that holds under exam-room pressure, not just in comfortable practice sessions.",
+    points: [
+      'Complex numbers and argument-form algebra',
+      'Vectors and vector calculus',
+      'Mechanics — kinematics and dynamics',
+      'Differential equations — first and second order',
+      'Statistical inference and hypothesis testing',
+      'Exam-style extended response technique',
+    ],
+  },
+  {
+    key: 'English',
+    title: 'VCE / SACE English',
+    desc: 'Text response, analytical essays, persuasive writing, and oral presentation. We teach the paragraph and essay structures that examiners explicitly reward at each grade boundary — not generic writing advice, but the specific moves that lift a B+ to an A.',
+    points: [
+      'Text response essay structure and analysis',
+      'Language analysis — tone, technique, connotation',
+      'Persuasive and argumentative writing',
+      'Comparative essay technique (VCE)',
+      'Creative writing and context tasks',
+      'Oral presentation and delivery coaching',
+    ],
+  },
+  {
+    key: 'Chemistry',
+    title: 'VCE / SACE Chemistry',
+    desc: 'From atomic theory to organic chemistry, our Chemistry coaching builds genuine conceptual understanding alongside the calculation technique and lab report writing that top marks require — every topic mapped to the study design.',
+    points: [
+      'Atomic structure, bonding and periodicity',
+      'Acids, bases and pH calculations',
+      'Chemical equilibrium and Le Chatelier\'s principle',
+      'Organic chemistry — functional groups and polymers',
+      'Electrochemistry and galvanic cells',
+      'Quantitative analysis and stoichiometry',
+    ],
+  },
+]
+
+const curricula = [
+  {
+    state: 'Victoria',
+    cert: 'VCE',
+    desc: 'Victorian Certificate of Education. We coach Year 11 and 12 students from their first SAC through to the final exam, with study score targets in every subject.',
+    points: ['Mathematical Methods & Specialist Maths', 'VCE English & Literature', 'General Achievement Test (GAT)', 'SAC strategy, mock exams & deep debrief', 'Selective entry — Melbourne High, Mac.Rob, Suzanne Cory'],
+    cta: 'Book VCE Tutoring',
+    variant: 'navy',
+  },
+  {
+    state: 'South Australia',
+    cert: 'SACE',
+    desc: "South Australian Certificate of Education. Stage 1 and Stage 2, with full ATAR coaching to the SACE Board's Performance Standards from lesson one.",
+    points: ['Mathematical Methods & Specialist Maths', 'SACE English & Essential English', 'Research Project (Personal Interest Project)', 'Performance Standards & marking rubric mastery', "Scholarship prep for Adelaide's top schools"],
+    cta: 'Book SACE Tutoring',
+    variant: 'cream',
+  },
+]
+
 export default function HighSchool() {
+  const [activeSubject, setActiveSubject] = useState(0)
+
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
@@ -21,34 +97,6 @@ export default function HighSchool() {
     document.querySelectorAll('.fade-in,.slide-left,.slide-right').forEach(el => obs.observe(el))
     return () => obs.disconnect()
   }, [])
-
-  const subjects = [
-    { n: '01', title: 'VCE / SACE Mathematical Methods', desc: 'Functions, calculus, probability, and statistics. We use the Pólya framework on every topic — not just drilling worked examples but building genuine understanding.' },
-    { n: '02', title: 'VCE / SACE Specialist Mathematics', desc: "The hardest subject on the ATAR scale. We've coached Specialist students from a C to a 40+ study score by targeting the exact question types that discriminate at the top." },
-    { n: '03', title: 'VCE / SACE English', desc: 'Text response, analytical essays, persuasive writing, and oral preparation. We teach the paragraph and essay structures that examiners explicitly reward at each grade boundary.' },
-    { n: '04', title: 'GAT & Research Project', desc: 'GAT preparation for VCE students and Personal Interest Project coaching for SACE Stage 2. Written argument, source analysis, and extended response technique.' },
-    { n: '05', title: 'Year 10 Bridging & Acceleration', desc: 'Targeted at Year 10 students moving into VCE or SACE — we identify gaps, introduce senior-level thinking early, and make the Step 1 transition seamless.' },
-    { n: '06', title: 'Selective Entry (Years 9–10)', desc: 'Coaching for selective school entry exams at the Year 9/10 level — HAST, EduTest, and school-specific written tasks. Abstract reasoning, verbal and quantitative.' },
-  ]
-
-  const curricula = [
-    {
-      state: 'Victoria',
-      cert: 'VCE',
-      desc: 'Victorian Certificate of Education. We coach Year 11 and 12 students from their first SAC through to the final exam, with study score targets in every subject.',
-      points: ['Mathematical Methods & Specialist Maths', 'VCE English & Literature', 'General Achievement Test (GAT)', 'SAC strategy, mock exams & deep debrief', 'Selective entry — Melbourne High, Mac.Rob, Suzanne Cory'],
-      cta: 'Book VCE Tutoring',
-      variant: 'navy',
-    },
-    {
-      state: 'South Australia',
-      cert: 'SACE',
-      desc: "South Australian Certificate of Education. Stage 1 and Stage 2, with full ATAR coaching to the SACE Board's Performance Standards from lesson one.",
-      points: ['Mathematical Methods & Specialist Maths', 'SACE English & Essential English', 'Research Project (Personal Interest Project)', 'Performance Standards & marking rubric mastery', "Scholarship prep for Adelaide's top schools"],
-      cta: 'Book SACE Tutoring',
-      variant: 'cream',
-    },
-  ]
 
   const namedTestimonials = testimonials.filter(t => (t.cat === 'atar' || t.cat === 'selective' || t.cat === 'scholarship') && t.name !== 'Undisclosed')
   const schemaReviews = namedTestimonials.slice(0, 5).map(t => ({
@@ -72,7 +120,7 @@ export default function HighSchool() {
     '@context': 'https://schema.org',
     '@type': 'Course',
     name: 'High School Tutoring Program',
-    description: 'VCE and SACE coaching for Years 10–12. Personalised tutoring in Mathematical Methods, Specialist Mathematics, English, and GAT preparation to reach your ATAR target.',
+    description: 'VCE and SACE coaching for Years 10–12. Personalised tutoring in Mathematical Methods, Specialist Mathematics, English, and Chemistry to reach your ATAR target.',
     url: 'https://titaniumtutoring.com.au/programs/high-school',
     provider: {
       '@type': 'Organization',
@@ -80,7 +128,7 @@ export default function HighSchool() {
       url: 'https://titaniumtutoring.com.au',
     },
     educationalLevel: 'High School (Years 10–12)',
-    teaches: ['VCE Mathematical Methods', 'VCE Specialist Mathematics', 'SACE Mathematical Methods', 'VCE English', 'SACE English', 'GAT Preparation', 'Selective Entry Coaching'],
+    teaches: ['VCE Mathematical Methods', 'VCE Specialist Mathematics', 'SACE Mathematical Methods', 'VCE English', 'SACE English', 'VCE Chemistry', 'SACE Chemistry'],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
@@ -90,6 +138,8 @@ export default function HighSchool() {
     },
     review: schemaReviews,
   }
+
+  const panel = subjects[activeSubject]
 
   return (
     <>
@@ -139,17 +189,30 @@ export default function HighSchool() {
           <div className="section-header fade-in">
             <span className="eyebrow">What We Teach</span>
             <h2 className="section-title">Subjects & Focus Areas</h2>
-            <p className="lead" style={{ marginTop: 14 }}>From core curriculum subjects to selective entry and exam strategy — every area delivered with the same personalised, results-focused approach.</p>
+            <p className="lead" style={{ marginTop: 14 }}>Select a subject to see exactly what we cover and how we coach it.</p>
             <div className="section-rule" />
           </div>
-          <div className="services-grid">
+          <div className="subject-tabs">
             {subjects.map((s, i) => (
-              <div className="service-card fade-in" key={i} data-delay={`${i * 70}`}>
-                <span className="service-num">{s.n}</span>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-              </div>
+              <button
+                key={s.key}
+                className={`subject-tab-btn${activeSubject === i ? ' active' : ''}`}
+                onClick={() => setActiveSubject(i)}
+              >
+                {s.key}
+              </button>
             ))}
+          </div>
+          <div className="subject-panel">
+            <h3 className="subject-panel-title">{panel.title}</h3>
+            <p className="subject-panel-desc">{panel.desc}</p>
+            <span className="subject-panel-label">What We Cover</span>
+            <ul className="subject-panel-points">
+              {panel.points.map(pt => (
+                <li key={pt}>{pt}</li>
+              ))}
+            </ul>
+            <Link href="/contact" className="btn-navy-sm">Book a Trial Session →</Link>
           </div>
         </div>
       </section>

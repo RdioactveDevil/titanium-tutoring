@@ -1,10 +1,73 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
 import { testimonials } from '@/app/data/testimonials'
 
+const subjects = [
+  {
+    key: 'Maths',
+    title: 'Mathematics',
+    desc: 'Number, operations, fractions, measurement, geometry, and early algebra — taught with genuine conceptual understanding, not just procedure drilling. Every session is personalised to the student\'s current year level and the specific gaps we find in our initial assessment.',
+    points: [
+      'Number bonds, place value and counting strategies',
+      'Multiplication, division and fractions',
+      'Decimals, percentages and ratios',
+      'Measurement — length, area, volume and time',
+      'Early algebra and pattern recognition',
+      'Geometry and spatial reasoning',
+    ],
+  },
+  {
+    key: 'English',
+    title: 'English',
+    desc: 'From phonics and early reading through to structured paragraph and essay writing — we develop the literacy skills that underpin every subject. Teaching is tailored to exactly where each student is in the Australian Curriculum, then accelerated from there.',
+    points: [
+      'Phonics and reading fluency',
+      'Vocabulary and comprehension strategies',
+      'Sentence and paragraph construction',
+      'Narrative and creative writing',
+      'Persuasive and informative text types',
+      'Spelling, grammar and punctuation',
+    ],
+  },
+  {
+    key: 'NAPLAN',
+    title: 'NAPLAN Preparation',
+    desc: 'Years 3 and 5 NAPLAN in Numeracy and Literacy. We drill every question type, build time awareness, and ensure test day holds no surprises — so students walk in with confidence and perform to their actual ability, not their exam anxiety.',
+    points: [
+      'Numeracy — calculator and non-calculator formats',
+      'Reading — comprehension and inference questions',
+      'Writing — narrative and persuasive prompts',
+      'Language conventions — grammar, spelling, punctuation',
+      'Timed practice under real test conditions',
+      'Weak-area identification and targeted drilling',
+    ],
+  },
+  {
+    key: 'Selective Entry',
+    title: 'Selective Entry & Scholarship Coaching',
+    desc: 'Early preparation for HAST and private school scholarship exams from Year 5 or 6. We coach abstract reasoning, quantitative thinking, verbal reasoning, and written expression to the specific format of each exam — so nothing on test day is unfamiliar.',
+    points: [
+      'Abstract and non-verbal reasoning',
+      'Quantitative and mathematical reasoning',
+      'Verbal reasoning and vocabulary',
+      'Written expression tasks',
+      'EduTest and HAST format familiarisation',
+      'Time management and exam technique',
+    ],
+  },
+]
+
+const yearGroups = [
+  { years: 'Years 1–2', label: 'Early Foundation', points: ['Number bonds & counting strategies', 'Phonics and basic reading fluency', 'Handwriting and sentence construction', 'Listening and comprehension skills'] },
+  { years: 'Years 3–4', label: 'Core Skills', points: ['Multiplication, division & fractions', 'NAPLAN Year 3 preparation', 'Paragraph writing & text types', 'Reading comprehension strategies'] },
+  { years: 'Years 5–6', label: 'Acceleration', points: ['Early algebra and geometry', 'NAPLAN Year 5 preparation', 'Essay structure and extended writing', 'Selective entry & scholarship readiness'] },
+]
+
 export default function PrimarySchool() {
+  const [activeSubject, setActiveSubject] = useState(0)
+
   useEffect(() => {
     const obs = new IntersectionObserver(
       (entries) => {
@@ -21,18 +84,6 @@ export default function PrimarySchool() {
     document.querySelectorAll('.fade-in,.slide-left,.slide-right').forEach(el => obs.observe(el))
     return () => obs.disconnect()
   }, [])
-
-  const subjects = [
-    { n: '01', title: 'Core Acceleration', desc: 'Number, operations, fractions, and early algebra alongside phonics, reading comprehension, vocabulary, and structured writing — all personalised to the year level and the individual student.' },
-    { n: '02', title: 'NAPLAN Preparation', desc: 'Years 3 and 5 NAPLAN coaching in Numeracy and Literacy. We drill every question style, build time awareness, and ensure test day holds no surprises.' },
-    { n: '03', title: 'Selective Entry & Scholarship Coaching', desc: 'Early preparation for the HAST and scholarship exams from Year 5 or 6 — abstract reasoning, quantitative thinking, and written expression coached to the specific exam format.' },
-  ]
-
-  const yearGroups = [
-    { years: 'Years 1–2', label: 'Early Foundation', points: ['Number bonds & counting strategies', 'Phonics and basic reading fluency', 'Handwriting and sentence construction', 'Listening and comprehension skills'] },
-    { years: 'Years 3–4', label: 'Core Skills', points: ['Multiplication, division & fractions', 'NAPLAN Year 3 preparation', 'Paragraph writing & text types', 'Reading comprehension strategies'] },
-    { years: 'Years 5–6', label: 'Acceleration', points: ['Early algebra and geometry', 'NAPLAN Year 5 preparation', 'Essay structure and extended writing', 'Selective entry & scholarship readiness'] },
-  ]
 
   const namedTestimonials = testimonials.filter(t => (t.cat === 'naplan' || t.cat === 'scholarship') && t.name !== 'Undisclosed')
   const schemaReviews = namedTestimonials.slice(0, 5).map(t => ({
@@ -74,6 +125,8 @@ export default function PrimarySchool() {
     },
     review: schemaReviews,
   }
+
+  const panel = subjects[activeSubject]
 
   return (
     <>
@@ -121,17 +174,30 @@ export default function PrimarySchool() {
           <div className="section-header fade-in">
             <span className="eyebrow">What We Teach</span>
             <h2 className="section-title">Subjects & Focus Areas</h2>
-            <p className="lead" style={{ marginTop: 14 }}>Every session is personalised. Below are the core areas we cover across the primary years.</p>
+            <p className="lead" style={{ marginTop: 14 }}>Select a subject to see exactly what we cover and how we coach it.</p>
             <div className="section-rule" />
           </div>
-          <div className="services-grid">
+          <div className="subject-tabs">
             {subjects.map((s, i) => (
-              <div className="service-card fade-in" key={i} data-delay={`${i * 70}`}>
-                <span className="service-num">{s.n}</span>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-              </div>
+              <button
+                key={s.key}
+                className={`subject-tab-btn${activeSubject === i ? ' active' : ''}`}
+                onClick={() => setActiveSubject(i)}
+              >
+                {s.key}
+              </button>
             ))}
+          </div>
+          <div className="subject-panel">
+            <h3 className="subject-panel-title">{panel.title}</h3>
+            <p className="subject-panel-desc">{panel.desc}</p>
+            <span className="subject-panel-label">What We Cover</span>
+            <ul className="subject-panel-points">
+              {panel.points.map(pt => (
+                <li key={pt}>{pt}</li>
+              ))}
+            </ul>
+            <Link href="/contact" className="btn-navy-sm">Book a Trial Session →</Link>
           </div>
         </div>
       </section>

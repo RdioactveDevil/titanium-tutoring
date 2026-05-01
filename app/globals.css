@@ -240,6 +240,25 @@ nav{position:sticky;top:0;left:0;right:0;z-index:100;height:var(--nav-h);backgro
 .service-link-hint{display:inline-block;margin-top:14px;font-size:13px;font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.08em;color:var(--gold-600);transition:color 200ms}
 .service-card--link:hover .service-link-hint{color:var(--navy)}
 
+/* SUBJECT TABS */
+.subject-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:32px}
+.subject-tab-btn{padding:10px 26px;border:2px solid var(--navy);border-radius:2px;background:transparent;color:var(--navy);font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.08em;font-size:13px;cursor:pointer;transition:background 180ms,color 180ms;line-height:1}
+.subject-tab-btn:hover{background:var(--navy);color:var(--white)}
+.subject-tab-btn.active{background:var(--navy);color:var(--gold)}
+.subject-panel{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:44px 52px;box-shadow:var(--shadow-card);position:relative;overflow:hidden}
+.subject-panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.subject-panel-title{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.04em;font-size:20px;color:var(--navy);margin-bottom:14px;line-height:1.2}
+.subject-panel-desc{font-size:15px;line-height:1.65;color:var(--ink-2);margin:0 0 28px}
+.subject-panel-label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.1em;font-size:11px;color:var(--gold-600);margin-bottom:14px;display:block}
+.subject-panel-points{display:grid;grid-template-columns:1fr 1fr;gap:8px 40px;margin-bottom:32px}
+.subject-panel-points li{font-size:14px;line-height:1.5;color:var(--ink-2);list-style:none;padding-left:20px;position:relative}
+.subject-panel-points li::before{content:'✓';position:absolute;left:0;color:var(--gold-600);font-weight:700}
+@media(max-width:768px){
+  .subject-panel{padding:32px 24px}
+  .subject-panel-points{grid-template-columns:1fr}
+  .subject-tab-btn{font-size:12px;padding:9px 18px}
+}
+
 /* POLYA METHOD */
 .polya{background:var(--paper);padding:88px 5%}
 .polya-inner{max-width:var(--content-max);margin:0 auto}
