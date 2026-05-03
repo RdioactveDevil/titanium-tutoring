@@ -455,6 +455,27 @@ footer{background:var(--navy);padding:56px 5% 32px;border-top:1px solid rgba(243
 .footer-col a:hover{color:var(--gold)}
 .footer-bottom{max-width:var(--content-max);margin:0 auto;padding-top:20px;border-top:1px solid rgba(243,190,67,0.15);display:flex;justify-content:space-between;font-size:12px;color:rgba(250,246,238,0.4);flex-wrap:wrap;gap:8px}
 
+/* MEDICAL SPLIT PANEL */
+.med-split{background:var(--white);padding:88px 5%}
+.med-split-inner{max-width:var(--content-max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.med-split-photo{border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-lift);position:relative}
+.med-split-img{width:100%;height:auto;display:block;object-fit:cover;border-radius:var(--r-md)}
+.med-split-content{display:flex;flex-direction:column;gap:0}
+.med-split-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:0}
+.med-split-list li{font-size:15px;line-height:1.55;color:var(--ink-2);display:flex;align-items:flex-start;gap:10px}
+@media(max-width:900px){.med-split-inner{grid-template-columns:1fr;gap:40px}}
+@media(max-width:768px){.med-split{padding:56px 5%}}
+
+/* UNIVERSITY LOGOS */
+.uni-logos{background:var(--paper-raise);padding:64px 5%;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.uni-logos-inner{max-width:var(--content-max);margin:0 auto;text-align:center}
+.uni-logos-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:32px 48px;margin-top:8px}
+.uni-logo-item{display:flex;align-items:center;justify-content:center;opacity:0.55;filter:grayscale(100%);transition:opacity 300ms,filter 300ms}
+.uni-logo-item:hover{opacity:1;filter:grayscale(0%)}
+.uni-logo-img{max-width:140px;max-height:56px;width:auto;height:auto;object-fit:contain;display:block}
+@media(max-width:768px){.uni-logos{padding:48px 5%}.uni-logos-row{gap:24px 32px}.uni-logo-img{max-width:110px;max-height:44px}}
+@media(max-width:480px){.uni-logo-img{max-width:90px;max-height:36px}}
+
 /* ANIMATIONS */
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}

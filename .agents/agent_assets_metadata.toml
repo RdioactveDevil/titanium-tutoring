@@ -1,0 +1,14 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "ISKoKfcIUCw5wBazBtLgk"
+uri = "file://attached_assets/stock_images/medical-student_1.jpg"
+type = "image"
+title = "medical student with stethoscope"
+
+[[outputs]]
+id = "fqEkhjC9V3JJD7ePG3f6s"
+uri = "file://attached_assets/stock_images/medical-student_2.jpg"
+type = "image"
+title = "medical student with stethoscope"

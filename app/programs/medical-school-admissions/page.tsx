@@ -1,5 +1,6 @@
 'use client'
 import { useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
 import { testimonials } from '@/app/data/testimonials'
@@ -121,10 +122,67 @@ export default function MedicalSchoolAdmissions() {
             { label: 'Medical School Admissions' },
           ]} />
           <span className="eyebrow">UCAT · Interviews · Personal Statements</span>
-          <h1 className="section-title">UCAT &amp; Medical School Admissions Coaching | Adelaide &amp; Melbourne</h1>
-          <p className="lead">The path to medicine is competitive at every stage. We coach UCAT performance, interview technique, and personal statement narrative so you present the strongest possible application.</p>
+          <h1 className="section-title">Medical School Admissions Coaching</h1>
         </div>
       </div>
+
+      <section className="uni-logos fade-in">
+        <div className="uni-logos-inner">
+          <div className="section-header" style={{ marginBottom: 28 }}>
+            <span className="eyebrow">Proven Results</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(18px,2.2vw,24px)' }}>Our Students Have Been Accepted To</h2>
+            <div className="section-rule" style={{ margin: '14px auto 0' }} />
+          </div>
+          <div className="uni-logos-row">
+            {[
+              { src: '/universities/adelaide.png', alt: 'University of Adelaide' },
+              { src: '/universities/flinders.png', alt: 'Flinders University' },
+              { src: '/universities/monash.png', alt: 'Monash University' },
+              { src: '/universities/unsw.png', alt: 'UNSW Sydney' },
+              { src: '/universities/melbourne.png', alt: 'University of Melbourne' },
+              { src: '/universities/bond.png', alt: 'Bond University' },
+              { src: '/universities/jcu.png', alt: 'James Cook University' },
+            ].map((logo) => (
+              <div key={logo.alt} className="uni-logo-item">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={140}
+                  height={60}
+                  className="uni-logo-img"
+                  style={{ width: 'auto', height: 'auto' }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="med-split">
+        <div className="med-split-inner">
+          <div className="med-split-photo slide-left">
+            <Image
+              src="/medical/hero.jpg"
+              alt="Medical student preparing for university admissions"
+              width={640}
+              height={480}
+              className="med-split-img"
+              priority
+            />
+          </div>
+          <div className="med-split-content slide-right">
+            <span className="eyebrow">Our Track Record</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(22px,2.8vw,32px)', marginBottom: 16 }}>From Aspiration to Acceptance</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.7, color: 'var(--ink-2)', marginBottom: 20 }}>We have guided students through every stage of medical school admissions — from their first UCAT diagnostic to their final MMI station. Our coaching is built around the specific demands of each university, not a generic playbook.</p>
+            <ul className="med-split-list">
+              <li><span className="split-check">✓</span>One-on-one sessions tailored to your timeline and target schools</li>
+              <li><span className="split-check">✓</span>Full mock UCAT and MMI circuits under realistic conditions</li>
+              <li><span className="split-check">✓</span>Personal statement reviewed against university-specific criteria</li>
+              <li><span className="split-check">✓</span>In-person in Adelaide &amp; Melbourne, or fully online</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <section className="curriculum">
         <div className="curriculum-inner">
