@@ -116,6 +116,19 @@ export default function HighSchool() {
     ],
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'How much does VCE or SACE tutoring in Adelaide and Melbourne cost?', acceptedAnswer: { '@type': 'Answer', text: 'Pricing depends on the subject, year level, and session frequency. We offer a free strategy call where we map out exactly what is needed before any cost discussion.' } },
+      { '@type': 'Question', name: 'What year levels does your High School program cover?', acceptedAnswer: { '@type': 'Answer', text: 'We tutor Year 10, Year 11, and Year 12 students across both VCE (Victoria) and SACE (South Australia). We also accept Year 9 students who want to get ahead before senior school begins.' } },
+      { '@type': 'Question', name: 'Do you offer tutoring in-person in Adelaide and Melbourne, or is it online?', acceptedAnswer: { '@type': 'Answer', text: 'We work with students in Adelaide and Melbourne in-person, and we also offer fully online sessions for students across the rest of Australia.' } },
+      { '@type': 'Question', name: 'How long before exams should we start VCE or SACE tutoring?', acceptedAnswer: { '@type': 'Answer', text: 'Ideally at the start of Year 11 or at minimum the start of Year 12. We regularly take on students mid-year or even in the final term before exams.' } },
+      { '@type': 'Question', name: 'Which VCE and SACE subjects do you tutor?', acceptedAnswer: { '@type': 'Answer', text: 'We cover Mathematical Methods, Specialist Mathematics, English, Literature, Chemistry, Physics, and most other VCE and SACE subjects.' } },
+      { '@type': 'Question', name: 'How do I know if my child is on track to hit their ATAR target?', acceptedAnswer: { '@type': 'Answer', text: 'In our free strategy call, we do a subject-by-subject gap analysis based on their current results and target ATAR. You leave with a written plan showing exactly where marks are being lost and how to recover them.' } },
+    ],
+  }
+
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -145,6 +158,7 @@ export default function HighSchool() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumb items={[
@@ -153,7 +167,7 @@ export default function HighSchool() {
             { label: 'High School' },
           ]} />
           <span className="eyebrow">Years 10–12</span>
-          <h1 className="section-title">High School Program</h1>
+          <h1 className="section-title">VCE &amp; SACE Tutoring in Adelaide &amp; Melbourne | High School Program</h1>
           <p className="lead">VCE and SACE — the two years that determine your ATAR. We coach every subject with the same structured rigour, personalised to your specific exam board, target score, and timeline.</p>
         </div>
       </div>
@@ -243,6 +257,33 @@ export default function HighSchool() {
               <p className="related-card-desc">UCAT coaching, MMI interview prep, and personal statement guidance for aspiring medical students.</p>
               <span className="related-card-link">Explore Medical Admissions →</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="consult-faq">
+        <div className="consult-faq-inner">
+          <div className="section-header fade-in">
+            <span className="eyebrow">Frequently Asked Questions</span>
+            <h2 className="section-title">VCE &amp; SACE Tutoring — Common Questions from Adelaide &amp; Melbourne Parents</h2>
+            <div className="section-rule" />
+          </div>
+          <div className="consult-faq-list">
+            {[
+              { q: 'How much does VCE or SACE tutoring in Adelaide and Melbourne cost?', a: 'Pricing depends on the subject, year level, and session frequency. We offer a free strategy call where we map out exactly what is needed before any cost discussion — so you are never paying for sessions you do not need.' },
+              { q: 'What year levels does your High School program cover?', a: 'We tutor Year 10, Year 11, and Year 12 students across both VCE (Victoria) and SACE (South Australia). We also accept Year 9 students who want to get ahead before senior school begins.' },
+              { q: 'Do you offer tutoring in-person in Adelaide and Melbourne, or is it online?', a: 'We work with students in Adelaide and Melbourne in-person, and we also offer fully online sessions for students across the rest of Australia. The quality of coaching is identical either way.' },
+              { q: 'How long before exams should we start VCE or SACE tutoring?', a: 'Ideally at the start of Year 11 or at minimum the start of Year 12. However, we regularly take on students mid-year or even in the final term before exams — we work with the timeline available and make every session count.' },
+              { q: 'Which VCE and SACE subjects do you tutor?', a: 'We cover Mathematical Methods, Specialist Mathematics, English, Literature, Chemistry, Physics, and most other VCE and SACE subjects. Contact us with your specific subject and we will confirm availability.' },
+              { q: 'How do I know if my child is on track to hit their ATAR target?', a: 'In our free strategy call, we do a subject-by-subject gap analysis based on their current results and target ATAR. You leave with a written plan showing exactly where marks are being lost and how to recover them.' },
+            ].map((f, i) => (
+              <div className="consult-faq-item" key={i}>
+                <div className="consult-faq-q" style={{ cursor: 'default' }}>
+                  <span style={{ fontWeight: 600 }}>{f.q}</span>
+                </div>
+                <div className="consult-faq-a" style={{ display: 'block', paddingTop: 8 }}>{f.a}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

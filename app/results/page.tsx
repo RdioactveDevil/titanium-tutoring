@@ -38,8 +38,8 @@ export default function Results() {
       <div className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow">Proof</span>
-          <h1 className="section-title">Results That Speak</h1>
-          <p className="lead">Real outcomes from real students — ATAR scores, scholarship wins, selective school entries, medical admissions, and national competition results.</p>
+          <h1 className="section-title">Student Results — VCE, SACE, NAPLAN &amp; Selective Entry</h1>
+          <p className="lead">Real outcomes from real students — ATAR scores, scholarship wins, selective school entries, medical admissions, and national competition results. Our students across Adelaide, Melbourne, and online Australia have achieved top VCE results, SACE ATAR scores, NAPLAN improvement, and selective entry outcomes that speak for themselves.</p>
         </div>
       </div>
 
@@ -73,7 +73,7 @@ export default function Results() {
         <div className="news-inner">
           <div className="section-header fade-in">
             <span className="eyebrow">Media Coverage</span>
-            <h2 className="section-title">In the News</h2>
+            <h2 className="section-title">Titanium Tutoring in the News — Adelaide &amp; Melbourne</h2>
             <p className="lead" style={{ marginTop: 14 }}>Independently featured across Australia&apos;s major mastheads — print and digital — on 29 January 2025.</p>
             <div className="section-rule" />
           </div>

@@ -74,6 +74,18 @@ export default function ExamStrategyPage() {
     ],
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What exams does your Exam Strategy program cover?', acceptedAnswer: { '@type': 'Answer', text: 'We cover VCE, SACE, NAPLAN, selective entry exams (HAST, EduTest), and scholarship exams. The core framework is the same — we adapt it to the specific format and mark scheme of your child\'s exam.' } },
+      { '@type': 'Question', name: 'Is Exam Strategy tutoring available for students in Adelaide and Melbourne?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We offer Exam Strategy coaching in person in Adelaide (South Australia) and Melbourne (Victoria), as well as online Australia-wide.' } },
+      { '@type': 'Question', name: 'How much does Exam Strategy coaching cost in Adelaide or Melbourne?', acceptedAnswer: { '@type': 'Answer', text: 'Fees depend on the number and frequency of sessions. Contact us for a free consultation and we will recommend a program based on your student\'s upcoming exams and timeline.' } },
+      { '@type': 'Question', name: 'When is the best time to start exam strategy coaching for VCE or SACE?', acceptedAnswer: { '@type': 'Answer', text: 'Ideally 6–8 weeks before a major exam block. However, even 2–3 sessions of targeted strategy coaching in the final weeks can produce measurable improvements in scores.' } },
+      { '@type': 'Question', name: 'How do I know if my child needs exam strategy coaching?', acceptedAnswer: { '@type': 'Answer', text: 'If your child understands the content but underperforms on test day, struggles to finish exams, or gets anxious under time pressure, exam strategy coaching is likely the highest-leverage intervention.' } },
+    ],
+  }
+
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -101,6 +113,7 @@ export default function ExamStrategyPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumb items={[
@@ -109,7 +122,7 @@ export default function ExamStrategyPage() {
             { label: 'Exam Strategy & Mindset' },
           ]} />
           <span className="eyebrow">All Year Levels</span>
-          <h1 className="section-title">Exam Strategy &amp; Mindset</h1>
+          <h1 className="section-title">Exam Strategy &amp; Mindset Coaching in Adelaide &amp; Melbourne | VCE, SACE &amp; NAPLAN</h1>
           <p className="lead">Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches — and the ones that separate students who know the content from those who score it.</p>
         </div>
       </div>
@@ -185,6 +198,32 @@ export default function ExamStrategyPage() {
               <p className="related-card-desc">UCAT coaching, MMI interview prep, and personal statement guidance for aspiring medical students.</p>
               <span className="related-card-link">Explore Medical Admissions →</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="consult-faq">
+        <div className="consult-faq-inner">
+          <div className="section-header fade-in">
+            <span className="eyebrow">Frequently Asked Questions</span>
+            <h2 className="section-title">Exam Strategy Coaching in Adelaide &amp; Melbourne — Common Questions</h2>
+            <div className="section-rule" />
+          </div>
+          <div className="consult-faq-list">
+            {[
+              { q: 'What exams does your Exam Strategy program cover?', a: 'We cover VCE, SACE, NAPLAN, selective entry exams (HAST, EduTest), and scholarship exams. The core framework is the same — we adapt it to the specific format and mark scheme of your child\'s exam.' },
+              { q: 'Is Exam Strategy tutoring available for students in Adelaide and Melbourne?', a: 'Yes. We offer Exam Strategy coaching in person in Adelaide (South Australia) and Melbourne (Victoria), as well as online Australia-wide.' },
+              { q: 'How much does Exam Strategy coaching cost in Adelaide or Melbourne?', a: 'Fees depend on the number and frequency of sessions. Contact us for a free consultation and we will recommend a program based on your student\'s upcoming exams and timeline.' },
+              { q: 'When is the best time to start exam strategy coaching for VCE or SACE?', a: 'Ideally 6–8 weeks before a major exam block. However, even 2–3 sessions of targeted strategy coaching in the final weeks can produce measurable improvements in scores.' },
+              { q: 'How do I know if my child needs exam strategy coaching?', a: 'If your child understands the content but underperforms on test day, struggles to finish exams, or gets anxious under time pressure, exam strategy coaching is likely the highest-leverage intervention.' },
+            ].map((f, i) => (
+              <div className="consult-faq-item" key={i}>
+                <div className="consult-faq-q" style={{ cursor: 'default' }}>
+                  <span style={{ fontWeight: 600 }}>{f.q}</span>
+                </div>
+                <div className="consult-faq-a" style={{ display: 'block', paddingTop: 8 }}>{f.a}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -92,6 +92,18 @@ export default function NaplanPage() {
     ],
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'How much does NAPLAN tutoring in Adelaide or Melbourne cost?', acceptedAnswer: { '@type': 'Answer', text: 'We offer a free strategy call to assess your child\'s current level and build a tailored preparation plan before any fees are discussed.' } },
+      { '@type': 'Question', name: 'What year levels do you tutor for NAPLAN?', acceptedAnswer: { '@type': 'Answer', text: 'We prepare students for NAPLAN in Years 3, 5, 7, and 9 across Numeracy, Reading, Writing, and Language Conventions.' } },
+      { '@type': 'Question', name: 'Is NAPLAN tutoring available online as well as in Adelaide and Melbourne?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Our NAPLAN preparation is available both in-person in Adelaide and Melbourne and fully online for students across Australia.' } },
+      { '@type': 'Question', name: 'How many weeks of preparation does a student need for NAPLAN?', acceptedAnswer: { '@type': 'Answer', text: 'We recommend a minimum of 8–12 weeks for consistent improvement, though we work with whatever timeline is available and prioritise the domains with the most room to improve.' } },
+      { '@type': 'Question', name: 'Does NAPLAN tutoring in South Australia also cover selective entry preparation?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Many of the skills we build for NAPLAN — reasoning, reading speed, and written expression — directly support selective entry and scholarship exam performance.' } },
+    ],
+  }
+
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -119,6 +131,7 @@ export default function NaplanPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumb items={[
@@ -127,7 +140,7 @@ export default function NaplanPage() {
             { label: 'NAPLAN Preparation' },
           ]} />
           <span className="eyebrow">Years 3, 5, 7 &amp; 9</span>
-          <h1 className="section-title">NAPLAN Preparation</h1>
+          <h1 className="section-title">NAPLAN Tutoring in Adelaide &amp; Melbourne | Years 3, 5, 7 &amp; 9</h1>
           <p className="lead">Numeracy and literacy coaching that builds fundamentals, not last-minute cramming. We prepare students for every NAPLAN year level with structured, personalised sessions — so test day is familiar territory.</p>
         </div>
       </div>
@@ -202,6 +215,32 @@ export default function NaplanPage() {
               <p className="related-card-desc">Time management, stress resilience, and high-stakes exam technique — the skills no textbook teaches.</p>
               <span className="related-card-link">Explore Exam Strategy →</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="consult-faq">
+        <div className="consult-faq-inner">
+          <div className="section-header fade-in">
+            <span className="eyebrow">Frequently Asked Questions</span>
+            <h2 className="section-title">NAPLAN Tutoring in Adelaide &amp; Melbourne — Common Questions</h2>
+            <div className="section-rule" />
+          </div>
+          <div className="consult-faq-list">
+            {[
+              { q: 'How much does NAPLAN tutoring in Adelaide or Melbourne cost?', a: 'We offer a free strategy call to assess your child\'s current level and build a tailored preparation plan before any fees are discussed.' },
+              { q: 'What year levels do you tutor for NAPLAN?', a: 'We prepare students for NAPLAN in Years 3, 5, 7, and 9 across Numeracy, Reading, Writing, and Language Conventions.' },
+              { q: 'Is NAPLAN tutoring available online as well as in Adelaide and Melbourne?', a: 'Yes. Our NAPLAN preparation is available both in-person in Adelaide and Melbourne and fully online for students across Australia.' },
+              { q: 'How many weeks of preparation does a student need for NAPLAN?', a: 'We recommend a minimum of 8–12 weeks for consistent improvement, though we work with whatever timeline is available and prioritise the domains with the most room to improve.' },
+              { q: 'Does NAPLAN tutoring in South Australia also cover selective entry preparation?', a: 'Yes. Many of the skills we build for NAPLAN — reasoning, reading speed, and written expression — directly support selective entry and scholarship exam performance.' },
+            ].map((f, i) => (
+              <div className="consult-faq-item" key={i}>
+                <div className="consult-faq-q" style={{ cursor: 'default' }}>
+                  <span style={{ fontWeight: 600 }}>{f.q}</span>
+                </div>
+                <div className="consult-faq-a" style={{ display: 'block', paddingTop: 8 }}>{f.a}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

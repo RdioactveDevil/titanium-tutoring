@@ -73,6 +73,18 @@ export default function MedicalSchoolAdmissions() {
     ],
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'How much does UCAT coaching in Adelaide or Melbourne cost?', acceptedAnswer: { '@type': 'Answer', text: 'Pricing depends on the number of sessions and whether you are combining UCAT coaching with interview preparation and personal statement guidance. Book a free consultation for a tailored quote.' } },
+      { '@type': 'Question', name: 'Do you offer UCAT tutoring in person in Adelaide and Melbourne?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We offer in-person UCAT and medical admissions coaching in Adelaide (South Australia) and Melbourne (Victoria), as well as fully online sessions.' } },
+      { '@type': 'Question', name: 'What medical schools does your admissions coaching cover?', acceptedAnswer: { '@type': 'Answer', text: 'We coach students applying to Bond University, Monash, UNSW, Flinders, University of Adelaide, and all other Australian medical programs that use the UCAT and MMI interview.' } },
+      { '@type': 'Question', name: 'How early should I start UCAT preparation?', acceptedAnswer: { '@type': 'Answer', text: 'We recommend starting 3–6 months before your UCAT test date. This gives sufficient time to work through all five subtests systematically and run full mock exams in the final weeks.' } },
+      { '@type': 'Question', name: 'Do you offer MMI interview coaching for medical school?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We run full mock MMI circuits covering ethical scenarios, communication tasks, and role plays. Each session is debriefed in detail so you can improve before your real interview.' } },
+    ],
+  }
+
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -100,6 +112,7 @@ export default function MedicalSchoolAdmissions() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumb items={[
@@ -108,7 +121,7 @@ export default function MedicalSchoolAdmissions() {
             { label: 'Medical School Admissions' },
           ]} />
           <span className="eyebrow">UCAT · Interviews · Personal Statements</span>
-          <h1 className="section-title">Medical School Admissions</h1>
+          <h1 className="section-title">UCAT &amp; Medical School Admissions Coaching | Adelaide &amp; Melbourne</h1>
           <p className="lead">The path to medicine is competitive at every stage. We coach UCAT performance, interview technique, and personal statement narrative so you present the strongest possible application.</p>
         </div>
       </div>
@@ -184,6 +197,32 @@ export default function MedicalSchoolAdmissions() {
               <p className="related-card-desc">VCE and SACE coaching. From first SAC to final exam — every subject, every study score target.</p>
               <span className="related-card-link">Explore High School →</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="consult-faq">
+        <div className="consult-faq-inner">
+          <div className="section-header fade-in">
+            <span className="eyebrow">Frequently Asked Questions</span>
+            <h2 className="section-title">UCAT &amp; Medical School Admissions Coaching in Adelaide &amp; Melbourne — Common Questions</h2>
+            <div className="section-rule" />
+          </div>
+          <div className="consult-faq-list">
+            {[
+              { q: 'How much does UCAT coaching in Adelaide or Melbourne cost?', a: 'Pricing depends on the number of sessions and whether you are combining UCAT coaching with interview preparation and personal statement guidance. Book a free consultation for a tailored quote.' },
+              { q: 'Do you offer UCAT tutoring in person in Adelaide and Melbourne?', a: 'Yes. We offer in-person UCAT and medical admissions coaching in Adelaide (South Australia) and Melbourne (Victoria), as well as fully online sessions.' },
+              { q: 'What medical schools does your admissions coaching cover?', a: 'We coach students applying to Bond University, Monash, UNSW, Flinders, University of Adelaide, and all other Australian medical programs that use the UCAT and MMI interview.' },
+              { q: 'How early should I start UCAT preparation?', a: 'We recommend starting 3–6 months before your UCAT test date. This gives sufficient time to work through all five subtests systematically and run full mock exams in the final weeks.' },
+              { q: 'Do you offer MMI interview coaching for medical school?', a: 'Yes. We run full mock MMI circuits covering ethical scenarios, communication tasks, and role plays. Each session is debriefed in detail so you can improve before your real interview.' },
+            ].map((f, i) => (
+              <div className="consult-faq-item" key={i}>
+                <div className="consult-faq-q" style={{ cursor: 'default' }}>
+                  <span style={{ fontWeight: 600 }}>{f.q}</span>
+                </div>
+                <div className="consult-faq-a" style={{ display: 'block', paddingTop: 8 }}>{f.a}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

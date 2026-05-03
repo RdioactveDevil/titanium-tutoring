@@ -178,13 +178,13 @@ export default function Home() {
               Through<br />hardships,<br />
               <em>to the stars.</em>
             </h1>
-            <p className="hero-attr">A team of qualified educators and subject specialists.</p>
+            <p className="hero-attr">Expert VCE, SACE &amp; NAPLAN tutoring in Adelaide and Melbourne.</p>
             <p className="hero-lead">
               Personalised tutoring — strategy-first, results-driven — for students who refuse to settle.
             </p>
             <div className="hero-actions">
               <Link href="/contact" className="btn-gold">Book a Call</Link>
-              <Link href="/programs" className="btn-ghost-light">Explore Programs →</Link>
+              <Link href="/programs" className="btn-ghost-light">Explore Our Tutoring Programs →</Link>
             </div>
           </div>
 

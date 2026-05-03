@@ -159,13 +159,13 @@ export default function Programs() {
   }, [])
 
   const services = [
-    { n: '01', title: 'Selective Entry & Scholarships', desc: 'HAST, Suzanne Cory, Melbourne High, scholarship exams. We have been through these doors and know what the markers want.', href: '/programs/high-school' },
-    { n: '02', title: 'VCE & SACE Mathematics', desc: "Pólya's four-step framework applied to every problem type. Methods, Specialist, General Maths — study scores, not just passes.", href: '/programs/high-school' },
-    { n: '03', title: 'NAPLAN Preparation', desc: 'Numeracy and literacy coaching for Years 3, 5, 7 and 9. We build fundamentals that stick, not last-minute cramming.', href: '/programs/naplan' },
-    { n: '04', title: 'Primary Maths & English', desc: 'Years 1–6. Building confident, curious learners. Strong foundations make every year after easier.', href: '/programs/primary-school' },
-    { n: '05', title: 'Year 7–10 Acceleration', desc: 'Get ahead before VCE or SACE begins. We identify gaps early and close them before they compound.', href: '/programs/middle-school' },
-    { n: '06', title: 'Exam Strategy & Mindset', desc: 'Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches.', href: '/programs/exam-strategy' },
-    { n: '07', title: 'UCAT & Medical School Admissions', desc: 'All five UCAT subtests, MMI interview coaching, personal statement guidance, and application strategy for aspiring medical students.', href: '/programs/medical-school-admissions' },
+    { n: '01', title: 'Selective Entry & Scholarships', desc: 'HAST, Suzanne Cory, Melbourne High, scholarship exams. We have been through these doors and know what the markers want.', href: '/programs/high-school', linkHint: 'Explore our VCE & SACE tutoring program' },
+    { n: '02', title: 'VCE & SACE Mathematics', desc: "Pólya's four-step framework applied to every problem type. Methods, Specialist, General Maths — study scores, not just passes.", href: '/programs/high-school', linkHint: 'See VCE & SACE Mathematics coaching' },
+    { n: '03', title: 'NAPLAN Preparation', desc: 'Numeracy and literacy coaching for Years 3, 5, 7 and 9. We build fundamentals that stick, not last-minute cramming.', href: '/programs/naplan', linkHint: 'See NAPLAN preparation options' },
+    { n: '04', title: 'Primary Maths & English', desc: 'Years 1–6. Building confident, curious learners. Strong foundations make every year after easier.', href: '/programs/primary-school', linkHint: 'Explore our primary school tutoring program' },
+    { n: '05', title: 'Year 7–10 Acceleration', desc: 'Get ahead before VCE or SACE begins. We identify gaps early and close them before they compound.', href: '/programs/middle-school', linkHint: 'Explore our middle school tutoring program' },
+    { n: '06', title: 'Exam Strategy & Mindset', desc: 'Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches.', href: '/programs/exam-strategy', linkHint: 'Explore our exam strategy coaching' },
+    { n: '07', title: 'UCAT & Medical School Admissions', desc: 'All five UCAT subtests, MMI interview coaching, personal statement guidance, and application strategy for aspiring medical students.', href: '/programs/medical-school-admissions', linkHint: 'Explore UCAT & medical admissions coaching' },
   ]
 
   const polyaSteps = [
@@ -246,7 +246,7 @@ export default function Programs() {
                   <span className="service-num">STEP {s.n}</span>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
-                  {s.href && <span className="service-link-hint">Learn more →</span>}
+                  {s.href && <span className="service-link-hint">{s.linkHint} →</span>}
                 </>
               )
               return s.href ? (

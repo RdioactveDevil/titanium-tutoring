@@ -103,6 +103,18 @@ export default function PrimarySchool() {
     ],
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'How much does primary school tutoring in Adelaide or Melbourne cost?', acceptedAnswer: { '@type': 'Answer', text: 'Pricing depends on year level and session frequency. Book a free strategy call and we will outline the right program for your child before any fees are involved.' } },
+      { '@type': 'Question', name: 'What year levels does your Primary School program cover?', acceptedAnswer: { '@type': 'Answer', text: 'We tutor Years 1 through 6 in Maths and English, with specialised coaching for NAPLAN Years 3 and 5, and selective entry preparation from Year 5 onward.' } },
+      { '@type': 'Question', name: 'Do you offer tutoring in-person in Adelaide and Melbourne for primary students?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We offer in-person sessions in Adelaide and Melbourne, as well as fully online tutoring for students elsewhere in Australia.' } },
+      { '@type': 'Question', name: 'How early should my child start NAPLAN tutoring in South Australia or Victoria?', acceptedAnswer: { '@type': 'Answer', text: 'For Year 3 NAPLAN we recommend starting 3–6 months before the test. For Year 5 NAPLAN, starting in Term 1 of the same year gives the best results.' } },
+      { '@type': 'Question', name: 'Can you help prepare my child for selective entry and scholarship exams in Year 5 or 6?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We offer targeted coaching for HAST, EduTest, and private school scholarship exams for students in Year 5 and 6 across South Australia and Victoria.' } },
+    ],
+  }
+
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -132,6 +144,7 @@ export default function PrimarySchool() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumb items={[
@@ -140,7 +153,7 @@ export default function PrimarySchool() {
             { label: 'Primary School' },
           ]} />
           <span className="eyebrow">Years 1–6</span>
-          <h1 className="section-title">Primary School Program</h1>
+          <h1 className="section-title">Primary School Tutoring in Adelaide &amp; Melbourne | Years 1–6</h1>
           <p className="lead">Strong foundations are the difference between a student who keeps up and a student who pulls ahead. We build both — from first principles, at every year level.</p>
         </div>
       </div>
@@ -228,6 +241,32 @@ export default function PrimarySchool() {
               <p className="related-card-desc">UCAT coaching, MMI interview prep, and personal statement guidance for aspiring medical students.</p>
               <span className="related-card-link">Explore Medical Admissions →</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="consult-faq">
+        <div className="consult-faq-inner">
+          <div className="section-header fade-in">
+            <span className="eyebrow">Frequently Asked Questions</span>
+            <h2 className="section-title">Primary School Tutoring in Adelaide &amp; Melbourne — Common Questions</h2>
+            <div className="section-rule" />
+          </div>
+          <div className="consult-faq-list">
+            {[
+              { q: 'How much does primary school tutoring in Adelaide or Melbourne cost?', a: 'Pricing depends on year level and session frequency. Book a free strategy call and we will outline the right program for your child before any fees are involved.' },
+              { q: 'What year levels does your Primary School program cover?', a: 'We tutor Years 1 through 6 in Maths and English, with specialised coaching for NAPLAN Years 3 and 5, and selective entry preparation from Year 5 onward.' },
+              { q: 'Do you offer tutoring in-person in Adelaide and Melbourne for primary students?', a: 'Yes. We offer in-person sessions in Adelaide and Melbourne, as well as fully online tutoring for students elsewhere in Australia.' },
+              { q: 'How early should my child start NAPLAN tutoring in South Australia or Victoria?', a: 'For Year 3 NAPLAN we recommend starting 3–6 months before the test. For Year 5 NAPLAN, starting in Term 1 of the same year gives the best results.' },
+              { q: 'Can you help prepare my child for selective entry and scholarship exams in Year 5 or 6?', a: 'Yes. We offer targeted coaching for HAST, EduTest, and private school scholarship exams for students in Year 5 and 6 across South Australia and Victoria.' },
+            ].map((f, i) => (
+              <div className="consult-faq-item" key={i}>
+                <div className="consult-faq-q" style={{ cursor: 'default' }}>
+                  <span style={{ fontWeight: 600 }}>{f.q}</span>
+                </div>
+                <div className="consult-faq-a" style={{ display: 'block', paddingTop: 8 }}>{f.a}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

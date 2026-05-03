@@ -68,7 +68,37 @@ export default function Contact() {
       q: 'What happens after the call?',
       a: 'You receive a written strategy summary — yours to keep regardless of what you decide. If you choose to move forward, we match your child with the right tutor and begin immediately.'
     },
+    {
+      q: 'How do I know if my child needs a tutor?',
+      a: 'If your child is consistently scoring below where they want to be, struggling to keep up with their class, underperforming on tests relative to their effort, or preparing for a high-stakes exam like NAPLAN, selective entry, or VCE or SACE — tutoring is almost certainly the fastest lever. Book a call and we will give you an honest assessment.'
+    },
+    {
+      q: 'What areas of Adelaide and Melbourne do you serve?',
+      a: 'We serve students across greater Adelaide (including the Hills, Northern, Southern, and Western suburbs) and greater Melbourne (including the Eastern, Northern, and inner suburbs). We also work with students across all of South Australia and Victoria, and nationally online.'
+    },
+    {
+      q: 'Do you offer VCE tutoring and SACE tutoring, or only one curriculum?',
+      a: 'Both. Our tutors are specialists in both the Victorian Certificate of Education (VCE) and the South Australian Certificate of Education (SACE). We coach to the specific study design, performance standards, and exam format of each curriculum.'
+    },
+    {
+      q: 'How quickly can we get started?',
+      a: 'Typically within a week of your strategy call. We match your child with the right tutor based on subject, year level, and learning style — then schedule the first session at a time that suits your family.'
+    },
   ]
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Is there any cost for the strategy call?', acceptedAnswer: { '@type': 'Answer', text: 'None at all. The call is completely complimentary — our way of understanding your child\'s situation properly before recommending anything.' } },
+      { '@type': 'Question', name: 'What will we actually cover on the call?', acceptedAnswer: { '@type': 'Answer', text: 'We listen to where your child is, where they need to be, and what has stood in the way. Then we map out a strategy tailored to them.' } },
+      { '@type': 'Question', name: 'What if we are not in SA or VIC?', acceptedAnswer: { '@type': 'Answer', text: 'No issue. We work with students across Australia — all sessions are available online.' } },
+      { '@type': 'Question', name: 'How do I know if my child needs a tutor?', acceptedAnswer: { '@type': 'Answer', text: 'If your child is consistently scoring below where they want to be, struggling to keep up, or preparing for a high-stakes exam like NAPLAN, selective entry, or VCE/SACE — tutoring is almost certainly the fastest lever.' } },
+      { '@type': 'Question', name: 'What areas of Adelaide and Melbourne do you serve?', acceptedAnswer: { '@type': 'Answer', text: 'We serve students across greater Adelaide and greater Melbourne, as well as all of South Australia and Victoria, and nationally online.' } },
+      { '@type': 'Question', name: 'Do you offer VCE tutoring and SACE tutoring, or only one curriculum?', acceptedAnswer: { '@type': 'Answer', text: 'Both. Our tutors are specialists in both VCE and SACE, coaching to the specific study design and exam format of each curriculum.' } },
+      { '@type': 'Question', name: 'How quickly can we get started?', acceptedAnswer: { '@type': 'Answer', text: 'Typically within a week of your strategy call. We match your child with the right tutor and schedule the first session at a time that suits your family.' } },
+    ],
+  }
 
   const benefits = [
     {
@@ -95,6 +125,7 @@ export default function Contact() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       {/* ============================================================
           HERO — cream/paper, centered, serif-led
           ============================================================ */}

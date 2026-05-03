@@ -129,6 +129,18 @@ export default function MiddleSchool() {
     ],
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'How much does middle school tutoring in Adelaide or Melbourne cost?', acceptedAnswer: { '@type': 'Answer', text: 'Costs vary by subject and frequency. We offer a free consultation to assess your child\'s needs and match the right program before any fees are discussed.' } },
+      { '@type': 'Question', name: 'What year levels does your Middle School program cover?', acceptedAnswer: { '@type': 'Answer', text: 'We tutor Years 7, 8, and 9 across Maths, English, NAPLAN, selective entry, and scholarship preparation in South Australia and Victoria.' } },
+      { '@type': 'Question', name: 'Do you offer online tutoring for middle school students outside Adelaide and Melbourne?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. All our middle school programs are available online, and the coaching is identical in quality to our in-person sessions.' } },
+      { '@type': 'Question', name: 'When should my child start tutoring to prepare for VCE or SACE?', acceptedAnswer: { '@type': 'Answer', text: 'Ideally in Year 8 or 9. Starting early means we can close gaps before they compound, and students arrive at Year 10 ready to accelerate rather than catch up.' } },
+      { '@type': 'Question', name: 'Can you help with NAPLAN in South Australia and Victoria?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We prepare Years 7 and 9 students for NAPLAN Numeracy and Literacy across both states, with structured practice sessions and diagnostic testing.' } },
+    ],
+  }
+
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -158,6 +170,7 @@ export default function MiddleSchool() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="page-hero">
         <div className="page-hero-inner">
           <Breadcrumb items={[
@@ -166,7 +179,7 @@ export default function MiddleSchool() {
             { label: 'Middle School' },
           ]} />
           <span className="eyebrow">Years 7–9</span>
-          <h1 className="section-title">Middle School Program</h1>
+          <h1 className="section-title">Middle School Tutoring in Adelaide &amp; Melbourne | Years 7–9</h1>
           <p className="lead">The middle years are where gaps open up quietly. We find them early, close them systematically, and set students up so Year 10 and beyond feel manageable — not overwhelming.</p>
         </div>
       </div>
@@ -254,6 +267,32 @@ export default function MiddleSchool() {
               <p className="related-card-desc">UCAT coaching, MMI interview prep, and personal statement guidance for aspiring medical students.</p>
               <span className="related-card-link">Explore Medical Admissions →</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="consult-faq">
+        <div className="consult-faq-inner">
+          <div className="section-header fade-in">
+            <span className="eyebrow">Frequently Asked Questions</span>
+            <h2 className="section-title">Middle School Tutoring in Adelaide &amp; Melbourne — Common Questions</h2>
+            <div className="section-rule" />
+          </div>
+          <div className="consult-faq-list">
+            {[
+              { q: 'How much does middle school tutoring in Adelaide or Melbourne cost?', a: 'Costs vary by subject and frequency. We offer a free consultation to assess your child\'s needs and match the right program before any fees are discussed.' },
+              { q: 'What year levels does your Middle School program cover?', a: 'We tutor Years 7, 8, and 9 across Maths, English, NAPLAN, selective entry, and scholarship preparation in South Australia and Victoria.' },
+              { q: 'Do you offer online tutoring for middle school students outside Adelaide and Melbourne?', a: 'Yes. All our middle school programs are available online, and the coaching is identical in quality to our in-person sessions.' },
+              { q: 'When should my child start tutoring to prepare for VCE or SACE?', a: 'Ideally in Year 8 or 9. Starting early means we can close gaps before they compound, and students arrive at Year 10 ready to accelerate rather than catch up.' },
+              { q: 'Can you help with NAPLAN in South Australia and Victoria?', a: 'Yes. We prepare Years 7 and 9 students for NAPLAN Numeracy and Literacy across both states, with structured practice sessions and diagnostic testing.' },
+            ].map((f, i) => (
+              <div className="consult-faq-item" key={i}>
+                <div className="consult-faq-q" style={{ cursor: 'default' }}>
+                  <span style={{ fontWeight: 600 }}>{f.q}</span>
+                </div>
+                <div className="consult-faq-a" style={{ display: 'block', paddingTop: 8 }}>{f.a}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
