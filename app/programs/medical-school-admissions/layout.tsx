@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Medical School Admissions Coaching | Titanium Tutoring' },
-  description: 'Expert UCAT coaching, MMI interview prep, and personal statement guidance for medical school applicants. One-on-one coaching at every stage of admission.',
+  title: { absolute: 'UCAT & Medical School Admissions Coaching Adelaide & Melbourne | Titanium Tutoring' },
+  description: 'Expert UCAT coaching & MMI interview prep in Adelaide & Melbourne. Personal statement guidance & admissions strategy for medical school applicants in Australia.',
   alternates: { canonical: '/programs/medical-school-admissions' },
   openGraph: {
-    title: 'Medical School Admissions Coaching | Titanium Tutoring',
-    description: 'Expert UCAT coaching, MMI interview prep, and personal statement guidance for medical school applicants. One-on-one coaching at every stage of admission.',
+    title: 'UCAT & Medical School Admissions Coaching Adelaide & Melbourne | Titanium Tutoring',
+    description: 'Expert UCAT coaching & MMI interview prep in Adelaide & Melbourne. Personal statement guidance & admissions strategy for medical school applicants in Australia.',
   },
 }
 

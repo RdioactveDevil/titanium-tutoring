@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: { absolute: 'NAPLAN Preparation | Titanium Tutoring' },
-  description: 'NAPLAN coaching for Years 3, 5, 7 and 9. Numeracy and literacy preparation that builds fundamentals — not last-minute cramming. Personalised sessions for every year level.',
+  title: { absolute: 'NAPLAN Preparation Adelaide & Melbourne | Years 3, 5, 7 & 9 | Titanium Tutoring' },
+  description: 'NAPLAN coaching in Adelaide & Melbourne for Years 3, 5, 7 & 9. Build numeracy & literacy fundamentals — not last-minute cramming. Book your free consult today.',
   alternates: { canonical: '/programs/naplan' },
   openGraph: {
-    title: 'NAPLAN Preparation | Titanium Tutoring',
-    description: 'NAPLAN coaching for Years 3, 5, 7 and 9. Numeracy and literacy preparation that builds fundamentals — not last-minute cramming. Personalised sessions for every year level.',
+    title: 'NAPLAN Preparation Adelaide & Melbourne | Years 3, 5, 7 & 9 | Titanium Tutoring',
+    description: 'NAPLAN coaching in Adelaide & Melbourne for Years 3, 5, 7 & 9. Build numeracy & literacy fundamentals — not last-minute cramming. Book your free consult today.',
   },
 }
 

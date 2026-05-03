@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Results | Titanium Tutoring',
-  description: 'Real results from real students — ATAR scores, scholarship wins, selective school entries, medical admissions, and national competition results.',
+  title: { absolute: 'Student Results & Success Stories | Titanium Tutoring Adelaide & Melbourne' },
+  description: 'Real results from Titanium Tutoring students — top ATAR scores, scholarship wins, selective school entries, UCAT success & national competition results.',
   alternates: { canonical: '/results' },
   openGraph: {
     images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Titanium Tutoring Student Results' }],

@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: { absolute: 'High School Tutoring | Titanium Tutoring' },
-  description: 'VCE and SACE tutoring for Years 10–12. Expert coaching in Maths, English, and all senior subjects — personalised to your curriculum, ATAR target, and timeline.',
+  title: { absolute: 'VCE & SACE Tutoring Adelaide & Melbourne | Years 10–12 | Titanium Tutoring' },
+  description: 'Expert VCE & SACE tutoring in Adelaide & Melbourne for Years 10–12. Specialist coaching in Maths Methods, Physics, English & more. Book a free consultation.',
   alternates: { canonical: '/programs/high-school' },
   openGraph: {
-    title: 'High School Tutoring | Titanium Tutoring',
-    description: 'VCE and SACE tutoring for Years 10–12. Expert coaching in Maths, English, and all senior subjects — personalised to your curriculum, ATAR target, and timeline.',
+    title: 'VCE & SACE Tutoring Adelaide & Melbourne | Years 10–12 | Titanium Tutoring',
+    description: 'Expert VCE & SACE tutoring in Adelaide & Melbourne for Years 10–12. Specialist coaching in Maths Methods, Physics, English & more. Book a free consultation.',
   },
 }
 

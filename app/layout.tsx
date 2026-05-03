@@ -6,8 +6,8 @@ import { testimonials } from './data/testimonials'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://titaniumtutoring.com.au'),
-  title: { default: 'Titanium Tutoring', template: '%s | Titanium Tutoring' },
-  description: 'Specialist tutoring for VCE, SACE, NAPLAN, and selective entry exams. A team of qualified educators and subject specialists dedicated to results.',
+  title: { default: 'Titanium Tutoring | VCE, SACE & NAPLAN Tutoring Adelaide & Melbourne', template: '%s | Titanium Tutoring' },
+  description: 'Titanium Tutoring — specialist VCE, SACE & NAPLAN tutoring in Adelaide & Melbourne. Expert tutors, personalised programs, and a proven track record of results.',
   alternates: { canonical: '/' },
   openGraph: {
     siteName: 'Titanium Tutoring',

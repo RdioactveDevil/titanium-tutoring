@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Middle School Tutoring | Titanium Tutoring' },
-  description: 'Middle school tutoring for Years 7–9. Maths, English, NAPLAN, and selective entry prep — we close the gaps before senior school and set students up to thrive.',
+  title: { absolute: 'Middle School Tutoring Adelaide & Melbourne | Years 7–9 | Titanium Tutoring' },
+  description: 'Year 7–9 tutoring in Adelaide & Melbourne. Expert Maths, English, NAPLAN & selective entry prep — closing gaps before VCE & SACE when it matters most.',
   alternates: { canonical: '/programs/middle-school' },
   openGraph: {
-    title: 'Middle School Tutoring | Titanium Tutoring',
-    description: 'Middle school tutoring for Years 7–9. Maths, English, NAPLAN, and selective entry prep — we close the gaps before senior school and set students up to thrive.',
+    title: 'Middle School Tutoring Adelaide & Melbourne | Years 7–9 | Titanium Tutoring',
+    description: 'Year 7–9 tutoring in Adelaide & Melbourne. Expert Maths, English, NAPLAN & selective entry prep — closing gaps before VCE & SACE when it matters most.',
   },
 }
 

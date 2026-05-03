@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Exam Strategy & Mindset | Titanium Tutoring' },
-  description: 'Time management, stress resilience, and high-stakes exam technique for all year levels. The exam skills no textbook teaches — coached by Titanium Tutoring.',
+  title: { absolute: 'Exam Strategy & Mindset Coaching Adelaide & Melbourne | Titanium Tutoring' },
+  description: 'VCE, SACE & NAPLAN exam strategy coaching in Adelaide & Melbourne. Master time management, stress resilience & exam technique — the skills no textbook teaches.',
   alternates: { canonical: '/programs/exam-strategy' },
   openGraph: {
-    title: 'Exam Strategy & Mindset | Titanium Tutoring',
-    description: 'Time management, stress resilience, and high-stakes exam technique for all year levels. The exam skills no textbook teaches — coached by Titanium Tutoring.',
+    title: 'Exam Strategy & Mindset Coaching Adelaide & Melbourne | Titanium Tutoring',
+    description: 'VCE, SACE & NAPLAN exam strategy coaching in Adelaide & Melbourne. Master time management, stress resilience & exam technique — the skills no textbook teaches.',
   },
 }
 

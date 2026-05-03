@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Book a Free Consultation | Titanium Tutoring',
-  description: 'Book a free strategy call with Titanium Tutoring. We diagnose exactly where your child is losing marks and hand you a written plan to take away — no obligation.',
+  title: { absolute: 'Book a Free Tutoring Consultation | Adelaide & Melbourne | Titanium Tutoring' },
+  description: 'Book a free tutoring consultation in Adelaide or Melbourne. We diagnose gaps, set a clear target, and hand you a written plan to take away — no obligation.',
   alternates: { canonical: '/contact' },
 }
 
