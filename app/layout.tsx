@@ -48,6 +48,8 @@ const organizationJsonLd = {
   description:
     'Specialist tutoring for VCE, SACE, NAPLAN, and selective entry exams. A team of qualified educators and subject specialists dedicated to results.',
   areaServed: [
+    { '@type': 'City', name: 'Adelaide' },
+    { '@type': 'City', name: 'Melbourne' },
     { '@type': 'AdministrativeArea', name: 'South Australia' },
     { '@type': 'AdministrativeArea', name: 'Victoria' },
     { '@type': 'Country', name: 'Australia' },
@@ -64,6 +66,18 @@ const organizationJsonLd = {
       addressLocality: 'Melbourne',
       addressRegion: 'VIC',
       addressCountry: 'AU',
+    },
+  ],
+  geo: [
+    {
+      '@type': 'GeoCoordinates',
+      latitude: -34.9285,
+      longitude: 138.6007,
+    },
+    {
+      '@type': 'GeoCoordinates',
+      latitude: -37.8136,
+      longitude: 144.9631,
     },
   ],
   hasOfferCatalog: {
@@ -93,6 +107,76 @@ const organizationJsonLd = {
   review: schemaReviews,
 }
 
+const tutoringServiceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Tutoring',
+  name: 'Titanium Tutoring — VCE, SACE & NAPLAN Tutoring',
+  url: 'https://titaniumtutoring.com.au',
+  description:
+    'One-on-one and small-group tutoring for students in Years 3–12, VCE, SACE, NAPLAN, selective entry, scholarship, and UCAT preparation across Adelaide, Melbourne, and online Australia-wide.',
+  provider: {
+    '@type': 'EducationalOrganization',
+    name: 'Titanium Tutoring',
+    url: 'https://titaniumtutoring.com.au',
+    telephone: '+61456753747',
+    email: 'contact@titaniumtutoring.com',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Adelaide' },
+    { '@type': 'City', name: 'Melbourne' },
+    { '@type': 'AdministrativeArea', name: 'South Australia' },
+    { '@type': 'AdministrativeArea', name: 'Victoria' },
+    { '@type': 'Country', name: 'Australia' },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Tutoring Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'VCE Tutoring',
+          description: 'Specialist tutoring for Victorian Certificate of Education subjects, coached to the specific VCE study design and exam format.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'SACE Tutoring',
+          description: 'Specialist tutoring for South Australian Certificate of Education subjects, coached to the SACE performance standards and assessment tasks.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'NAPLAN Preparation',
+          description: 'Targeted NAPLAN preparation for Years 3, 5, 7, and 9 covering literacy and numeracy.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Selective Entry & Scholarship Exam Preparation',
+          description: 'Intensive preparation for selective-entry high school and scholarship exams across South Australia and Victoria.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'UCAT & Medical School Admissions Preparation',
+          description: 'Comprehensive UCAT coaching and medical school interview preparation for aspiring medical students.',
+        },
+      },
+    ],
+  },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -100,6 +184,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(tutoringServiceJsonLd) }}
         />
         <Nav />
         {children}
