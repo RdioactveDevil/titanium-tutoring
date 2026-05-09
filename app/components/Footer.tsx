@@ -51,7 +51,7 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <span>&copy; 2025 Titanium Tutoring. All rights reserved.</span>
-        <span>Privacy &middot; Terms</span>
+        <span><Link href="/privacy" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy Policy</Link></span>
       </div>
     </footer>
   )
