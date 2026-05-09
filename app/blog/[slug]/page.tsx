@@ -106,7 +106,22 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </div>
           ))}
 
-          <div style={{ borderTop: '2px solid var(--border)', paddingTop: 40, marginTop: 56 }}>
+          {post.relatedPrograms.length > 0 && (
+            <div style={{ borderTop: '2px solid var(--border)', paddingTop: 40, marginTop: 56 }}>
+              <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 20 }}>Related Programs</p>
+              <div style={{ display: 'grid', gap: 16, gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', marginBottom: 40 }}>
+                {post.relatedPrograms.map(p => (
+                  <Link key={p.href} href={p.href} className="blog-related-card">
+                    <span className="blog-related-eyebrow">{p.eyebrow}</span>
+                    <span className="blog-related-label">{p.label}</span>
+                    <span className="blog-related-desc">{p.desc}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div style={{ borderTop: '2px solid var(--border)', paddingTop: 40, marginTop: 0 }}>
             <p style={{ fontSize: 15, color: 'var(--ink-2)', marginBottom: 20 }}>
               Want help applying these strategies to your own study? Book a free consultation with the Titanium Tutoring team.
             </p>

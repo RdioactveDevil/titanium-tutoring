@@ -10,6 +10,12 @@ export interface Post {
     body: string
     list?: string[]
   }>
+  relatedPrograms: Array<{
+    label: string
+    href: string
+    eyebrow: string
+    desc: string
+  }>
 }
 
 export const posts: Post[] = [
@@ -41,6 +47,10 @@ export const posts: Post[] = [
         heading: '5. Not Reading the "Hence" Instruction',
         body: "When a question says 'hence find...' it is telling you exactly which tool to use — the result from the previous part. Students who ignore this and use a different method often get no marks even if their answer is numerically correct, because the marks are awarded for method, not just the final value. 'Hence' is not a suggestion. It is a constraint. Read every question stem twice before starting your working.",
       },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'Victoria · Units 1–4', label: 'VCE Mathematical Methods', href: '/programs/high-school/vce-methods', desc: 'Specialist VCE Methods tutoring — every topic to the VCAA study design, SAC strategy included.' },
+      { eyebrow: 'Years 10–12', label: 'High School Program', href: '/programs/high-school', desc: 'VCE and SACE coaching across all subjects from first SAC to final exam.' },
     ],
   },
   {
@@ -88,6 +98,10 @@ export const posts: Post[] = [
           'Differential equations: students who understand the technique often lose marks on the initial conditions',
         ],
       },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'South Australia · Stage 1 & 2', label: 'SACE Mathematical Methods', href: '/programs/high-school/sace-methods', desc: 'Specialist SACE Methods tutoring — all topics to SACE Board performance standards, folio task strategy included.' },
+      { eyebrow: 'Years 10–12', label: 'High School Program', href: '/programs/high-school', desc: 'SACE and VCE coaching across all subjects from first SAT to final exam.' },
     ],
   },
   {
@@ -137,6 +151,10 @@ export const posts: Post[] = [
         body: 'UCAT ANZ testing runs from July to August. We recommend starting preparation in March or April — giving you 4 to 6 months. In that time, a structured approach covers: diagnostic testing in all five subtests, subtest-specific strategy sessions, timed practice sets, and at least two full mock exams in the final three weeks. Students who start in June typically have time to address one or two weak subtests but not all five.',
       },
     ],
+    relatedPrograms: [
+      { eyebrow: 'All Five Subtests', label: 'UCAT Preparation', href: '/programs/medical-school-admissions/ucat-preparation', desc: 'One-on-one UCAT coaching in Adelaide and Melbourne — diagnostic-first, timed from day one.' },
+      { eyebrow: 'UCAT · Interviews · Personal Statements', label: 'Medical School Admissions', href: '/programs/medical-school-admissions', desc: 'The full medical school admissions program: UCAT, MMI interview prep, and personal statement guidance.' },
+    ],
   },
   {
     slug: 'hast-exam-guide',
@@ -176,6 +194,10 @@ export const posts: Post[] = [
         heading: 'A Common Misconception About Aptitude Tests',
         body: "Many parents and students believe aptitude tests cannot be prepared for — that they measure innate ability. This is incorrect. While raw general intelligence cannot be significantly changed in the short term, test performance absolutely can be. Familiarity with question formats, knowledge of pattern types, time management under pressure, and written expression technique are all trainable. The difference between a prepared and unprepared student on the HAST is substantial and consistent.",
       },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'Selective School Entry', label: 'HAST Exam Coaching', href: '/programs/middle-school/hast-exam', desc: 'Section-by-section HAST coaching in Adelaide — abstract reasoning, verbal, quantitative, and written expression.' },
+      { eyebrow: 'Years 7–9', label: 'Middle School Program', href: '/programs/middle-school', desc: 'Full middle school program covering Maths, English, NAPLAN, selective entry, and scholarships.' },
     ],
   },
   {
@@ -220,6 +242,10 @@ export const posts: Post[] = [
         ],
       },
     ],
+    relatedPrograms: [
+      { eyebrow: 'Years 3, 5, 7 & 9', label: 'NAPLAN Preparation', href: '/programs/naplan', desc: 'Structured NAPLAN preparation for Numeracy and Literacy across all year levels.' },
+      { eyebrow: 'Years 7–9', label: 'Middle School Program', href: '/programs/middle-school', desc: 'Full middle school program covering Maths, English, NAPLAN, and selective entry preparation.' },
+    ],
   },
   {
     slug: 'naplan-writing-marking-criteria',
@@ -263,6 +289,10 @@ export const posts: Post[] = [
         heading: 'How Long Does Improvement Take?',
         body: "Writing improvement is slower than Numeracy improvement because it requires internalising new habits — not just learning new techniques. A student who prepares seriously for 8 weeks typically improves 1 to 2 bands. The students who improve most are those who write a practice response every week (not just read about writing), receive specific feedback against the marking criteria (not general comments), and implement one new technique per session rather than trying to change everything at once.",
       },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'Years 3, 5, 7 & 9', label: 'NAPLAN Preparation', href: '/programs/naplan', desc: 'Structured NAPLAN Numeracy and Literacy preparation — including Writing technique coaching.' },
+      { eyebrow: 'Years 1–6', label: 'Primary School Program', href: '/programs/primary-school', desc: 'Core literacy and numeracy acceleration for primary school students.' },
     ],
   },
   {
@@ -314,6 +344,10 @@ export const posts: Post[] = [
         heading: 'How Much Preparation Is Enough?',
         body: "Students who begin preparation 3 to 6 months before the test date consistently outperform those who prepare in the final 4 to 6 weeks. The reasoning components — particularly Mathematics problem-solving and Reading inference — improve gradually with repeated exposure to test-format questions and targeted feedback. They do not respond well to last-minute cramming. Written Expression is similar: the habits that produce strong responses take weeks to develop. A realistic preparation schedule for a motivated student looks like one or two structured sessions per week across 3 to 4 months, with a focus on the weakest component and full mock tests in the final 4 weeks.",
       },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'Selective Entry & Scholarships', label: 'Exam Strategy Program', href: '/programs/exam-strategy', desc: 'High-stakes exam technique — time management, question decoding, and performance under pressure for scholarship exams.' },
+      { eyebrow: 'Years 7–9', label: 'Middle School Program', href: '/programs/middle-school', desc: 'Full middle school program including scholarship coaching for private school entry.' },
     ],
   },
 ]

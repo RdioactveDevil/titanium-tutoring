@@ -744,3 +744,12 @@ footer{background:var(--navy);padding:56px 5% 32px;border-top:1px solid rgba(243
 .prose-policy li{font-size:15px;line-height:1.75;color:var(--ink-2);margin-bottom:8px}
 .prose-policy a{color:var(--navy);text-decoration:underline}
 .prose-policy a:hover{color:var(--gold-600,#b8891e)}
+
+/* ======================================
+   BLOG RELATED PROGRAM CARDS
+   ====================================== */
+.blog-related-card{display:block;padding:20px 22px;border:1.5px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color 0.18s,box-shadow 0.18s}
+.blog-related-card:hover{border-color:var(--gold);box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+.blog-related-eyebrow{font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+.blog-related-label{font-size:15px;font-weight:700;color:var(--navy);display:block;margin-bottom:8px}
+.blog-related-desc{font-size:13px;color:var(--ink-2);line-height:1.6}
