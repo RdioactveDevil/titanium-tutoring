@@ -24,7 +24,7 @@ export default function MedicalSchoolAdmissions() {
   }, [])
 
   const services = [
-    { n: '01', title: 'UCAT Coaching', desc: 'All five subtests: Verbal Reasoning, Decision Making, Quantitative Reasoning, Abstract Reasoning, and Situational Judgement. We drill each subtest with timed practice and targeted strategy.' },
+    { n: '01', title: 'UCAT Coaching', desc: 'All five subtests: Verbal Reasoning, Decision Making, Quantitative Reasoning, Abstract Reasoning, and Situational Judgement. We drill each subtest with timed practice and targeted strategy.', href: '/programs/medical-school-admissions/ucat-preparation' },
     { n: '02', title: 'Decision Making Mastery', desc: 'The subtest most candidates underestimate. We teach the logical frameworks — syllogisms, Venn diagrams, statistical inference — that turn a 600 into a 900.' },
     { n: '03', title: 'Situational Judgement Training', desc: 'Medical ethics, professionalism, and the GMC-aligned principles that underpin every SJT scenario. We decode the marking logic so you stop guessing and start scoring.' },
     { n: '04', title: 'Interview Preparation', desc: 'MMI circuit coaching, panel interview technique, and structured scenario practice. We run full mock MMI stations and debrief every response for tone, content, and self-awareness.' },
@@ -232,6 +232,19 @@ export default function MedicalSchoolAdmissions() {
       <section className="related-programs">
         <div className="related-programs-inner">
           <div className="section-header">
+            <span className="eyebrow">Specialist Coaching</span>
+            <h2 className="section-title">Dive Deeper into<br />UCAT Preparation</h2>
+            <div className="section-rule" style={{ margin: '20px auto 0' }} />
+          </div>
+          <div className="related-grid" style={{ marginBottom: 48 }}>
+            <Link href="/programs/medical-school-admissions/ucat-preparation" className="related-card">
+              <span className="related-card-eyebrow">All Five Subtests</span>
+              <div className="related-card-title">UCAT Preparation</div>
+              <p className="related-card-desc">Verbal Reasoning, Decision Making, Quantitative Reasoning, Abstract Reasoning, and Situational Judgement — coached subtest by subtest.</p>
+              <span className="related-card-link">Explore UCAT Coaching →</span>
+            </Link>
+          </div>
+          <div className="section-header" style={{ marginTop: 0 }}>
             <span className="eyebrow">Explore Other Programs</span>
             <h2 className="section-title">Find the Right Program<br />for Your Student</h2>
             <div className="section-rule" style={{ margin: '20px auto 0' }} />

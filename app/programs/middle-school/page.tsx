@@ -244,6 +244,19 @@ export default function MiddleSchool() {
       <section className="related-programs">
         <div className="related-programs-inner">
           <div className="section-header">
+            <span className="eyebrow">Specialist Coaching</span>
+            <h2 className="section-title">Selective Entry<br />Specialist Programs</h2>
+            <div className="section-rule" style={{ margin: '20px auto 0' }} />
+          </div>
+          <div className="related-grid" style={{ marginBottom: 48 }}>
+            <Link href="/programs/middle-school/hast-exam" className="related-card">
+              <span className="related-card-eyebrow">Selective School Entry</span>
+              <div className="related-card-title">HAST Exam Coaching</div>
+              <p className="related-card-desc">Abstract reasoning, verbal reasoning, quantitative thinking, and written expression — coached to the exact format of the HAST selective entry exam.</p>
+              <span className="related-card-link">Explore HAST Coaching →</span>
+            </Link>
+          </div>
+          <div className="section-header" style={{ marginTop: 0 }}>
             <span className="eyebrow">Explore Other Programs</span>
             <h2 className="section-title">Find the Right Program<br />for Your Student</h2>
             <div className="section-rule" style={{ margin: '20px auto 0' }} />
