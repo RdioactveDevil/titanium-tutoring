@@ -6,8 +6,12 @@ import Link from 'next/link'
 const programs = [
   { label: 'Primary School', href: '/programs/primary-school' },
   { label: 'Middle School', href: '/programs/middle-school' },
-  { label: 'High School', href: '/programs/high-school' },
+  { label: 'HAST Exam Coaching', href: '/programs/middle-school/hast-exam' },
+  { label: 'High School (VCE & SACE)', href: '/programs/high-school' },
+  { label: 'VCE Mathematical Methods', href: '/programs/high-school/vce-methods' },
+  { label: 'SACE Mathematical Methods', href: '/programs/high-school/sace-methods' },
   { label: 'Medical School Admissions', href: '/programs/medical-school-admissions' },
+  { label: 'UCAT Preparation', href: '/programs/medical-school-admissions/ucat-preparation' },
 ]
 
 export default function Nav() {

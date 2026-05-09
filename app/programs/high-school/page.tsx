@@ -234,6 +234,25 @@ export default function HighSchool() {
       <section className="related-programs">
         <div className="related-programs-inner">
           <div className="section-header">
+            <span className="eyebrow">Specialist Coaching</span>
+            <h2 className="section-title">Subject-Specific<br />Deep Dives</h2>
+            <div className="section-rule" style={{ margin: '20px auto 0' }} />
+          </div>
+          <div className="related-grid" style={{ marginBottom: 48 }}>
+            <Link href="/programs/high-school/vce-methods" className="related-card">
+              <span className="related-card-eyebrow">Victoria · Units 1–4</span>
+              <div className="related-card-title">VCE Mathematical Methods</div>
+              <p className="related-card-desc">Functions, calculus, probability and statistics coached to the VCAA study design. SAC strategy and exam technique included.</p>
+              <span className="related-card-link">Explore VCE Methods →</span>
+            </Link>
+            <Link href="/programs/high-school/sace-methods" className="related-card">
+              <span className="related-card-eyebrow">South Australia · Stage 1 &amp; 2</span>
+              <div className="related-card-title">SACE Mathematical Methods</div>
+              <p className="related-card-desc">Functions, calculus, probability and statistics coached to SACE Board performance standards. Folio task and SAT strategy included.</p>
+              <span className="related-card-link">Explore SACE Methods →</span>
+            </Link>
+          </div>
+          <div className="section-header" style={{ marginTop: 0 }}>
             <span className="eyebrow">Explore Other Programs</span>
             <h2 className="section-title">Find the Right Program<br />for Your Student</h2>
             <div className="section-rule" style={{ margin: '20px auto 0' }} />
