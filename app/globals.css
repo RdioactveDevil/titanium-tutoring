@@ -717,3 +717,30 @@ footer{background:var(--navy);padding:56px 5% 32px;border-top:1px solid rgba(243
   .hero-actions{gap:10px}
   .btn-gold,.btn-ghost-light{padding:11px 18px;font-size:14px}
 }
+
+/* ======================================
+   COOKIE BANNER
+   ====================================== */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:1000;background:var(--navy-900,#050f3a);border-top:2px solid var(--gold);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cookie-banner-text{font-size:13px;color:rgba(250,246,238,0.8);margin:0;line-height:1.5}
+.cookie-banner-link{color:var(--gold);text-decoration:underline}
+.cookie-banner-link:hover{color:var(--paper)}
+.cookie-banner-actions{display:flex;gap:10px;flex-shrink:0}
+.cookie-banner-decline{background:transparent;border:1px solid rgba(250,246,238,0.25);color:rgba(250,246,238,0.65);padding:8px 18px;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:border-color 150ms,color 150ms}
+.cookie-banner-decline:hover{border-color:rgba(250,246,238,0.5);color:var(--paper)}
+.cookie-banner-accept{background:var(--gold);border:none;color:var(--navy);padding:8px 18px;border-radius:4px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font-body);transition:background 150ms}
+.cookie-banner-accept:hover{background:#e5ad2c}
+@media(max-width:600px){
+  .cookie-banner{flex-direction:column;align-items:flex-start;padding:16px 5%}
+  .cookie-banner-actions{width:100%;justify-content:flex-end}
+}
+
+/* ======================================
+   PRIVACY POLICY PAGE
+   ====================================== */
+.prose-policy h2{font-family:var(--font-body);font-size:17px;font-weight:700;color:var(--navy);margin:40px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.prose-policy p{font-size:15px;line-height:1.75;color:var(--ink-2);margin:0 0 16px}
+.prose-policy ul{margin:0 0 16px;padding-left:20px}
+.prose-policy li{font-size:15px;line-height:1.75;color:var(--ink-2);margin-bottom:8px}
+.prose-policy a{color:var(--navy);text-decoration:underline}
+.prose-policy a:hover{color:var(--gold-600,#b8891e)}

@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import './globals.css'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
+import CookieBanner from './components/CookieBanner'
 import { testimonials } from './data/testimonials'
+
+const GA_ID = 'G-LTS5FP27Y3'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://titaniumtutoring.com.au'),
@@ -180,6 +184,20 @@ const tutoringServiceJsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* GA4 Consent Mode v2 — defaults to denied until user accepts */}
+        <Script id="gtag-consent-defaults" strategy="beforeInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('consent', 'default', {
+            analytics_storage: 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            wait_for_update: 2000
+          });
+        `}</Script>
+      </head>
       <body>
         <script
           type="application/ld+json"
@@ -192,6 +210,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         {children}
         <Footer />
+        <CookieBanner />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_ID}');
+        `}</Script>
       </body>
     </html>
   )
