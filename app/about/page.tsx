@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function About() {
   const [email, setEmail] = useState('')
@@ -52,11 +53,13 @@ export default function About() {
       <section className="why">
         <div className="why-inner">
           <div className="why-photo-col slide-left">
-            <img
+            <Image
               src="/lecture.jpg"
               alt="Titanium Tutoring team in session"
               className="why-photo"
-              onError={e => { const el = e.target as HTMLImageElement; el.style.display='none'; (el.nextElementSibling as HTMLElement).style.display='flex' }}
+              width={800}
+              height={560}
+              style={{ objectFit: 'cover' }}
             />
             <div className="why-photo-placeholder" style={{ display: 'none' }}>
               <span style={{ fontSize: '2.5rem', opacity: .25 }}>📸</span>

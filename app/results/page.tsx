@@ -1,6 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { testimonials, catLabel } from '../data/testimonials'
 
 const pressClippings = [
@@ -80,11 +81,13 @@ export default function Results() {
           <div className="news-grid">
             {pressClippings.map((clip, i) => (
               <div className="news-card fade-in" key={i} data-delay={`${i * 50}`}>
-                <img
+                <Image
                   src={clip.src}
                   alt={clip.label}
                   className="news-img"
-                  onError={e => { const el = e.target as HTMLImageElement; el.style.display='none'; (el.nextElementSibling as HTMLElement).style.display='flex' }}
+                  width={400}
+                  height={180}
+                  style={{ objectFit: 'cover', width: '100%', height: 180 }}
                 />
                 <div className="news-img-placeholder" style={{ display: 'none' }}>{clip.label}</div>
                 <div className="news-label">{clip.label}</div>

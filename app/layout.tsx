@@ -10,8 +10,8 @@ const GA_ID = 'G-LTS5FP27Y3'
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://titaniumtutoring.com.au'),
-  title: { default: 'Titanium Tutoring | VCE, SACE & NAPLAN Tutoring Adelaide & Melbourne', template: '%s | Titanium Tutoring' },
-  description: 'Titanium Tutoring — specialist VCE, SACE & NAPLAN tutoring in Adelaide & Melbourne. Expert tutors, personalised programs, and a proven track record of results.',
+  title: { default: 'Titanium Tutoring | VCE, SACE, ATAR & NAPLAN Tutors', template: '%s | Titanium Tutoring' },
+  description: 'Specialist VCE, SACE, NAPLAN & high school tutoring in Adelaide & Melbourne — Titanium Tutoring. Expert tutors, personalised programs, proven ATAR results.',
   alternates: { canonical: '/' },
   openGraph: {
     siteName: 'Titanium Tutoring',
