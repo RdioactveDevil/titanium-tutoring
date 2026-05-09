@@ -9,6 +9,7 @@ const catColour: Record<string, string> = {
   Medical: 'tcat-medical',
   'Selective Entry': 'tcat-selective',
   NAPLAN: 'tcat-naplan',
+  Scholarship: 'tcat-amc',
 }
 
 function formatDate(iso: string) {
