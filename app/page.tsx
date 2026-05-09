@@ -62,7 +62,7 @@ export default function Home() {
     window.addEventListener('resize', resize)
 
     type Pt = { x: number; y: number; vx: number; vy: number; r: number; o: number; layer: number }
-    const N = 65
+    const N = 40
     let pts: Pt[] = []
     const init = () => {
       pts = Array.from({ length: N }, () => ({
@@ -122,9 +122,9 @@ export default function Home() {
         for (let j = i + 1; j < pts.length; j++) {
           const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y
           const d = Math.sqrt(dx * dx + dy * dy)
-          if (d < 115) {
+          if (d < 90) {
             ctx.beginPath()
-            ctx.strokeStyle = `rgba(243,190,67,${0.09 * (1 - d / 115)})`
+            ctx.strokeStyle = `rgba(243,190,67,${0.09 * (1 - d / 90)})`
             ctx.lineWidth = 0.5
             ctx.moveTo(pts[i].x, pts[i].y)
             ctx.lineTo(pts[j].x, pts[j].y)
@@ -135,9 +135,10 @@ export default function Home() {
 
       animId = requestAnimationFrame(tick)
     }
-    tick()
+    const startDelay = setTimeout(() => tick(), 200)
 
     return () => {
+      clearTimeout(startDelay)
       cancelAnimationFrame(animId)
       window.removeEventListener('resize', resize)
       revealObs.disconnect()

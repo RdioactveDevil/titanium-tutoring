@@ -185,6 +185,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         {/* GA4 Consent Mode v2 — defaults to denied until user accepts */}
         <Script id="gtag-consent-defaults" strategy="beforeInteractive">{`
           window.dataLayer = window.dataLayer || [];
