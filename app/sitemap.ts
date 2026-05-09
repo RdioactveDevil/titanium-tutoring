@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { posts } from './data/posts'
 
 const BASE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'https://titaniumtutoring.com.au').replace(/\/$/, '')
 
@@ -104,5 +105,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    ...posts.map(p => ({
+      url: `${BASE_URL}/blog/${p.slug}`,
+      lastModified: new Date(p.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
   ]
 }
