@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { homeTestimonials, catLabel } from './data/testimonials'
 
 export default function Home() {
@@ -315,11 +316,13 @@ export default function Home() {
       <section className="why">
         <div className="why-inner">
           <div className="why-photo-col slide-left">
-            <img
+            <Image
               src="/lecture.jpg"
               alt="Titanium Tutoring team in session"
               className="why-photo"
-              onError={e => { const el = e.target as HTMLImageElement; el.style.display='none'; (el.nextElementSibling as HTMLElement).style.display='flex' }}
+              width={800}
+              height={560}
+              style={{ objectFit: 'cover' }}
             />
             <div className="why-photo-placeholder" style={{ display: 'none' }}>
               <span style={{ fontSize: '2.5rem', opacity: .25 }}>📸</span>
@@ -436,7 +439,7 @@ export default function Home() {
       <section className="testimonials">
         <div className="testimonials-inner">
           <div className="section-header fade-in">
-            <span className="eyebrow">Testimonials</span>
+            <span className="eyebrow">ATAR, Scholarship &amp; Medical Results</span>
             <h2 className="section-title">Champions in Their Own Right</h2>
             <div className="section-rule" />
           </div>

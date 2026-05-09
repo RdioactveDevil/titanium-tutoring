@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const programs = [
   { label: 'Primary School', href: '/programs/primary-school' },
@@ -40,7 +41,7 @@ export default function Nav() {
       <nav>
         <div className="nav-inner">
           <Link href="/" className="nav-brand" onClick={close}>
-            <img src="/logo-icon.png" alt="Titanium Tutoring" onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+            <Image src="/logo-icon.png" alt="Titanium Tutoring" width={40} height={40} style={{ objectFit: 'contain' }} />
             <span className="nav-brand-name">Titanium Tutoring</span>
           </Link>
           <ul className="nav-links">

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className="footer-inner">
         <div>
           <div className="footer-brand">
-            <img src="/logo-icon.png" alt="Titanium Tutoring" onError={undefined} />
+            <Image src="/logo-icon.png" alt="Titanium Tutoring" width={52} height={52} style={{ objectFit: 'contain' }} />
             <div className="footer-brand-text">
               <span className="footer-brand-name">Titanium Tutoring</span>
               <span className="footer-brand-motto">Per Aspera Ad Astra</span>
@@ -45,7 +46,7 @@ export default function Footer() {
         <div className="footer-col">
           <span className="footer-col-title">Contact</span>
           <p><a href="tel:+61456753747">+61 456 753 747</a></p>
-          <p><a href="mailto:contact@titaniumtutoring.com">contact@titaniumtutoring.com</a></p>
+          <p><a href="mailto:contact@titaniumtutoring.com">Email Us</a></p>
           <p>South Australia &middot; Victoria</p>
         </div>
       </div>
