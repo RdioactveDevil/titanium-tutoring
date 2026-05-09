@@ -221,6 +221,101 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: 'naplan-writing-marking-criteria',
+    title: 'NAPLAN Writing: How the Marking Criteria Actually Works',
+    date: '2026-05-09',
+    excerpt: 'Most students prepare for NAPLAN Writing by practising generic "good writing." That is not what is being assessed. Understanding the marking criteria changes your preparation entirely — and produces measurably better scores.',
+    cat: 'NAPLAN',
+    readMins: 6,
+    sections: [
+      {
+        heading: 'What NAPLAN Writing Actually Marks',
+        body: 'NAPLAN Writing is not marked holistically. There are ten discrete criteria, each scored independently. The total score is the sum of these criteria — which means you can target specific criteria for improvement rather than trying to "write better" in some general sense. The ten criteria are: Audience, Text Structure, Ideas, Character and Setting (narrative only), Vocabulary, Cohesion, Paragraphing, Sentence Structure, Punctuation, and Spelling. Understanding which criteria carry the most marks — and which are easiest to improve quickly — is the foundation of effective NAPLAN Writing preparation.',
+      },
+      {
+        heading: 'The High-Value Criteria Most Students Neglect',
+        body: 'Audience, Ideas, and Vocabulary are each worth up to 6 marks (out of a possible 47 for narrative, 45 for persuasive). These three criteria alone account for roughly 40% of the total score. Yet most students spend their preparation time on Spelling and Punctuation — which are worth a maximum of 6 marks combined. Spelling and Punctuation are important, but they are relatively easy to mark at a ceiling once a student writes to a competent standard. The marks that separate a Band 7 from a Band 9 are almost always in Audience, Ideas, and Vocabulary.',
+      },
+      {
+        heading: 'Audience: The Criterion Students Misunderstand Most',
+        body: "The Audience criterion assesses whether the writing is deliberately crafted for a reader — not just written at a reader. A score of 5 or 6 requires the student to sustain a consistent register, use stylistic choices that create specific effects, and show awareness of how the reader will experience the text. In practice, this means: vary sentence length intentionally (short sentences for impact, longer ones to build tension), use second-person address in persuasive writing where appropriate, and open with something other than a restatement of the prompt. Students who score 3 or 4 in Audience write competently. Students who score 6 write with a clear sense of how their words will land.",
+      },
+      {
+        heading: 'Text Structure: The Easiest Criterion to Max Out',
+        body: 'Text Structure is worth up to 4 marks and is one of the most reliably improvable criteria in preparation. A score of 4 requires: an orientation that establishes the context, a complication or argument that develops the ideas, and a resolution or conclusion that brings the piece to a satisfying close. For narrative, the structure needs to feel purposeful rather than mechanical — events should connect causally, not just sequentially. The simplest fix: plan your structure before you write. Students who spend 3 minutes planning and 27 minutes writing consistently out-structure students who spend all 30 minutes writing.',
+      },
+      {
+        heading: 'Vocabulary: Specific, Not Impressive',
+        body: "The Vocabulary criterion rewards precise, purposeful word choice — not uncommon or sophisticated words for their own sake. A student who writes 'the old man shuffled down the cracked footpath' scores higher on Vocabulary than one who writes 'the elderly gentleman perambulated along the deteriorated thoroughfare.' Specific, concrete words create images. Abstract or unnecessarily formal words slow the reader down. In preparation, practise replacing generic verbs (walked, said, looked) with specific ones (shuffled, muttered, squinted) — and practise doing it quickly, under time pressure.",
+      },
+      {
+        heading: 'Persuasive vs Narrative: Which Is Better?',
+        body: "NAPLAN presents either a persuasive prompt or a narrative prompt depending on the year and sitting. Students often ask which genre they should be stronger in. The honest answer: you should be equally prepared for both, but most students find persuasive slightly more predictable because the structure is fixed. A five-paragraph persuasive essay with a clear thesis, three evidenced arguments, concessions where relevant, and a conclusion that returns to the opening hook covers every structural criterion. Narrative is higher-ceiling — a genuinely well-crafted story can max out Audience and Ideas more easily — but also higher-risk if the student loses control of the plot under time pressure.",
+        list: [
+          'Persuasive: plan thesis and three arguments before writing — 3 minutes maximum',
+          'Narrative: plan complication and resolution before writing — do not improvise the ending',
+          'Both: open with something other than a question or a definition',
+          'Both: vary your sentence lengths deliberately in the final paragraph',
+        ],
+      },
+      {
+        heading: 'How Long Does Improvement Take?',
+        body: "Writing improvement is slower than Numeracy improvement because it requires internalising new habits — not just learning new techniques. A student who prepares seriously for 8 weeks typically improves 1 to 2 bands. The students who improve most are those who write a practice response every week (not just read about writing), receive specific feedback against the marking criteria (not general comments), and implement one new technique per session rather than trying to change everything at once.",
+      },
+    ],
+  },
+  {
+    slug: 'acer-scholarship-exam-guide',
+    title: 'ACER Scholarship Exam: What It Tests and How to Prepare',
+    date: '2026-05-09',
+    excerpt: 'The ACER Scholarship Test is used by many of Australia\'s leading private schools to award academic scholarships. It is different from school tests and different from NAPLAN — and it rewards a specific kind of preparation.',
+    cat: 'Scholarship',
+    readMins: 7,
+    sections: [
+      {
+        heading: 'What Is the ACER Scholarship Test?',
+        body: "The ACER (Australian Council for Educational Research) Scholarship Test is a standardised academic ability test used by many Australian private schools — including some of the most competitive — to award academic scholarships. It is not a curriculum test. It does not assess what students have been taught at school. It assesses reasoning ability: how well a student reads, writes, thinks mathematically, and solves unfamiliar problems. This distinction matters enormously for preparation. Students who prepare by reviewing school content often underperform. Students who prepare specifically for the test format — question types, time constraints, and the reasoning demands — consistently outperform their school results.",
+      },
+      {
+        heading: 'The Four Test Components',
+        body: 'The ACER Scholarship Test has four components. Not all schools use all four, and some use different combinations depending on the year level applying. It is worth confirming with the specific school which components they administer.',
+        list: [
+          'Written Expression — a timed writing task (persuasive or narrative) marked against a rubric similar to NAPLAN Writing criteria',
+          'Mathematics — reasoning and problem-solving questions, not routine calculations; calculator use varies by school',
+          'Reading — comprehension and inference questions on complex unseen passages',
+          'Humanities — social science, history, and general reasoning questions (not all schools include this)',
+        ],
+      },
+      {
+        heading: 'How the Mathematics Section Works',
+        body: "ACER Maths is not a school maths test. Questions are designed to assess mathematical reasoning — the ability to identify relationships, use logical inference, and solve multi-step problems — not to check whether a student has memorised a specific procedure. Many questions can be solved multiple ways, and the fastest method is not always the most obvious one. Students who have been drilled exclusively on procedures (expand, factorise, calculate) often find ACER Maths harder than expected. The preparation focus should be on problem-solving flexibility: reading the question carefully, identifying what is being asked, and working backwards from possible answers when forward methods are slow.",
+      },
+      {
+        heading: 'How the Reading Section Works',
+        body: "The Reading section uses complex, often literary or scientific passages at a level above the student's year group. Questions test inference, vocabulary in context, author purpose, and the ability to distinguish what is stated from what is implied. The most common mistake: spending too long re-reading passages. Effective ACER Reading technique involves reading the questions first (to know what to look for), then reading the passage with those questions in mind, then locating and verifying answers. Students who read passages thoroughly before looking at questions consistently run out of time.",
+      },
+      {
+        heading: 'Written Expression: What Scores Well',
+        body: "The Written Expression component is typically 25 to 30 minutes for one response. The marking criteria reward the same things as NAPLAN Writing at its higher bands: a strong opening that does not restate the prompt, deliberate vocabulary choices, structural control, and a sense that the writing was crafted for a reader rather than written at speed. The most useful preparation is timed writing practice with feedback against the marking criteria — not reading about good writing, but actually writing and being told specifically what to change.",
+      },
+      {
+        heading: 'When Schools Run the ACER Test and How to Apply',
+        body: "Most schools administer the ACER Scholarship Test in the first half of the year preceding entry — so a student applying to start Year 7 in 2027 would typically sit the test in early to mid 2026. Application deadlines vary significantly by school: some close as early as March, others as late as June. We recommend identifying your target schools' deadlines in January of the application year and registering immediately — scholarship places are limited and some schools interview shortlisted students after the written test.",
+        list: [
+          'Research application deadlines at each target school in January',
+          'Register before the deadline — do not wait for preparation to feel complete',
+          'Confirm which of the four components your school uses',
+          'Check whether a calculator is permitted in the Mathematics section',
+          'Ask whether there is an interview component after the written test',
+        ],
+      },
+      {
+        heading: 'How Much Preparation Is Enough?',
+        body: "Students who begin preparation 3 to 6 months before the test date consistently outperform those who prepare in the final 4 to 6 weeks. The reasoning components — particularly Mathematics problem-solving and Reading inference — improve gradually with repeated exposure to test-format questions and targeted feedback. They do not respond well to last-minute cramming. Written Expression is similar: the habits that produce strong responses take weeks to develop. A realistic preparation schedule for a motivated student looks like one or two structured sessions per week across 3 to 4 months, with a focus on the weakest component and full mock tests in the final 4 weeks.",
+      },
+    ],
+  },
 ]
 
 export function getPost(slug: string): Post | undefined {
