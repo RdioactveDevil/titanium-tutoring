@@ -838,6 +838,420 @@ export const posts: Post[] = [
       { eyebrow: 'Years 7–9', label: 'Middle School Program', href: '/programs/middle-school', desc: 'Middle school academic support in Adelaide — Maths, English, NAPLAN, and selective entry.' },
     ],
   },
+  {
+    slug: 'how-to-get-into-medicine-south-australia',
+    title: 'How to Get Into Medicine in South Australia: ATAR, UCAT, Prerequisites, and Interviews',
+    date: '2026-06-03',
+    excerpt: 'Medicine is the most competitive undergraduate course in South Australia. A high ATAR is necessary but not sufficient — here is exactly what the University of Adelaide and Flinders University look for, and how to build a competitive application from Year 10 onwards.',
+    cat: 'Medical',
+    readMins: 9,
+    sections: [
+      {
+        heading: 'The Two SA Medical Schools and How Entry Works',
+        body: 'South Australia has two undergraduate medical schools: the University of Adelaide (MBBS/MD) and Flinders University (MBBS). Both admit students directly from Year 12 through SATAC, and both require a combination of a competitive ATAR, a strong UCAT ANZ score, and a successful interview. Neither school makes offers based on ATAR alone — the three components are assessed together, and a weakness in any one of them can disqualify an otherwise strong application. Understanding how each component is weighted, and in what sequence they are assessed, is the foundation of effective medicine application strategy.',
+      },
+      {
+        heading: 'ATAR Requirements: What You Actually Need',
+        body: "Both Adelaide and Flinders medicine programs have minimum ATAR thresholds, and both have competitive entry scores that are typically higher than those thresholds. The minimum ATAR for medicine application at both schools has historically been 90. The competitive entry score — the ATAR at which most successful applicants sit — is typically in the 97 to 99.9 range, though this varies year to year depending on applicant numbers and UCAT score distributions. The ATAR functions as a filter: below the minimum, you cannot be considered. Above the minimum, ATAR is used alongside UCAT to determine interview shortlisting. A student with an ATAR of 97 and an exceptional UCAT score may be shortlisted ahead of a student with a 99.5 ATAR and an average UCAT score.",
+        list: [
+          'University of Adelaide MBBS: minimum ATAR 90, competitive entry typically 97+',
+          'Flinders University MBBS: minimum ATAR 90, competitive entry typically 97+',
+          'ATAR alone is never sufficient — UCAT is weighted alongside it for shortlisting',
+          'Prerequisite subjects (see below) must be completed regardless of ATAR',
+        ],
+      },
+      {
+        heading: 'UCAT ANZ: The Component That Differentiates Applicants',
+        body: "For students whose ATAR is competitive, UCAT ANZ score is the factor that most commonly determines whether they receive an interview offer. UCAT ANZ is a five-subtest reasoning exam (Verbal Reasoning, Decision Making, Quantitative Reasoning, Abstract Reasoning, and Situational Judgement) taken in July or August of Year 12. It is scored on a scale of approximately 1200 to 3600 (the sum of four cognitive subtest scores), with a separate band score for Situational Judgement. Strong UCAT scores for SA medicine typically mean a combined cognitive score above 2800 and a Situational Judgement score in Band 1 or 2. Preparation for UCAT should begin no later than March of Year 12 — the test cannot be retaken in the same year if results are disappointing.",
+      },
+      {
+        heading: 'Prerequisites: What Chemistry and Biology Actually Require',
+        body: "Both SA medical schools require Chemistry as a prerequisite for entry. Biology is typically required or strongly recommended. These prerequisites must be completed at SACE Stage 2 level — Stage 1 subjects do not satisfy them. Students who choose not to study Chemistry in Year 11 and 12 close the medicine pathway entirely, regardless of their ATAR. In practice, this means the medicine pathway decision must be made no later than Stage 1 subject selection in Year 10. Students who discover in Year 11 that they want to study medicine but did not take Chemistry at Stage 1 face a significant problem: they cannot jump directly into Stage 2 Chemistry without the foundational Stage 1 content.",
+      },
+      {
+        heading: 'The Interview: How the MMI Works',
+        body: "Students who are shortlisted based on ATAR and UCAT are invited to a Multiple Mini Interview (MMI). The MMI consists of a series of short stations — typically 8 to 10 — each with a different interviewer and a different scenario or question. Stations may include ethical dilemmas, role-play scenarios, communication tasks, personal reflection questions, or current affairs in medicine. Each station is independently scored. The MMI is specifically designed to prevent a single good or bad performance from determining the outcome — consistency across stations matters more than excelling at one. Strong MMI performance requires genuine preparation: practising structured responses under time pressure, understanding the ethical frameworks used in medicine, and developing the ability to think clearly when given an unfamiliar scenario on short notice.",
+        list: [
+          'Each MMI station is 6 to 8 minutes with a short preparation period',
+          'Stations are assessed independently — one poor station does not determine your result',
+          'Ethical reasoning, communication, and empathy are the primary assessment criteria',
+          'Practise out loud with a timer — thinking through scenarios silently is not adequate preparation',
+        ],
+      },
+      {
+        heading: 'Building a Competitive Application From Year 10',
+        body: 'The most effective medicine applicants in South Australia are those who plan the pathway from Year 10 rather than Year 12. The steps that matter:',
+        list: [
+          'Year 10: confirm Chemistry and Biology in Stage 1 subject selection — these are non-negotiable',
+          'Year 11: perform strongly in Stage 1 Chemistry and Biology to be admitted to Stage 2; begin building awareness of the UCAT through introductory practice',
+          'Year 11 second semester: register for UCAT ANZ in the following year and begin structured preparation',
+          'Year 12 first semester: balance SACE Stage 2 performance with serious UCAT preparation — both matter simultaneously',
+          'August Year 12: sit UCAT ANZ; results available within weeks',
+          'October Year 12: submit SATAC application with medicine preferences',
+        ],
+      },
+      {
+        heading: 'What to Do If Your ATAR Is Not Competitive',
+        body: "Not achieving a competitive ATAR for direct-entry medicine in Year 12 does not end the medicine pathway. Both the University of Adelaide and Flinders offer graduate-entry medicine programs (requiring a completed undergraduate degree and GAMSAT results rather than ATAR). Many students who are not admitted to undergraduate medicine take a high-achieving undergraduate science or health science degree, sit the GAMSAT in their penultimate or final year, and apply for graduate medicine. This pathway takes longer — typically four years of undergraduate study followed by four years of medical school — but it is a legitimate route that many South Australian doctors have taken. Reaching out to universities directly for pathway advice is worthwhile for students in this situation.",
+      },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'All Five Subtests', label: 'UCAT Preparation', href: '/programs/medical-school-admissions/ucat-preparation', desc: 'One-on-one UCAT coaching in Adelaide and online — diagnostic-first, timed from day one.' },
+      { eyebrow: 'UCAT · Interviews · Personal Statements', label: 'Medical School Admissions', href: '/programs/medical-school-admissions', desc: 'The full SA medical school admissions program: UCAT, MMI interview prep, and prerequisite subject coaching.' },
+    ],
+  },
+  {
+    slug: 'sace-methods-mathematical-investigation',
+    title: 'SACE Mathematical Methods Investigation Task: How to Write One That Scores Performance Standard A',
+    date: '2026-05-31',
+    excerpt: 'The Mathematical Investigation is worth 20% of your SACE Methods grade — yet most students treat it as an afterthought. Here is exactly what the task requires, how it is marked, and the structure that consistently earns Performance Standard A.',
+    cat: 'SACE',
+    readMins: 7,
+    sections: [
+      {
+        heading: 'What the Mathematical Investigation Actually Is',
+        body: "The Mathematical Investigation is a folio task that makes up 20% of your SACE Stage 2 Mathematical Methods School Assessment. You are given a topic area and must independently investigate a mathematical question, produce a formal written report, and demonstrate mathematical reasoning beyond routine calculation. It is not an extended homework task or a research essay — it is a genuine mathematical inquiry, and it is assessed as one. Most students underestimate it precisely because it does not look like a test: there is no time limit, no exam room, and no single right answer. But the Performance Standard A descriptors are demanding, and students who approach the investigation casually consistently score below their ability.",
+      },
+      {
+        heading: 'Choosing a Direction That Works in Your Favour',
+        body: "Within the given topic area, students typically have some latitude in choosing the specific direction of their investigation. The most common mistake: choosing a direction that is either too narrow (running out of mathematical content quickly) or too broad (unable to go deep into any single idea). A strong investigation focuses on one specific mathematical relationship or phenomenon and explores it thoroughly — changing one variable at a time, using multiple representations (algebraic, graphical, numerical), and building toward a generalisation. The investigation should be able to sustain three to four pages of genuine mathematical content. If your initial direction produces two pages of mathematics, it is too narrow. If you cannot explain the core relationship in one sentence, it may be too broad.",
+      },
+      {
+        heading: 'The Report Structure That Earns Performance Standard A',
+        body: "Performance Standard A in the Investigation requires 'systematic and thorough' mathematical reasoning and a report that communicates it 'clearly and concisely'. In practice, this means a specific structure:",
+        list: [
+          'Introduction: state your investigation question precisely — not a topic, but an answerable question with mathematical variables',
+          'Mathematical development: work through your investigation step by step, showing how each result leads to the next',
+          'Generalisation or conjecture: identify a broader pattern or result that emerges from your specific cases',
+          'Verification: test your generalisation with cases you did not use to derive it',
+          'Conclusion: directly answer your investigation question and note any limitations or extensions',
+        ],
+      },
+      {
+        heading: 'The Mathematics Section: Depth Over Breadth',
+        body: "The most common reason strong Methods students score below Performance Standard A on the investigation is breadth without depth — covering many ideas shallowly rather than one idea thoroughly. Performance Standard A rewards investigations where the mathematics builds: where each step follows logically from the previous, where the student makes and tests conjectures, and where the conclusion could not have been stated at the beginning without doing the work. An investigation that presents five disconnected calculations on the same topic is not a mathematical inquiry — it is a collection of examples. The marker should be able to follow a thread of mathematical reasoning from the first page to the last.",
+      },
+      {
+        heading: 'Mathematical Communication: Where Marks Are Quietly Lost',
+        body: "The investigation is a written document, and the quality of mathematical communication is assessed separately from the quality of the mathematics. Students who produce correct mathematics but present it poorly — unexplained variables, notation errors, results stated without justification — will not score Performance Standard A even if the underlying reasoning is sound. Key communication requirements:",
+        list: [
+          'Define every variable before using it — do not assume the reader knows what x represents',
+          'Explain each step: "therefore", "this implies", "substituting x = 3 gives" — the reasoning must be explicit',
+          'Use correct mathematical notation throughout, including for derivatives, integrals, and function notation',
+          'Include graphs and diagrams where they add meaning — not as decoration, but as evidence',
+          'Write in third person or first person consistently throughout — do not switch',
+        ],
+      },
+      {
+        heading: 'Timeline and How to Use Your Time',
+        body: 'The Mathematical Investigation is typically due in Term 3 of Stage 2, with several weeks allocated. Most students use this time poorly — starting late and rushing the writing phase. A strong timeline:',
+        list: [
+          'Week 1: explore the topic area broadly, identify two or three possible investigation directions, choose one',
+          'Week 2: develop the mathematical content — calculations, graphs, patterns, conjectures',
+          'Week 3: write the report in full draft, including all explanations and justifications',
+          'Week 4: revise the report with specific attention to mathematical communication and structure',
+          'Final days: proofread notation, check all graphs are labelled, confirm the conclusion directly answers the opening question',
+        ],
+      },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'South Australia · Stage 1 & 2', label: 'SACE Mathematical Methods', href: '/programs/high-school/sace-methods', desc: 'Specialist SACE Methods tutoring — investigation task coaching, SAT strategy, and exam preparation.' },
+      { eyebrow: 'Years 10–12', label: 'High School Program', href: '/programs/high-school', desc: 'SACE coaching across all Stage 2 subjects, from first SAT to final exam.' },
+    ],
+  },
+  {
+    slug: 'sace-additional-information-form',
+    title: 'The SACE Additional Information Form (AIF): What It Is, When to Submit It, and How to Write It',
+    date: '2026-06-08',
+    excerpt: 'The SACE Additional Information Form exists to ensure that students who face significant illness, loss, or disruption are not permanently disadvantaged by circumstances outside their control. Most students who should submit one do not — and most who do submit one do not write it effectively.',
+    cat: 'SACE',
+    readMins: 5,
+    sections: [
+      {
+        heading: 'What the SACE AIF Is',
+        body: "The Additional Information Form (AIF) is a formal submission to the SACE Board that allows students, schools, or parents to notify the Board of significant circumstances that have affected a student's performance during Stage 2. It is not an appeal — it does not change grades that have already been awarded. Instead, it provides context that the SACE Board can consider when making decisions about a student's results, particularly in borderline cases. The AIF is part of the SACE Board's broader Special Consideration process, which acknowledges that external circumstances can significantly and unfairly affect how a student performs.",
+      },
+      {
+        heading: 'What Circumstances Qualify',
+        body: 'The SACE AIF is appropriate when a student has experienced circumstances that were outside their control and that meaningfully affected their performance. Common qualifying circumstances include:',
+        list: [
+          'Serious illness or injury during Stage 2, including mental health conditions requiring medical management',
+          'Death or serious illness of an immediate family member close to an assessment or exam period',
+          'Significant family breakdown or domestic disruption that directly affected study and performance',
+          'Natural disaster or emergency affecting the student\'s home or study environment',
+          'Other exceptional circumstances — the key test is that the event was serious, unforeseeable, and directly affected performance',
+        ],
+      },
+      {
+        heading: 'What the AIF Can and Cannot Do',
+        body: "Understanding the limits of the AIF is important. It is not a guarantee of grade improvement, and it does not give students a second chance at assessments they simply did not prepare for. The SACE Board uses AIF information as context when reviewing borderline results or when deciding whether a student's final grade accurately reflects their underlying ability. In practice, a well-documented AIF can make a meaningful difference in a borderline case — the difference between a B+ and an A- where the Board's assessors have evidence that the student's performance was affected by documented circumstances. It does not transform a C into an A, and it does not compensate for consistently poor performance across the entire year without specific documented events.",
+      },
+      {
+        heading: 'What Evidence to Include',
+        body: 'The strength of an AIF depends significantly on the quality of supporting documentation. Evidence that carries weight with the SACE Board:',
+        list: [
+          'Medical certificates from a doctor specifying dates of illness and its likely impact on study capacity — the more specific the better',
+          'Statutory declarations (witnessed statements) for non-medical circumstances such as family bereavement or domestic disruption',
+          'School documentation confirming the circumstances were communicated to the school at the time — not retrospectively',
+          'Letters from counsellors, welfare coordinators, or other professionals involved with the student during the period in question',
+        ],
+      },
+      {
+        heading: 'How to Write the AIF Statement',
+        body: "The student statement within the AIF should be factual, specific, and focused on the link between the circumstances and academic performance. Three things the statement must do: describe what happened and when (specific dates, not vague periods), explain how it affected study and performance (not just state that it was difficult), and identify which assessments or exam components were most affected. Three things to avoid: emotional language without factual grounding, vague statements like 'I was very stressed', and claims about what your grade would have been without the circumstances. The SACE Board assesses AIFs based on evidence and the plausibility of the claimed impact — not on the difficulty of the student's situation.",
+      },
+      {
+        heading: 'Deadlines and How to Submit',
+        body: "AIF submissions follow specific SACE Board deadlines that change slightly each year. The general pattern: AIFs related to school-based assessments (SATs) can be submitted throughout the year as circumstances arise; AIFs related to the external exam must be submitted within a short window after the exam. Missing the deadline almost always means the AIF cannot be considered. The AIF is submitted through the student's school — the school's SACE Coordinator coordinates the process. Students and parents should contact their school's SACE Coordinator as early as possible when circumstances arise, rather than waiting until the end of the year. Early submission means the Board has more time to consider the information, and documentation is more credible when provided at the time rather than retrospectively.",
+      },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'South Australia · Stage 1 & 2', label: 'SACE Program', href: '/programs/high-school', desc: 'SACE coaching across Stage 2 subjects — strategy, SAT preparation, and exam technique.' },
+      { eyebrow: 'Years 10–12', label: 'High School Program', href: '/programs/high-school', desc: 'SACE support in Adelaide from subject selection through to final results.' },
+    ],
+  },
+  {
+    slug: 'online-vs-in-person-tutoring-adelaide',
+    title: 'Online vs In-Person Tutoring in South Australia: How to Choose What Actually Works',
+    date: '2026-06-12',
+    excerpt: 'Online tutoring is now mainstream in Adelaide. For some students and subjects it is just as effective as in-person; for others it falls short. Here is an honest comparison — including the factors most families overlook when deciding.',
+    cat: 'SACE',
+    readMins: 5,
+    sections: [
+      {
+        heading: 'How Adelaide Tutoring Changed After 2020',
+        body: "Before 2020, online tutoring in Adelaide was a niche option used primarily when a specialist tutor was not available locally. The COVID-19 school closures normalised remote learning and tutoring rapidly, and the Adelaide tutoring market has not reverted. Today, most tutoring providers in South Australia offer both online and in-person options, and many work exclusively online. The practical effect: Adelaide families now have access to a much larger pool of tutors than before, including specialist tutors for niche SACE subjects who may not be physically located in Adelaide. The question is no longer 'is online tutoring a real option?' — it clearly is. The question is whether it is the right option for a specific student, subject, and set of circumstances.",
+      },
+      {
+        heading: 'What Online Tutoring Does Well',
+        body: "Online tutoring has genuine advantages that are not just compromises of in-person tutoring. Scheduling flexibility is greater — there is no travel time for tutor or student, which makes it easier to fit sessions around school, sport, and family commitments. The pool of available tutors is larger, which matters particularly for less common subjects (SACE Physics, Specialist Mathematics, or niche electives) where local specialist tutors may be rare. For students who are organised, self-motivated, and comfortable on screen, online sessions can be equally or more productive than in-person — the technology (shared whiteboards, screen sharing, document collaboration) is now mature enough to support genuine interactive teaching.",
+      },
+      {
+        heading: 'Where In-Person Tutoring Has the Edge',
+        body: 'In-person tutoring retains genuine advantages in specific circumstances. Students who struggle with attention and engagement on screens are typically better served in person — the physical presence of another person and the absence of a browser window creates a different quality of focus. Younger students (primary school and early high school) generally benefit more from in-person interaction, where non-verbal cues and physical materials (manipulatives, written working on shared paper) support learning in ways a screen cannot fully replicate. Practical science subjects with investigation components — Chemistry, Biology, Physics — can also benefit from in-person sessions when the tutor and student are working through experimental design, data analysis, or equipment-related questions together.',
+      },
+      {
+        heading: 'The Subject Factor',
+        body: 'Subject type is one of the most reliable predictors of which format works better:',
+        list: [
+          'Mathematics (all levels): online works well — shared digital whiteboards and problem sets are effective for maths, and the largest pool of specialist maths tutors is online',
+          'English and humanities: online works well — text-based subjects translate naturally to screen, and essay feedback can be delivered asynchronously',
+          'Sciences: online works for content and calculation; in-person has an edge for investigation planning and hands-on problem-solving',
+          'NAPLAN and scholarship preparation: both formats work; for younger students, in-person tends to produce better engagement',
+          'UCAT and exam technique: online works well for most subtests; the adaptive screen-based format of UCAT ANZ actually makes online preparation more directly relevant',
+        ],
+      },
+      {
+        heading: 'The Student Factor',
+        body: "The most important variable is not format or subject — it is the individual student. Students who are self-directed, keep cameras on, and treat online sessions like in-person ones get comparable results from either format. Students who are easily distracted, treat the online session as passive viewing, or disconnect emotionally when not physically in the room with a tutor almost always get better outcomes in person. Parents should be honest about this assessment rather than defaulting to online because it is cheaper or more convenient. If a student spends online sessions with their phone nearby and minimises engagement when the tutor's attention shifts, the convenience advantage of online is offset entirely by the engagement deficit.",
+      },
+      {
+        heading: 'Making the Decision',
+        body: "A practical framework for SA families: start with the student's learning profile (focus and self-direction), then consider the subject, then consider logistics. If a student is self-directed and the subject is mathematics or humanities, online is a reasonable first choice. If a student is younger, struggles with screen engagement, or the subject has hands-on components, in-person is worth the additional logistics. If you are uncertain, most tutors are willing to do a trial session in either format — this is the most reliable way to assess which works better for a specific student. Do not make the decision purely on cost or convenience: a cheaper online session with poor engagement produces worse outcomes than a slightly more expensive in-person session where the student is fully present.",
+      },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'Years 10–12', label: 'High School Program', href: '/programs/high-school', desc: 'SACE coaching available in-person in Adelaide and online — same specialist tutors, flexible format.' },
+      { eyebrow: 'Years 7–9', label: 'Middle School Program', href: '/programs/middle-school', desc: 'Middle school tutoring in Adelaide — Maths, English, NAPLAN, and selective entry preparation.' },
+    ],
+  },
+  {
+    slug: 'university-senior-college-scholarship',
+    title: 'University Senior College Adelaide: The Scholarship Program and How to Apply',
+    date: '2026-06-20',
+    excerpt: 'The University Senior College (USC) in Adelaide offers a distinctive Year 11 and 12 environment — and a scholarship program that makes it accessible to high-achieving students across South Australia. Here is what USC is, how scholarships work, and what the application process involves.',
+    cat: 'Scholarship',
+    readMins: 6,
+    sections: [
+      {
+        heading: 'What Is the University Senior College?',
+        body: "The University Senior College is a Year 11 and 12 college located within the grounds of the University of Adelaide in North Adelaide. It offers SACE Stage 1 and Stage 2 subjects in a university-style environment — small classes, subject specialist teachers, and a campus shared with University of Adelaide students. USC is not a traditional school: there is no uniform, no school sport, no whole-school assembly. The environment is deliberately tertiary in character, which suits students who are academically motivated and prefer a more independent, university-preparation focused experience. For students who thrive in that environment, USC is a compelling alternative to a traditional Year 11 and 12 at a metropolitan high school.",
+      },
+      {
+        heading: 'The Merit Scholarship Program',
+        body: "USC offers merit scholarships to high-achieving students applying for Year 11 entry. Scholarships typically provide fee reductions ranging from partial to full coverage of tuition fees, depending on the scholarship level awarded. The value of a USC scholarship is significant — full-fee tuition at USC is a genuine financial commitment, and scholarship holders receive that benefit in exchange for maintaining academic standards throughout their enrolment. Scholarship holders are expected to maintain a minimum academic performance level to retain their scholarship — schools communicate these requirements to scholarship recipients at the time of offer.",
+      },
+      {
+        heading: 'How Selection Works',
+        body: "USC scholarship selection is based on academic merit, demonstrated through school academic records, and — in many years — through a written application or assessment component. The selection process typically involves: submission of Year 9 and Year 10 academic results, a written personal statement or application response, and sometimes an interview or assessment task. USC is looking for students who are genuinely academically capable, who will engage seriously with a university-style learning environment, and who will contribute positively to the academic culture of the college. Strong grades alone are necessary but not sufficient — the application needs to demonstrate authentic academic motivation.",
+      },
+      {
+        heading: 'What Makes a Strong Scholarship Application',
+        body: "Applications that succeed at USC scholarships share several characteristics. The academic record is strong across multiple subjects — not just in one area. The personal statement is specific rather than generic: it explains why USC in particular appeals to the student (not just 'I want to go to a good school'), what subjects the student wants to study and why, and what the student plans to do after Year 12. Students who have thought seriously about their post-school pathway — even if they have not decided definitively — write more compelling applications than students who present a vague aspiration to 'do well'. References from current teachers that speak to academic engagement, not just behaviour, are also valuable.",
+        list: [
+          'Academic record: consistent high performance across core subjects in Years 9 and 10',
+          'Personal statement: specific reasons for choosing USC, clear subject interests, genuine academic motivation',
+          'Teacher reference: addresses academic engagement and capacity for independent learning',
+          'Understanding of USC: demonstrates knowledge of what USC offers and why it suits the student\'s goals',
+        ],
+      },
+      {
+        heading: 'USC vs a Traditional Year 12 School: Choosing the Right Environment',
+        body: "USC is not the right environment for every high-achieving student. Students who flourish at USC are typically self-directed learners who manage their own time well, value academic discussion with motivated peers, and are comfortable in an environment without the pastoral scaffolding of a traditional school. Students who need strong social structure, who benefit from school sport and extracurricular life as part of their wellbeing, or who find the transition to independent learning difficult may perform better at a well-supported traditional school — even a highly academic one. The environment decision should be made honestly, not aspirationally. A student who underperforms at USC because the environment does not suit them will produce a worse SACE outcome than the same student thriving at a traditional school.",
+      },
+      {
+        heading: 'Application Timeline',
+        body: "USC scholarship applications typically open in Term 2 or Term 3 of Year 10, for entry the following year. Applications close in Term 3, with offers made in Term 4. Students who receive a scholarship offer and accept it typically attend an orientation event before the end of the school year. Confirming exact dates directly with USC is important — the timeline shifts slightly year to year, and missing the application window means waiting another year. For students aiming for USC entry without a scholarship, applications for standard enrolment follow a similar timeline through SATAC or directly through USC's enrolment process.",
+      },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'Selective Entry & Scholarships', label: 'Scholarship Exam Coaching', href: '/programs/exam-strategy', desc: 'Scholarship application preparation for South Australian Year 11 colleges and private schools.' },
+      { eyebrow: 'Years 10–12', label: 'High School Program', href: '/programs/high-school', desc: 'SACE Stage 2 coaching for students at USC and other SA senior colleges.' },
+    ],
+  },
+  {
+    slug: 'ignite-program-south-australia',
+    title: 'The Ignite Gifted and Talented Program in South Australia: Entry, Selection Test, and Preparation',
+    date: '2026-06-04',
+    excerpt: 'The Ignite program is South Australia\'s gifted and talented program for high-ability students in government schools. Entry is competitive and requires a specific aptitude test. Here is what the program involves, which schools offer it, and how to prepare for selection.',
+    cat: 'Selective Entry',
+    readMins: 6,
+    sections: [
+      {
+        heading: 'What the Ignite Program Is',
+        body: "The Ignite Gifted and Talented Program is a South Australian Department for Education program for high-ability students delivered within select government primary and secondary schools. Ignite provides an extension curriculum — material studied at greater depth, higher pace, and with more emphasis on critical thinking and problem-solving than the standard curriculum. It is not a separate school: Ignite students attend a mainstream school but are grouped for core subjects (primarily Maths and English) with other Ignite-identified students and taught at an accelerated level. The program is designed for students who are significantly above average in academic ability and who would otherwise be under-challenged in a standard classroom.",
+      },
+      {
+        heading: 'The Selection Test: What It Assesses',
+        body: "Entry into the Ignite program requires students to sit a selection test administered by the Department for Education. The test is an aptitude test — not a curriculum assessment. It does not test what students have been taught in class. It tests reasoning ability: how well students think, identify patterns, work with language, and solve novel problems. The test typically covers verbal reasoning (including vocabulary, analogies, and comprehension), quantitative reasoning (number patterns, word problems, and mathematical thinking), and abstract reasoning (pattern sequences using shapes and symbols). Because it is an aptitude test, students who prepare specifically for the question formats — practising pattern recognition, verbal reasoning under time pressure, and quantitative problem-solving — consistently perform better than students who rely on their school performance alone.",
+      },
+      {
+        heading: 'Which SA Schools Offer Ignite',
+        body: "The Ignite program is offered at a selection of government schools across metropolitan and regional South Australia, covering both primary and secondary levels. Secondary schools offering Ignite in the Adelaide metropolitan area have included schools such as Mitcham Girls High School, Blackwood High School, and Hamilton Secondary College, among others. The available schools and entry year levels change periodically as the Department for Education reviews the program. Students and families should check the current Department for Education website for the most up-to-date list of participating schools and available year levels — the information changes more frequently than most parents expect.",
+        list: [
+          'Ignite is available at both primary and secondary level in some schools',
+          'Not all metropolitan suburbs have a local Ignite school — travel to a non-local school is common for Ignite families',
+          'Entry year levels vary by school — some offer Year 7 entry, others Year 8 or later',
+          'Students typically remain in the Ignite stream throughout their time at that school',
+        ],
+      },
+      {
+        heading: 'How Ignite Differs From a Standard Classroom',
+        body: "In an Ignite class, the curriculum moves faster, goes deeper into topics, and requires more independent and extended thinking than a standard class. Assessment tasks are more complex and open-ended. The peer group is academically motivated, which changes classroom culture — discussion is substantive, expectations of participation are higher, and students are less likely to feel embarrassed about engaging seriously with academic work. For students who have been unchallenged or bored in standard classes, Ignite often represents a significant and positive shift. However, students who were high-achieving in a standard class without significant effort may find Ignite genuinely demanding for the first time — this is often described by students and parents as the single biggest adjustment.",
+      },
+      {
+        heading: 'How to Prepare for the Ignite Selection Test',
+        body: "Because the Ignite selection test is an aptitude test, the most effective preparation focuses on the reasoning skills it assesses rather than curriculum content. Abstract reasoning, in particular, is the area where preparation produces the clearest improvement — students who have been drilled on the common pattern families (number, position, size, colour, shape, and rotation) consistently outperform students who attempt patterns cold. Verbal reasoning benefits from vocabulary development, practice with analogies, and timed comprehension exercises. Quantitative reasoning benefits from non-routine problem-solving practice — puzzles and word problems that require logical thinking rather than formula application. Preparation over 3 to 6 months is more effective than intensive last-minute practice.",
+        list: [
+          'Abstract reasoning: drill the six core pattern families until recognition is automatic',
+          'Verbal reasoning: practise vocabulary in context, analogies, and inference questions',
+          'Quantitative reasoning: focus on novel problem structures, not arithmetic speed alone',
+          'Timed practice: the test is time-pressured — practising under realistic conditions is essential',
+        ],
+      },
+      {
+        heading: 'When Applications Open and How to Apply',
+        body: "Applications for the Ignite program are typically submitted through the Department for Education's online application system. Application windows vary by school and entry year level — most open in Terms 1 or 2 of the year preceding intended entry. The selection test is administered by the Department for Education at a testing centre, not at the student's school. Results and program offers are typically communicated in Terms 3 or 4. Families should monitor the Department for Education website directly for application open dates, as the dates are not widely publicised and missing the window means waiting another year. Early preparation for the selection test is strongly recommended — waiting until applications open to begin preparation typically leaves insufficient time.",
+      },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'Selective School Entry', label: 'HAST Exam Coaching', href: '/programs/middle-school/hast-exam', desc: 'Aptitude test coaching in Adelaide — abstract reasoning, verbal, quantitative, and written expression.' },
+      { eyebrow: 'Years 7–9', label: 'Middle School Program', href: '/programs/middle-school', desc: 'Full middle school program including Ignite and selective school preparation in South Australia.' },
+    ],
+  },
+  {
+    slug: 'hast-abstract-reasoning-preparation',
+    title: 'HAST Abstract Reasoning: The Section That Most Determines Your Selective School Result',
+    date: '2026-06-16',
+    excerpt: 'Abstract reasoning is the HAST section students find most unfamiliar — and the one where targeted preparation produces the largest improvement. Here is exactly how it works, what patterns appear, and how to train for speed and accuracy under exam pressure.',
+    cat: 'Selective Entry',
+    readMins: 6,
+    sections: [
+      {
+        heading: 'Why Abstract Reasoning Is the Most Trainable HAST Section',
+        body: "Abstract reasoning is the section of the HAST exam that students consistently find most surprising. Unlike verbal or quantitative reasoning, which have some overlap with school content, abstract reasoning uses purely visual sequences with no language and no numbers — just shapes, patterns, and relationships. Many students sit the section without any preparation and find it disorienting. Yet abstract reasoning is also the most reliably trainable section: the question types follow a finite set of patterns, and students who have been drilled on those patterns can answer most questions quickly and accurately. The difference in performance between a prepared and unprepared student on the abstract reasoning section is often larger than in any other section of the HAST.",
+      },
+      {
+        heading: 'The Six Pattern Families',
+        body: "Almost every abstract reasoning question in the HAST — and in similar aptitude tests like the UCAT, ACER, and Ignite selection test — belongs to one or more of six pattern families. Learning to identify which family a pattern belongs to is the first skill to develop:",
+        list: [
+          'Number: count something across the sequence — number of shapes, sides, dots, lines, or intersections',
+          'Position: track where an element is located — it may rotate position, move in a fixed direction, or oscillate',
+          'Size: elements change size in a predictable sequence — large to small, or alternating',
+          'Colour and shading: fill patterns alternate, rotate, or follow a rule — black, white, grey in sequence',
+          'Shape type: specific shapes (triangles, circles, arrows) are added, removed, or transformed across frames',
+          'Rotation: an element rotates by a fixed amount (e.g., 45° or 90°) per frame — clockwise or anticlockwise',
+        ],
+      },
+      {
+        heading: 'How to Approach a Question Under Exam Pressure',
+        body: "The approach that consistently produces the best results under HAST exam conditions is a systematic scan rather than an intuitive guess. When a new abstract reasoning question appears: look at the first and last frames first — the change between them often reveals the dominant pattern. Then check all six families in order (number, position, size, colour, shape, rotation) until you find the rule. This takes practice to do quickly — initially students feel slower when they are systematic, but with repetition the scan becomes automatic and takes less than 10 seconds per question. Students who try to 'see' the pattern by staring at the sequence without a framework are slower and less accurate than students who apply a systematic check.",
+      },
+      {
+        heading: 'Multi-Rule Questions: When More Than One Pattern Applies',
+        body: "In harder HAST abstract reasoning questions, two or more pattern families operate simultaneously. For example, a sequence might involve both a rotating element (rotation family) and a changing fill pattern (colour family) — and the correct answer must satisfy both rules. These questions trip up students who identify one rule and assume they are done. The check for multi-rule questions: once you have identified one rule, verify that it fully distinguishes the correct answer from all incorrect options. If two answer options both satisfy your identified rule, there is a second rule you have not found yet. Look for what varies between the two possible answers — that variation reveals the second pattern.",
+      },
+      {
+        heading: 'Speed: How to Work Quickly Without Rushing',
+        body: "The HAST abstract reasoning section is time-pressured. Students who cannot identify patterns quickly run out of time, and guessing under pressure reduces accuracy. Two habits build the speed required: first, drill each pattern family in isolation before attempting mixed sets — this builds recognition speed for each type individually. Second, practise under timed conditions from early in the preparation period, not just in the final weeks. Students who only practise untimed questions have typically never experienced the cognitive load of the clock ticking during a pattern they cannot immediately solve. Timed practice also helps students develop the habit of moving on after a fixed time on a question rather than stalling — a question left unanswered is worth the same as a question answered wrong, so pacing matters.",
+      },
+      {
+        heading: 'How to Structure Your Practice',
+        body: 'A preparation schedule that consistently produces improvement for HAST abstract reasoning:',
+        list: [
+          'Weeks 1–2: learn the six pattern families one at a time using untimed drills — master each before introducing mixed practice',
+          'Weeks 3–5: mixed untimed practice across all six families, focusing on the systematic scan approach',
+          'Weeks 6–8: introduce timed practice sets; target 10 to 12 seconds per question',
+          'Final 4 weeks: full-length timed sections under realistic exam conditions, followed by review of every error',
+          'Throughout: keep an error log — categorise every missed question by pattern family to identify persistent weaknesses',
+        ],
+      },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'Selective School Entry', label: 'HAST Exam Coaching', href: '/programs/middle-school/hast-exam', desc: 'Complete HAST preparation in Adelaide — abstract reasoning, verbal, quantitative, and written expression.' },
+      { eyebrow: 'Years 7–9', label: 'Middle School Program', href: '/programs/middle-school', desc: 'Full middle school program for Glenunga, Adelaide High, and Botanic High selective entry.' },
+    ],
+  },
+  {
+    slug: 'naplan-primary-school-preparation',
+    title: 'NAPLAN for Primary School Students: What Year 3 and Year 5 Tests Actually Assess',
+    date: '2026-05-30',
+    excerpt: 'NAPLAN at Year 3 and Year 5 is very different from the Year 7 and Year 9 tests. Many primary school parents are unsure what to expect, how much preparation is appropriate, and what the results actually mean for their child. Here is a clear guide.',
+    cat: 'NAPLAN',
+    readMins: 6,
+    sections: [
+      {
+        heading: 'Why Primary School NAPLAN Matters',
+        body: "NAPLAN is sat in Years 3, 5, 7, and 9. The primary school sittings — Year 3 and Year 5 — are the earliest external, standardised measure of a student's academic development in literacy and numeracy. For most students, these results have no immediate high-stakes consequences. But they carry two important functions: they give parents and teachers an independent data point on where a student stands relative to national expectations, and they establish the baseline against which a student's growth to Year 5 and then Year 7 will be measured. A student who scores well below the national average at Year 3 and receives no targeted support is likely to fall further behind by Year 7 — when NAPLAN results start to matter more for selective school and scholarship processes.",
+      },
+      {
+        heading: 'What Year 3 NAPLAN Assesses',
+        body: "Year 3 NAPLAN covers Literacy and Numeracy. The Literacy component includes Reading, Writing, and Language Conventions (spelling, grammar, and punctuation). The Numeracy component covers the Year 3 maths curriculum: number and place value, simple fractions, measurement, basic geometry, and early data skills. The test is adaptive — questions adjust in difficulty based on how a student answers — which means a Year 3 student who is performing strongly will see harder questions, and one who is struggling will see easier questions calibrated to their level. This adaptive format can feel different from what students expect from a school test, and unfamiliarity with it can affect performance independently of actual academic ability.",
+      },
+      {
+        heading: 'What Changes in Year 5 NAPLAN',
+        body: 'By Year 5, the content is more complex across all areas. Year 5 NAPLAN Numeracy includes proportional reasoning, introductory algebraic thinking, area and perimeter, and more complex data interpretation. The Reading section uses longer, more varied passages and tests inference more explicitly — students must go beyond what is directly stated and identify implied meaning. The Writing task requires a more developed, structured response. Students who were strong at Year 3 often find Year 5 more demanding than expected — not because their ability has declined, but because the expectations have grown significantly. Students who were only just meeting expectations at Year 3 may show concerning gaps by Year 5.',
+        list: [
+          'Numeracy: fractions, decimals, and percentages are tested more directly in Year 5 than Year 3',
+          'Reading: inference questions are harder — students must draw conclusions the text does not state explicitly',
+          'Writing: structural requirements are more explicit — a clear beginning, developed middle, and conclusion are expected',
+          'Language Conventions: sentence structure and punctuation expectations increase significantly from Year 3 to Year 5',
+        ],
+      },
+      {
+        heading: 'How Primary NAPLAN Results Affect Future Pathways',
+        body: 'For most students, Year 3 and Year 5 NAPLAN results are diagnostic tools, not selection instruments. However, there are pathways where early NAPLAN results carry weight. Some Ignite program applications consider NAPLAN results as part of their evidence base for high ability identification. Some independent school scholarship applications ask for NAPLAN results as part of the academic record. And for families considering Year 7 selective entry (HAST exam for Glenunga, Adelaide High, or Botanic High), a strong Year 5 NAPLAN Numeracy and Literacy result is a useful early indicator of whether the student is tracking toward competitive HAST performance. Consistently strong primary NAPLAN results also support teacher identification for gifted programs at individual schools.',
+      },
+      {
+        heading: 'How to Prepare Without Creating Anxiety',
+        body: "The most common concern among primary school parents is how to support NAPLAN preparation without increasing anxiety or pressure. The evidence-based answer: familiarisation with the format reduces anxiety more than content drilling does. Most Year 3 and Year 5 students who struggle with NAPLAN are not struggling because they lack the academic ability — they are struggling because the adaptive digital format, the question types, and the timed conditions are unfamiliar. Letting students see and practise with NAPLAN-style questions before the test — not extensively, but enough to understand what they are encountering — is the most effective and lowest-stress preparation approach for primary students.",
+        list: [
+          'Do a small number of practice questions in each area so the format is familiar',
+          'Avoid extended drilling sessions — primary school students disengage quickly',
+          'Normalise the test as a snapshot, not a verdict — one sitting does not determine a trajectory',
+          'Ensure good sleep the night before and a normal morning routine on test day',
+        ],
+      },
+      {
+        heading: 'What to Do With the Results',
+        body: "NAPLAN results are released several months after the test and include a score, a band, and a comparison to national averages. The most useful thing parents can do with primary NAPLAN results is share them with the child's teacher and ask: does this match what you see in class? If the results are below expectations and consistent with the teacher's observations, that is a signal worth acting on — targeted literacy or numeracy support in Year 3 or Year 5 is far easier to deliver and more effective than remediation in Year 7 or 9. If the results are significantly below expectations but inconsistent with the teacher's observation of the student, it may reflect test-day anxiety or unfamiliarity with the format rather than a genuine academic gap.",
+      },
+    ],
+    relatedPrograms: [
+      { eyebrow: 'Years 3, 5, 7 & 9', label: 'NAPLAN Preparation', href: '/programs/naplan', desc: 'Structured NAPLAN preparation for Year 3 and Year 5 Literacy and Numeracy in Adelaide.' },
+      { eyebrow: 'Years 1–6', label: 'Primary School Program', href: '/programs/primary-school', desc: 'Core literacy and numeracy support for South Australian primary school students.' },
+    ],
+  },
 ]
 
 export function getPost(slug: string): Post | undefined {
