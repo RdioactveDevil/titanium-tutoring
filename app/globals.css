@@ -97,8 +97,17 @@ nav{position:sticky;top:0;left:0;right:0;z-index:100;height:var(--nav-h);backgro
 @keyframes dropdownSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .nav-dropdown .nav-dropdown-item{display:block;padding:10px 14px;border-radius:var(--r-sm);color:var(--ink);text-decoration:none;font-size:13px;font-weight:500;transition:background 150ms,color 150ms,transform 150ms var(--ease-out),padding-left 150ms}
 .nav-dropdown .nav-dropdown-item:hover{background:var(--paper-raise);color:var(--navy);transform:translateX(4px);padding-left:18px}
+.nav-dropdown-mega{min-width:440px;display:grid;grid-template-columns:1fr 1px 1fr;padding:14px 8px;gap:0}
+.nav-mega-col{padding:0 4px}
+.nav-mega-col-head{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--ink-3);padding:2px 14px 10px;display:block}
+.nav-mega-divider{background:var(--rule);margin:8px 0;width:1px}
 .mobile-sub{font-size:11px !important;letter-spacing:0.08em !important;padding-left:16px !important;color:rgba(8,30,109,0.45) !important;border-bottom-color:rgba(8,30,109,0.04) !important}
 .mobile-sub.active{color:var(--navy) !important}
+.mobile-sub-head{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:var(--ink-3);padding:14px 20px 4px;display:block;pointer-events:none}
+.curriculum-toggle{display:inline-flex;border:2px solid var(--navy);border-radius:var(--r-md);overflow:hidden;margin-bottom:28px}
+.curriculum-toggle-btn{padding:11px 36px;border:none;background:transparent;color:var(--navy);font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.09em;font-size:13px;cursor:pointer;transition:background 180ms,color 180ms;line-height:1}
+.curriculum-toggle-btn.active{background:var(--navy);color:var(--gold)}
+.curriculum-toggle-btn:not(.active):hover{background:var(--paper-raise)}
 .mobile-cta{margin-top:8px;background:var(--gold) !important;color:var(--navy) !important;text-align:center;padding:13px !important;border-radius:var(--r-md);border-bottom:none !important;display:block}
 .mobile-cta:hover{background:var(--gold-600) !important}
 

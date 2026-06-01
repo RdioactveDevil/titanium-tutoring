@@ -4,50 +4,54 @@ import Link from 'next/link'
 import Breadcrumb from '@/app/components/Breadcrumb'
 import { testimonials } from '@/app/data/testimonials'
 
-const subjects = [
+const vceSubjects = [
   {
     key: 'Methods',
-    title: 'VCE / SACE Mathematical Methods',
-    desc: 'Functions, calculus, probability and statistics — delivered in the exact sequence of the VCAA and SACE study designs. Every topic is taught with conceptual understanding first, then applied to the past-exam question patterns that actually appear on test day.',
+    title: 'VCE Mathematical Methods',
+    href: '/programs/high-school/vce-methods',
+    desc: 'Functions, calculus, probability and statistics coached to the VCAA study design. Units 1–4 with SAC strategy and exam technique built into every session.',
     points: [
-      'Functions, relations and graphs',
+      'Functions, relations and transformations',
       'Differential calculus — chain, product and quotient rules',
       'Integral calculus and area under curves',
       'Discrete and continuous probability distributions',
       'SAC strategy and mock exam debrief',
-      'Last-six-years exam question drilling',
+      'Last-six-years VCAA exam question drilling',
     ],
   },
   {
     key: 'Specialist',
-    title: 'VCE / SACE Specialist Mathematics',
-    desc: "The most demanding subject on the ATAR scale. Our Specialist coaching targets the exact question types that separate a 35 from a 45 — with the conceptual depth that holds under exam-room pressure, not just in comfortable practice sessions.",
+    title: 'VCE Specialist Mathematics',
+    href: null,
+    desc: "The most demanding subject on the ATAR scale. Our Specialist coaching targets the question types that separate a 35 from a 45 — with the conceptual depth that holds under exam-room pressure.",
     points: [
       'Complex numbers and argument-form algebra',
       'Vectors and vector calculus',
       'Mechanics — kinematics and dynamics',
       'Differential equations — first and second order',
       'Statistical inference and hypothesis testing',
-      'Exam-style extended response technique',
+      'Extended response technique under exam conditions',
     ],
   },
   {
     key: 'English',
-    title: 'VCE / SACE English',
-    desc: 'Text response, analytical essays, persuasive writing, and oral presentation. We teach the paragraph and essay structures that examiners explicitly reward at each grade boundary — not generic writing advice, but the specific moves that lift a B+ to an A.',
+    title: 'VCE English',
+    href: null,
+    desc: 'Text response, comparative essays, language analysis, and persuasive writing — coached to VCAA text selections and criteria. The paragraph structures and moves that examiners explicitly reward.',
     points: [
       'Text response essay structure and analysis',
+      'Comparative essay technique (Text and Context)',
       'Language analysis — tone, technique, connotation',
       'Persuasive and argumentative writing',
-      'Comparative essay technique (VCE)',
       'Creative writing and context tasks',
       'Oral presentation and delivery coaching',
     ],
   },
   {
     key: 'Chemistry',
-    title: 'VCE / SACE Chemistry',
-    desc: 'From atomic theory to organic chemistry, our Chemistry coaching builds genuine conceptual understanding alongside the calculation technique and lab report writing that top marks require — every topic mapped to the study design.',
+    title: 'VCE Chemistry',
+    href: null,
+    desc: 'From atomic theory to organic chemistry, coached to the VCAA Chemistry study design — building genuine conceptual understanding alongside calculation technique and SAC preparation.',
     points: [
       'Atomic structure, bonding and periodicity',
       'Acids, bases and pH calculations',
@@ -55,6 +59,93 @@ const subjects = [
       'Organic chemistry — functional groups and polymers',
       'Electrochemistry and galvanic cells',
       'Quantitative analysis and stoichiometry',
+    ],
+  },
+  {
+    key: 'Physics',
+    title: 'VCE Physics',
+    href: null,
+    desc: 'Motion, electricity, fields, and waves — coached to the VCAA Physics study design with rigorous problem-solving technique and SAC strategy built into every session.',
+    points: [
+      'Motion and forces — kinematics and Newton\'s laws',
+      'Electrical circuits and electromagnetism',
+      'Gravitational, electric and magnetic fields',
+      'Waves, light, and optics',
+      'Modern physics — quantum and special relativity',
+      'SAC strategy and extended response technique',
+    ],
+  },
+]
+
+const saceSubjects = [
+  {
+    key: 'Methods',
+    title: 'SACE Mathematical Methods',
+    href: '/programs/high-school/sace-methods',
+    desc: 'Functions, calculus, probability and statistics coached to SACE Board performance standards. Stage 1 and Stage 2 with folio task strategy and SAT preparation.',
+    points: [
+      'Functions, relations and transformations',
+      'Differential calculus and applications',
+      'Integral calculus and area under curves',
+      'Discrete and continuous probability distributions',
+      'Folio task strategy and SAT preparation',
+      'Performance Standard A techniques',
+    ],
+  },
+  {
+    key: 'Physics',
+    title: 'SACE Physics',
+    href: '/programs/high-school/sace-physics',
+    desc: 'Motion, electricity, waves, and modern physics — coached to SACE Board performance standards with rigorous problem-solving and investigation report technique.',
+    points: [
+      'Motion — linear, projectile and circular',
+      'Electrical circuits, electromagnetism and induction',
+      'Gravitational, electric and magnetic fields',
+      'Waves, light, interference and diffraction',
+      'Modern physics — quantum theory and special relativity',
+      'Investigation report writing for assessment',
+    ],
+  },
+  {
+    key: 'Chemistry',
+    title: 'SACE Chemistry',
+    href: '/programs/high-school/sace-chemistry',
+    desc: 'From atomic structure to organic chemistry, coached to SACE Board performance standards — conceptual understanding plus calculation technique and investigation skills.',
+    points: [
+      'Atomic structure, bonding and periodicity',
+      'Acids, bases and pH calculations',
+      'Chemical equilibrium and Le Chatelier\'s principle',
+      'Organic chemistry — functional groups and reactions',
+      'Electrochemistry and galvanic cells',
+      'Quantitative analysis and stoichiometry',
+    ],
+  },
+  {
+    key: 'Biology',
+    title: 'SACE Biology',
+    href: '/programs/high-school/sace-biology',
+    desc: 'Cells, genetics, evolution, and ecosystems — coached to SACE Board performance standards with investigation design skills and data analysis technique built in.',
+    points: [
+      'Cell biology — structure, function and cellular processes',
+      'Genetics — inheritance, mutation and gene expression',
+      'Evolution and natural selection',
+      'Ecosystems and ecological interactions',
+      'Investigation design and data analysis',
+      'Performance Standard A response technique',
+    ],
+  },
+  {
+    key: 'English',
+    title: 'SACE English',
+    href: '/programs/high-school/sace-english',
+    desc: 'Text analysis, essays, creative and multimodal tasks — coached to SACE English performance standards with the specific response structures and language that markers reward.',
+    points: [
+      'Text analysis and literary essay structure',
+      'Analytical and comparative responses',
+      'Language technique identification and effect',
+      'Creative writing — narrative and reflective',
+      'Multimodal and oral presentation tasks',
+      'Performance Standard A writing technique',
     ],
   },
 ]
@@ -78,7 +169,17 @@ const curricula = [
   },
 ]
 
+const subjectDeepDives = [
+  { eyebrow: 'Victoria · Units 1–4', title: 'VCE Mathematical Methods', desc: 'Functions, calculus, probability and statistics coached to the VCAA study design. SAC strategy and exam technique included.', href: '/programs/high-school/vce-methods', link: 'Explore VCE Methods →' },
+  { eyebrow: 'South Australia · Stage 1 & 2', title: 'SACE Mathematical Methods', desc: 'Functions, calculus, probability and statistics coached to SACE Board performance standards. Folio task and SAT strategy included.', href: '/programs/high-school/sace-methods', link: 'Explore SACE Methods →' },
+  { eyebrow: 'South Australia · Stage 1 & 2', title: 'SACE Physics', desc: 'Motion, electricity, waves, and modern physics coached to SACE Board performance standards with investigation report technique.', href: '/programs/high-school/sace-physics', link: 'Explore SACE Physics →' },
+  { eyebrow: 'South Australia · Stage 1 & 2', title: 'SACE Chemistry', desc: 'Atomic theory to organic chemistry — conceptual understanding, calculation technique, and investigation skills to Performance Standard A.', href: '/programs/high-school/sace-chemistry', link: 'Explore SACE Chemistry →' },
+  { eyebrow: 'South Australia · Stage 1 & 2', title: 'SACE Biology', desc: 'Cells, genetics, evolution, and ecosystems — with investigation design and data analysis technique built into every session.', href: '/programs/high-school/sace-biology', link: 'Explore SACE Biology →' },
+  { eyebrow: 'South Australia · Stage 1 & 2', title: 'SACE English', desc: 'Text analysis, essays, and creative tasks coached to SACE English performance standards — the structures and language markers reward.', href: '/programs/high-school/sace-english', link: 'Explore SACE English →' },
+]
+
 export default function HighSchool() {
+  const [activeCurriculum, setActiveCurriculum] = useState<'vic' | 'sa'>('vic')
   const [activeSubject, setActiveSubject] = useState(0)
 
   useEffect(() => {
@@ -97,6 +198,11 @@ export default function HighSchool() {
     document.querySelectorAll('.fade-in,.slide-left,.slide-right').forEach(el => obs.observe(el))
     return () => obs.disconnect()
   }, [])
+
+  const handleCurriculumChange = (c: 'vic' | 'sa') => {
+    setActiveCurriculum(c)
+    setActiveSubject(0)
+  }
 
   const namedTestimonials = testimonials.filter(t => (t.cat === 'atar' || t.cat === 'selective' || t.cat === 'scholarship') && t.name !== 'Undisclosed')
   const schemaReviews = namedTestimonials.slice(0, 5).map(t => ({
@@ -152,7 +258,8 @@ export default function HighSchool() {
     review: schemaReviews,
   }
 
-  const panel = subjects[activeSubject]
+  const currentSubjects = activeCurriculum === 'vic' ? vceSubjects : saceSubjects
+  const panel = currentSubjects[activeSubject]
 
   return (
     <>
@@ -203,11 +310,27 @@ export default function HighSchool() {
           <div className="section-header fade-in">
             <span className="eyebrow">What We Teach</span>
             <h2 className="section-title">Subjects & Focus Areas</h2>
-            <p className="lead" style={{ marginTop: 14 }}>Select a subject to see exactly what we cover and how we coach it.</p>
+            <p className="lead" style={{ marginTop: 14 }}>Select your state, then choose a subject to see exactly what we cover and how we coach it.</p>
             <div className="section-rule" />
           </div>
+          <div style={{ textAlign: 'center' }}>
+            <div className="curriculum-toggle">
+              <button
+                className={`curriculum-toggle-btn${activeCurriculum === 'vic' ? ' active' : ''}`}
+                onClick={() => handleCurriculumChange('vic')}
+              >
+                VIC — VCE
+              </button>
+              <button
+                className={`curriculum-toggle-btn${activeCurriculum === 'sa' ? ' active' : ''}`}
+                onClick={() => handleCurriculumChange('sa')}
+              >
+                SA — SACE
+              </button>
+            </div>
+          </div>
           <div className="subject-tabs">
-            {subjects.map((s, i) => (
+            {currentSubjects.map((s, i) => (
               <button
                 key={s.key}
                 className={`subject-tab-btn${activeSubject === i ? ' active' : ''}`}
@@ -226,7 +349,14 @@ export default function HighSchool() {
                 <li key={pt}>{pt}</li>
               ))}
             </ul>
-            <Link href="/contact" className="btn-navy-sm">Book a Trial Session →</Link>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+              <Link href="/contact" className="btn-navy-sm">Book a Trial Session →</Link>
+              {panel.href && (
+                <Link href={panel.href} style={{ fontSize: 13, fontWeight: 700, color: 'var(--gold-600)', letterSpacing: '0.06em', textDecoration: 'none' }}>
+                  Full {panel.key} subject guide →
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -239,18 +369,14 @@ export default function HighSchool() {
             <div className="section-rule" style={{ margin: '20px auto 0' }} />
           </div>
           <div className="related-grid" style={{ marginBottom: 48 }}>
-            <Link href="/programs/high-school/vce-methods" className="related-card">
-              <span className="related-card-eyebrow">Victoria · Units 1–4</span>
-              <div className="related-card-title">VCE Mathematical Methods</div>
-              <p className="related-card-desc">Functions, calculus, probability and statistics coached to the VCAA study design. SAC strategy and exam technique included.</p>
-              <span className="related-card-link">Explore VCE Methods →</span>
-            </Link>
-            <Link href="/programs/high-school/sace-methods" className="related-card">
-              <span className="related-card-eyebrow">South Australia · Stage 1 &amp; 2</span>
-              <div className="related-card-title">SACE Mathematical Methods</div>
-              <p className="related-card-desc">Functions, calculus, probability and statistics coached to SACE Board performance standards. Folio task and SAT strategy included.</p>
-              <span className="related-card-link">Explore SACE Methods →</span>
-            </Link>
+            {subjectDeepDives.map((s) => (
+              <Link key={s.href} href={s.href} className="related-card">
+                <span className="related-card-eyebrow">{s.eyebrow}</span>
+                <div className="related-card-title">{s.title}</div>
+                <p className="related-card-desc">{s.desc}</p>
+                <span className="related-card-link">{s.link}</span>
+              </Link>
+            ))}
           </div>
           <div className="section-header" style={{ marginTop: 0 }}>
             <span className="eyebrow">Explore Other Programs</span>

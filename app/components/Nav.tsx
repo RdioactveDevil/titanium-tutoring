@@ -4,11 +4,20 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const programs = [
+const yearLevelPrograms = [
   { label: 'Primary School', href: '/programs/primary-school' },
   { label: 'Middle School', href: '/programs/middle-school' },
   { label: 'High School (VCE & SACE)', href: '/programs/high-school' },
   { label: 'Medical School Admissions', href: '/programs/medical-school-admissions' },
+]
+
+const specialistPrograms = [
+  { label: 'Scholarships', href: '/programs/middle-school' },
+  { label: 'Selective Entry', href: '/programs/middle-school/hast-exam' },
+  { label: 'HAST Exam', href: '/programs/middle-school/hast-exam' },
+  { label: 'IGNITE', href: '/programs/middle-school' },
+  { label: 'NAPLAN', href: '/programs/naplan' },
+  { label: 'Exam Strategy', href: '/programs/exam-strategy' },
 ]
 
 export default function Nav() {
@@ -25,6 +34,7 @@ export default function Nav() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [menuOpen])
+
   const active = (href: string) => path === href ? 'active' : ''
   const activePrograms = path === '/programs' || path.startsWith('/programs/') ? 'active' : ''
 
@@ -56,10 +66,20 @@ export default function Nav() {
                   Programs <span style={{ fontSize: 9, opacity: 0.7 }}>▼</span>
                 </Link>
                 {progOpen && (
-                  <div className="nav-dropdown">
-                    {programs.map(p => (
-                      <Link key={p.href} href={p.href} className={`nav-dropdown-item${path === p.href ? ' active' : ''}`} onClick={close}>{p.label}</Link>
-                    ))}
+                  <div className="nav-dropdown nav-dropdown-mega">
+                    <div className="nav-mega-col">
+                      <span className="nav-mega-col-head">By Year Level</span>
+                      {yearLevelPrograms.map(p => (
+                        <Link key={p.href} href={p.href} className={`nav-dropdown-item${path === p.href ? ' active' : ''}`} onClick={close}>{p.label}</Link>
+                      ))}
+                    </div>
+                    <div className="nav-mega-divider" />
+                    <div className="nav-mega-col">
+                      <span className="nav-mega-col-head">Specialist</span>
+                      {specialistPrograms.map(p => (
+                        <Link key={p.label} href={p.href} className={`nav-dropdown-item${path === p.href ? ' active' : ''}`} onClick={close}>{p.label}</Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -78,8 +98,12 @@ export default function Nav() {
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
         <Link href="/" className={active('/')} onClick={close}>Home</Link>
         <Link href="/programs" className={activePrograms} onClick={close}>Programs</Link>
-        {programs.map(p => (
+        {yearLevelPrograms.map(p => (
           <Link key={p.href} href={p.href} className={`mobile-sub${path === p.href ? ' active' : ''}`} onClick={close}>{p.label}</Link>
+        ))}
+        <span className="mobile-sub-head">Specialist</span>
+        {specialistPrograms.map(p => (
+          <Link key={p.label} href={p.href} className={`mobile-sub${path === p.href ? ' active' : ''}`} onClick={close}>{p.label}</Link>
         ))}
         <Link href="/about" className={active('/about')} onClick={close}>About</Link>
         <Link href="/results" className={active('/results')} onClick={close}>Results</Link>
