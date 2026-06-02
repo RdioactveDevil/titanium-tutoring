@@ -274,7 +274,7 @@ export default function HighSchool() {
             { label: 'High School' },
           ]} />
           <span className="eyebrow">Years 10–12</span>
-          <h1 className="section-title">VCE &amp; SACE Tutoring in Adelaide &amp; Melbourne | High School Program</h1>
+          <h1 className="section-title">VCE &amp; SACE Tutoring</h1>
           <p className="lead">VCE and SACE — the two years that determine your ATAR. We coach every subject with the same structured rigour, personalised to your specific exam board, target score, and timeline.</p>
         </div>
       </div>

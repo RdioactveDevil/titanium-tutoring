@@ -179,7 +179,7 @@ export default function MiddleSchool() {
             { label: 'Middle School' },
           ]} />
           <span className="eyebrow">Years 7–9</span>
-          <h1 className="section-title">Middle School Tutoring in Adelaide &amp; Melbourne | Years 7–9</h1>
+          <h1 className="section-title">Middle School Tutoring</h1>
           <p className="lead">The middle years are where gaps open up quietly. We find them early, close them systematically, and set students up so Year 10 and beyond feel manageable — not overwhelming.</p>
         </div>
       </div>

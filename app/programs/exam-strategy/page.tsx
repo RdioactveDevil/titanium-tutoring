@@ -122,7 +122,7 @@ export default function ExamStrategyPage() {
             { label: 'Exam Strategy & Mindset' },
           ]} />
           <span className="eyebrow">All Year Levels</span>
-          <h1 className="section-title">Exam Strategy &amp; Mindset Coaching in Adelaide &amp; Melbourne | VCE, SACE &amp; NAPLAN</h1>
+          <h1 className="section-title">Exam Strategy &amp; Mindset Coaching</h1>
           <p className="lead">Time management, stress resilience, and high-stakes exam technique. The skills no textbook teaches — and the ones that separate students who know the content from those who score it.</p>
         </div>
       </div>

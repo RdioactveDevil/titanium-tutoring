@@ -39,7 +39,7 @@ export default function Results() {
       <div className="page-hero">
         <div className="page-hero-inner">
           <span className="eyebrow">Proof</span>
-          <h1 className="section-title">Student Results — VCE, SACE, NAPLAN &amp; Selective Entry</h1>
+          <h1 className="section-title">Student Results</h1>
           <p className="lead">Real outcomes from real students — ATAR scores, scholarship wins, selective school entries, medical admissions, and national competition results. Our students across Adelaide, Melbourne, and online Australia have achieved top VCE results, SACE ATAR scores, NAPLAN improvement, and selective entry outcomes that speak for themselves.</p>
         </div>
       </div>
