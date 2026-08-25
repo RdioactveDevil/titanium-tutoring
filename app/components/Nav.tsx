@@ -28,11 +28,14 @@ export default function Nav() {
 
   const close = () => { setMenuOpen(false); setProgOpen(false) }
 
+  // Lock background scroll while the mobile menu is open so the menu itself
+  // scrolls internally (long menus were overflowing off-screen, and a page
+  // scroll used to close the menu before you could reach the lower links).
   useEffect(() => {
     if (!menuOpen) return
-    const onScroll = () => close()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = prev }
   }, [menuOpen])
 
   const active = (href: string) => path === href ? 'active' : ''
