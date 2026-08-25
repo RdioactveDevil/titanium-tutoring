@@ -434,6 +434,10 @@ nav{position:sticky;top:0;left:0;right:0;z-index:100;height:var(--nav-h);backgro
 .resource-card-desc{font-size:14px;color:rgba(8,30,109,0.68);line-height:1.55;flex:1;margin-bottom:16px}
 .resource-card-cta{font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:0.06em;color:var(--navy);margin-top:auto}
 @media(max-width:640px){.resource-featured{grid-template-columns:1fr;padding:28px 24px;gap:20px}}
+/* Interactive tool wrapper — hosts a self-contained dark tool panel on the cream page */
+.tool-shell{max-width:calc(var(--content-max) + 40px);margin:0 auto;padding:24px 5% 40px}
+.tool-shell .breadcrumb{margin-bottom:20px}
+@media(max-width:640px){.tool-shell{padding:16px 4% 28px}}
 .related-card{display:flex;flex-direction:column;background:var(--paper);border:1px solid rgba(8,30,109,0.1);border-radius:var(--r-md);padding:28px 24px;text-decoration:none;transition:box-shadow 220ms,transform 220ms;position:relative;overflow:hidden}
 .related-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 200ms}
 .related-card:hover{box-shadow:0 6px 24px rgba(8,30,109,0.12);transform:translateY(-3px)}

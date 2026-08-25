@@ -38,6 +38,27 @@ const guides = [
   },
 ]
 
+const medTools = [
+  {
+    label: 'Admissions',
+    title: 'Selection Score Decoder',
+    desc: 'See how ATAR, UCAT and interview actually combine at every Australian medical school — and where your next 100 hours of effort pay off most for the school you\'re targeting.',
+    href: '/resources/selection-score-decoder',
+  },
+  {
+    label: 'UCAT',
+    title: 'The UCAT Gauntlet',
+    desc: 'Six original UCAT-style questions on the real per-question clock. Feel the speed the test genuinely demands before you decide how to prepare for it.',
+    href: '/resources/ucat-gauntlet',
+  },
+  {
+    label: 'Interview',
+    title: 'The MMI Simulator',
+    desc: 'Run a timed Multiple Mini Interview station out loud, then see exactly what assessors score — the rubric, a strong structure, and the common mistakes.',
+    href: '/resources/mmi-simulator',
+  },
+]
+
 const references = [
   {
     badge: 'reference',
@@ -122,6 +143,27 @@ export default function Resources() {
             </div>
             <span className="resource-featured-cta">Use the Tool →</span>
           </Link>
+
+          {/* INTERACTIVE MEDICINE TOOLS */}
+          <div className="section-header fade-in" style={{ marginTop: 16 }}>
+            <span className="eyebrow">Interactive · Medicine Pathway</span>
+            <h2 className="section-title">Medicine Admissions Tools</h2>
+            <p className="lead" style={{ marginTop: 14 }}>Three free, timed tools for aspiring medical students — decode how every school builds its selection score, feel the real UCAT clock, and practise a live MMI interview station.</p>
+            <div className="section-rule" />
+          </div>
+          <div className="resource-grid" style={{ marginBottom: 48 }}>
+            {medTools.map((r, i) => (
+              <Link key={r.href} href={r.href} className="resource-card fade-in" data-delay={`${i * 60}`}>
+                <div className="resource-card-top">
+                  <span style={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--gold-600)' }}>{r.label}</span>
+                  <span className="resource-badge guide">Tool</span>
+                </div>
+                <div className="resource-card-title">{r.title}</div>
+                <p className="resource-card-desc">{r.desc}</p>
+                <span className="resource-card-cta">Open the Tool →</span>
+              </Link>
+            ))}
+          </div>
 
           {/* STUDY GUIDES */}
           <div className="section-header fade-in" style={{ marginTop: 16 }}>
