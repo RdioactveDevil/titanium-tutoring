@@ -154,6 +154,22 @@ export default function Resources() {
             <span className="resource-featured-cta">Use the Tool →</span>
           </Link>
 
+          {/* MEDICINE ADMISSIONS GUIDE (seminar companion) */}
+          <div className="section-header fade-in" style={{ marginTop: 16 }}>
+            <span className="eyebrow">New · Seminar Companion</span>
+            <h2 className="section-title">The Medicine Admissions Guide</h2>
+            <p className="lead" style={{ marginTop: 14 }}>Our complete take-home playbook for getting into medicine in Australia — the pathways, the UCAT, the interview, the ATAR maths, and the backup plan the top applicants actually use.</p>
+            <div className="section-rule" />
+          </div>
+          <a href="/downloads/Titanium-Tutoring-Medicine-Student-Guide-2026.pdf" target="_blank" rel="noopener" className="resource-featured fade-in" style={{ marginBottom: 48 }}>
+            <div>
+              <span className="resource-featured-badge">Free PDF · 14 pages · No sign-up</span>
+              <div className="resource-featured-title">How to Get Into Medicine in Australia — Student Guide 2026</div>
+              <p className="resource-featured-desc">Every direct-entry and graduate pathway, a school-by-school selection table, how the UCAT and MMI interview actually work, a year-by-year timeline, myths vs reality, and a results-day backup plan. The companion guide to our &ldquo;How the Top 1% Get Into Medicine &amp; Dentistry&rdquo; seminar.</p>
+            </div>
+            <span className="resource-featured-cta">View the Guide →</span>
+          </a>
+
           {/* INTERACTIVE MEDICINE TOOLS */}
           <div className="section-header fade-in" style={{ marginTop: 16 }}>
             <span className="eyebrow">Interactive · Medicine Pathway</span>
