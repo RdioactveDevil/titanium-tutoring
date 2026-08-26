@@ -362,6 +362,15 @@ function Gauntlet() {
             </ul>
           </div>
 
+          <a className="ttg-download" href="/downloads/UCAT-Error-Log-Titanium-Tutoring.xlsx" download>
+            <span className="ttg-download-icon" aria-hidden="true">↓</span>
+            <span className="ttg-download-body">
+              <span className="ttg-download-h">Free download · UCAT Error Log &amp; Dashboard</span>
+              <span className="ttg-download-sub">The “review every mistake” habit, built into a spreadsheet — log each error and watch an auto-updating dashboard reveal your weak subtests, timing issues and review progress.</span>
+            </span>
+            <span className="ttg-download-cta">Get the Excel tracker →</span>
+          </a>
+
           <div className="ttg-cta">
             <button className="ttg-btn" onClick={restart}>↺ Run it again</button>
             <span className="ttg-cta-line">Want a real plan? Titanium builds one around your timeline.</span>
@@ -496,6 +505,14 @@ const css = `
 .ttg-good-h{font-size:13px; font-weight:800; color:var(--gold); text-transform:uppercase; letter-spacing:1px;}
 .ttg-list{margin:12px 0 0; padding-left:20px;}
 .ttg-list li{font-size:14.5px; line-height:1.6; color:#D7DcF2; margin-bottom:8px;}
+.ttg-download{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:20px 0 0; padding:16px 18px; border-radius:12px; text-decoration:none; color:var(--ink); background:rgba(243,190,67,0.09); border:1px solid rgba(243,190,67,0.28); transition:background .16s, border-color .16s, transform .08s;}
+.ttg-download:hover{background:rgba(243,190,67,0.14); border-color:rgba(243,190,67,0.5); transform:translateY(-1px);}
+.ttg-download:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+.ttg-download-icon{flex:none; width:40px; height:40px; border-radius:10px; background:var(--gold); color:#0A1440; display:grid; place-items:center; font-size:20px; font-weight:800;}
+.ttg-download-body{display:flex; flex-direction:column; gap:3px; flex:1; min-width:220px;}
+.ttg-download-h{font-size:14.5px; font-weight:800; color:#FCE9B6;}
+.ttg-download-sub{font-size:12.5px; line-height:1.5; color:#CBD2EE;}
+.ttg-download-cta{font-size:13px; font-weight:700; color:var(--gold); white-space:nowrap; margin-left:auto;}
 .ttg-cta{display:flex; align-items:center; gap:14px; flex-wrap:wrap; margin:24px 0 16px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.09);}
 .ttg-cta-line{font-size:13.5px; color:var(--muted);}
 .ttg-src{font-size:11.5px; color:var(--muted); line-height:1.5; margin:0;}
