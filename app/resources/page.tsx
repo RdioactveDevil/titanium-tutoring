@@ -59,6 +59,16 @@ const medTools = [
   },
 ]
 
+const downloads = [
+  {
+    label: 'UCAT',
+    format: 'XLSX',
+    title: 'UCAT Error Log & Dashboard',
+    desc: 'The habit that separates top UCAT scorers: log every mistake and review it. This tracker turns your entries into an auto-updating dashboard — mistakes by subtest, review progress, and timing issues — so your weak spots become obvious. Includes sample data and a how-to sheet.',
+    href: '/downloads/UCAT-Error-Log-Titanium-Tutoring.xlsx',
+  },
+]
+
 const references = [
   {
     badge: 'reference',
@@ -162,6 +172,27 @@ export default function Resources() {
                 <p className="resource-card-desc">{r.desc}</p>
                 <span className="resource-card-cta">Open the Tool →</span>
               </Link>
+            ))}
+          </div>
+
+          {/* DOWNLOADABLE TEMPLATES */}
+          <div className="section-header fade-in" style={{ marginTop: 16 }}>
+            <span className="eyebrow">Free Downloads</span>
+            <h2 className="section-title">Study Templates</h2>
+            <p className="lead" style={{ marginTop: 14 }}>Ready-to-use spreadsheets and trackers you can download and start filling in today — no sign-up required.</p>
+            <div className="section-rule" />
+          </div>
+          <div className="resource-grid" style={{ marginBottom: 48 }}>
+            {downloads.map((d, i) => (
+              <a key={d.href} href={d.href} download className="resource-card fade-in" data-delay={`${i * 60}`} style={{ maxWidth: 520 }}>
+                <div className="resource-card-top">
+                  <span style={{ fontSize: 11, letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--gold-600)' }}>{d.label}</span>
+                  <span className="resource-badge reference">{d.format}</span>
+                </div>
+                <div className="resource-card-title">{d.title}</div>
+                <p className="resource-card-desc">{d.desc}</p>
+                <span className="resource-card-cta">↓ Download ({d.format})</span>
+              </a>
             ))}
           </div>
 
